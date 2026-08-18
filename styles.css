@@ -12,6 +12,7 @@
 	--lootSuperior: blue;
 	--lootEpic: purple;
 	--lootArtifact: orange;
+	--lootCursed: red;
 }
 body {
 	margin: var(--margin-body);
@@ -33,6 +34,7 @@ body {
 	width: var(--panel-width);
 	border: ridge var(--border-ridge) black;
 	height: calc(100% - calc(var(--border-ridge) * 2));
+	background: black;
 }
 #txtScreen {
 	height: calc(100% - calc(var(--border-ridge) * 2) - var(--text-field) - calc(var(--text-padding) * 2));
@@ -79,5 +81,8 @@ span {
 }
 .artifact {
 	color: var(--lootArtifact);
+}
+.cursed {
+	color: var(--lootCursed);
 }
 
