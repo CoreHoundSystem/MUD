@@ -3,6 +3,7 @@
 	--border-ridge: 3px;
 	--margin-body: 30px;
 	--text-field: 40px;
+	--text-padding: 10px;
 	--roomDescription: white;
 	--lootCommon: grey;
 	--lootUncommon: white;
@@ -34,7 +35,7 @@ body {
 	height: calc(100% - calc(var(--border-ridge) * 2));
 }
 #txtScreen {
-	height: calc(100% - calc(var(--border-ridge) * 2) - var(--text-field));
+	height: calc(100% - calc(var(--border-ridge) * 2) - var(--text-field) - calc(var(--text-padding) * 2);
 }
 #commandArea {
 	height: 40px;
@@ -45,7 +46,7 @@ body {
 	border: none;
 	height: 100%;
 	width: 100%;
-	padding: 10px;
+	padding: var(--text-padding);
 	line-height: 20px;
 }
 #commandLine::placeholder {
