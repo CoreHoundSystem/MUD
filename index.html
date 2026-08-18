@@ -14,7 +14,6 @@
 			<div id="panel"></div>
 		</div>
 		<script>
-			//$("body").css("background-image", "url=/images/viking1.jpg");
 			var FittedPlateMail = {
 				color: "superior",
 				text: "Fitted Plate Mail",
@@ -25,6 +24,17 @@
 			$(function() {
 				postText(FittedPlateMail);
 			})
+			//commands
+			$("#commandLine").keypress(function (e) {
+				if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
+					e.preventDefault();
+					x = {
+						color: "common",
+						text: $("#commandLine").text(),
+					}
+					postText(x);
+				}
+			});
 		</script>
 	</body>
 </html>
