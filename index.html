@@ -54,11 +54,20 @@
 			function spawn(y) {
 				console.log(y);
 				y = y.split(" ");
+				if(y.length < 2 || y.length > 3) {
+					postText(improperSyntax);
 				if(y[2]) {
 					postText(y[2] + " " +y[1] + " have appeared!",1);
 				} else {
 					postText(y[1] + " has appeared!",1);
 				}
+			}
+			function improperSyntax() {
+				iS = {
+					color: "cursed",
+					text: "Improper Syntax",
+				}
+				postText(iS);
 			}
 			$("#commandLine").keypress(function (e) {
 				if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
