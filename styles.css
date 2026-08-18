@@ -35,7 +35,7 @@ body {
 	height: calc(100% - calc(var(--border-ridge) * 2));
 }
 #txtScreen {
-	height: calc(100% - calc(var(--border-ridge) * 2) - var(--text-field) - calc(var(--text-padding) * 2);
+	height: calc(100% - calc(var(--border-ridge) * 2) - var(--text-field) - calc(var(--text-padding) * 2));
 }
 #commandArea {
 	height: 40px;
