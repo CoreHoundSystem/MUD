@@ -59,25 +59,16 @@
 			function command(c) {
 				c = c.substring(1,t.length);
 				console.log(c.indexOf(" "));					//gives us our string
+				code = c;
+				fullCode = c;
 				if(c.indexOf(" ") != -1) {						//checks to see if string can be parsed
 					code = c.substring(0,t.indexOf(" "));		//isolates primary command
 					fullCode = c.split(" ");					//creates array
 					console.log(fullCode);
 					console.log(code);
-					for(i=0;i<fullCode.length;i++) {			//should pair array with object named code
-						//code.[code.key[i]] = fullCode[i]
-						//console.log([code][code.key[i]]);
-						console.log
-					}
-				} else {
-					code = c;
-					console.log(code);
-					console.log(window[window[code]execute]());
-					//console.log(window[code.execute]());
-					window[code.execute]();
 				}
-				//code.execute;
-				console.log(code);
+				console.log(window[code](fullCode));
+				window[code](fullCode);
 			}
 		</script>
 	</body>
