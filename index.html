@@ -8,7 +8,7 @@
 			<div id="primary">
 				<div id="txtScreen"></div>
 				<div id="commandArea">
-					<textarea id="commandLine">Enter command...</textarea>
+					<textarea id="commandLine" placeholder="Enter command..."></textarea>
 				</div>
 			</div>
 			<div id="panel"></div>
@@ -17,11 +17,10 @@
 			//$("body").css("background-image", "url=/images/viking1.jpg");
 			var FittedPlateMail = {
 				color: "superior",
-				style: "none",
 				text: "Fitted Plate Mail",
 			}
 			function postText(a) {
-				$('#txtScreen').append('<span class="' + a.color + ' ' + a.style + '">' + a.text + '</span>');
+				$('#txtScreen').append('<span class="' + a.color + '">' + a.text + '</span>');
 			}
 			$(function() {
 				postText(FittedPlateMail);
