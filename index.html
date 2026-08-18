@@ -38,6 +38,7 @@
 				if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 					e.preventDefault();
 					t = $("#commandLine").val();
+					console.log(t.substring(0,1));
 					if(t.substring(0,1) != "/") {
 						x = {
 							color: "uncommon",
