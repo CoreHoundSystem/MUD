@@ -2,9 +2,18 @@
 	--panel-width: 200px;
 	--border-ridge: 3px;
 	--margin-body: 30px;
+	--text-field: 40px;
+	--roomDescription: white;
+	--lootCommon: grey;
+	--lootUncommon: white;
+	--lootMasterwork: white;
+	--lootMagic: green;
+	--lootSuperior: blue;
+	--lootEpic: purple;
+	--lootArtifact: orange;
 }
 body {
-	margin: 10px;
+	margin: var(--margin-body);
 	background-image: url(/images/viking1.jpg);
 }
 #main {
@@ -25,8 +34,35 @@ body {
 	height: calc(100% - calc(var(--border-ridge) * 2));
 }
 #txtScreen {
-	
+	height: calc(100% - calc(var(--border-ridge) * 2) - var(--text-field));
 }
 #commandLine {
-	
+	height: 40px;
+	background: red;
+	border: groove var(--border-ridge) black;
 }
+
+//text styles
+.common {
+	color: var(--lootCommon);
+}
+.uncommon {
+	color: var(--lootUncommon);
+}
+.masterwork {
+	color: var(--lootMasterwork);
+	font-style: italic;
+}
+.magic {
+	color: var(--lootMagic);
+}
+.superior {
+	color: var(--lootSuperior);
+}
+.epic {
+	color: var(--lootEpic);
+}
+.artifact {
+	color: var(--lootArtifact);
+}
+
