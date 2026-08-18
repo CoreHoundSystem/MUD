@@ -12,7 +12,18 @@
 			<div id="panel"></div>
 		</div>
 		<script>
-			$("body").css("background-image", "url=/images/viking1.jpg");
+			//$("body").css("background-image", "url=/images/viking1.jpg");
+			var FittedPlateMail = {
+				color: "superior";
+				style: "none";
+				text: "Fitted Plate Mail";
+			}
+			function postText(a) {
+				$('#txtScreen').append('<span class="' + a.color + ' ' + a.style + '">' + a.text + '</span>');
+			}
+			$(function() {
+				postText(FittedPlateMail);
+			})
 		</script>
 	</body>
 </html>
