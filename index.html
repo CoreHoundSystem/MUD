@@ -35,9 +35,10 @@
 					e.preventDefault();
 					x = {
 						color: "common",
-						text: $("#commandLine").text(),
+						text: $("#commandLine").val(),
 					}
 					postText(x);
+					$("#commandLine").val();
 				}
 			});
 		</script>
