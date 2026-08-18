@@ -48,16 +48,16 @@
 				} else {
 					console.log(y);
 					y = y.split(" ");
-					postText(y[1] + " is healed!");
+					postText(y[1] + " is healed!",1);
 				}
 			}
 			function spawn(y) {
 				console.log(y);
 				y = y.split(" ");
 				if(y[2]) {
-					postText(y[2] + " " +y[1] + " have appeared!");
+					postText(y[2] + " " +y[1] + " have appeared!",1);
 				} else {
-					postText(y[1] + " has appeared!");
+					postText(y[1] + " has appeared!",1);
 				}
 			}
 			$("#commandLine").keypress(function (e) {
