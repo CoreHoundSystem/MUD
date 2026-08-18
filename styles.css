@@ -42,10 +42,20 @@ body {
 	border: groove var(--border-ridge) black;
 }
 #commandLine {
-	
+	border: none;
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	line-height: 20px;
+}
+#commandLine::placeholder {
+	color: grey;
 }
 
 //text styles
+span {
+	font-style: normal;
+}
 .common {
 	color: var(--lootCommon);
 }
