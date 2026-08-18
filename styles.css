@@ -36,10 +36,13 @@ body {
 #txtScreen {
 	height: calc(100% - calc(var(--border-ridge) * 2) - var(--text-field));
 }
-#commandLine {
+#commandArea {
 	height: 40px;
 	background: red;
 	border: groove var(--border-ridge) black;
+}
+#commandLine {
+	
 }
 
 //text styles
