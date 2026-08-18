@@ -16,14 +16,14 @@
 		<script>
 			var version = {
 				color: "artifact",
-				text: "12:14",
+				text: "12:18",
 			}
 			var FittedPlateMail = {
 				color: "superior",
 				text: "Fitted Plate Mail",
 			}
 			function postText(a) {
-				$('#txtScreen').append('<span class="' + a.color + '">' + a.text + '</span>');
+				$('#txtScreen').append('<span class="' + a.color + '">' + a.text + '</span></br>');
 			}
 			$(function() {
 				postText(version);
