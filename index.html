@@ -16,14 +16,18 @@
 		<script>
 			var version = {
 				color: "artifact",
-				text: "12:31",
+				text: "12:37",
 			}
 			var FittedPlateMail = {
 				color: "superior",
 				text: "Fitted Plate Mail",
 			}
-			function postText(a) {
-				$('#txtScreen').append('<span class="' + a.color + '">' + a.text + '</span></br>');
+			function postText(a,b) {
+				if(!b) {
+					$('#txtScreen').append('<span class="' + a.color + '">' + a.text + '</span></br>');
+				} else {
+					$('#txtScreen').append('<span class="uncommon">' + a + '</span></br>');
+				}
 			}
 			$(function() {
 				postText(version);
@@ -40,6 +44,8 @@
 						}
 						postText(x);
 						$("#commandLine").val('');
+					} else {
+						postText($("#commandLine").val(),1);
 					}
 			});
 		</script>
