@@ -1,0 +1,7 @@
+Divide scripts into different files
+* Admin commands
+* core scripts (i.e., postText)
+* grids
+* spells
+* mobs
+* maps
