@@ -1,19 +1,20 @@
 :root {
 	--panel-width: 200px;
 	--border-ridge: 3px;
+	--margin-body: 30px;
 }
 body {
 	margin: 10px;
 	background-image: url(/images/viking1.jpg);
 }
 #main {
-	width: calc(100vw - 20px - var(--border-ridge) - var(--border-ridge));
-	height: calc(100vh - 20px - var(--border-ridge) - var(--border-ridge));
+	width: calc(100vw - calc(var(--margin-body) * 2) - calc(var(--border-ridge) * 2));
+	height: calc(100vh - calc(var(--margin-body) * 2) - calc(var(--border-ridge) * 2));
 	border: ridge var(--border-ridge) black;
 	display: flex
 }
 #primary {
-	width: calc(100% - var(--panel-width) - var(--border-ridge) - var(--border-ridge));
+	width: calc(100% - var(--panel-width) - calc(var(--border-ridge) * 2));
 	height: calc(100% - 0px);
 	display: inline-block;
 	background: black;
@@ -21,7 +22,7 @@ body {
 #panel {
 	width: var(--panel-width);
 	border: ridge var(--border-ridge) black;
-	height: calc(100% - var(--border-ridge) - var(--border-ridge));
+	height: calc(100% - calc(var(--border-ridge) * 2));
 }
 #txtScreen {
 	
