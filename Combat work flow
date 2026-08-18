@@ -1,0 +1,20 @@
+Combat begins
+* triggered by player or aggressive mob/player
+  * unless rule implemented - aggressor gets free round
+* isolate player stats: hp, pools (mana, focus, rage), gear (can not be changed in fight), auto attack with weapon by default, 
+cast spell as ordered, use item as ordered, 
+* isolate mob stats: attack rating/damage, ability/spell rotation/threshold, hp
+*Q How does archery/range work?
+*flow:
+Initiative
+player 
+  - checks for spell/ability assigned
+    - if spell/ability:
+      - check resources/requirements
+    - if none, check for attack
+  - if a hit, check mob for resistance to attack/spell/sbility
+mob
+  - check thresholds for ability/spell, if none...
+  - make random attack/ability/spell check
+  - perform action
+  - compare player resistances
