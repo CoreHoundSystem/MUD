@@ -35,6 +35,7 @@
 			})
 			//commands
 			var spawn = {
+				key: [entity,quantity];
 				entity: "",
 				quantity: 1,
 				execute: postText(spawn.entity,1), //should append current room with mob
@@ -61,8 +62,14 @@
 				console.log(c);
 				if(c.indexOf(" ") != 0) {
 					code = c.substring(1,t.indexOf(" "));
+					fullCode = c.split(" ");
+					console.log(fullCode);
+					for(i=0;i<fullCode.length;i++) {
+						//code.
+					}
 				} else {
 					code = c;
+					console.log(code);
 				}
 				code.execute;
 				console.log(command);
