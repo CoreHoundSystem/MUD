@@ -34,12 +34,12 @@
 				postText(FittedPlateMail);
 			})
 			//commands
-			var spawn = {
+			/*var spawn = {
 				key: ["entity","quantity"],
 				entity: "",
 				quantity: 1,
 			}
-			/*var heal = {
+			var heal = {
 				execute: postText("You are healed",1),
 			}*/
 			function heal(y) {
@@ -48,7 +48,16 @@
 				} else {
 					console.log(y);
 					y = y.split(" ");
-					postText(y[1] + " is healed!")
+					postText(y[1] + " is healed!");
+				}
+			}
+			function spawn(y) {
+				console.log(y);
+				y = y.split(" ");
+				if(y[2]) {
+					postText(y[2] + " " +y[1] + " have appeared!");
+				} else {
+					postText(y[1] + " has appeared!");
 				}
 			}
 			$("#commandLine").keypress(function (e) {
