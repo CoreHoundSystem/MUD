@@ -1,26 +1,27 @@
 :root {
 	--panel-width: 200px;
+	--border-ridge: 3px;
 }
 body {
 	margin: 10px;
 	background-image: url(/images/viking1.jpg);
 }
 #main {
-	width: calc(100vw - 20px - 6px);
-	height: calc(100vh - 20px - 6px);
-	border: ridge 3px black;
+	width: calc(100vw - 20px - var(--border-ridge) - var(--border-ridge));
+	height: calc(100vh - 20px - var(--border-ridge) - var(--border-ridge));
+	border: ridge var(--border-ridge) black;
 	display: flex
 }
 #primary {
-	width: calc(100% - --panel-width - 6px);
+	width: calc(100% - var(--panel-width) - var(--border-ridge) - var(--border-ridge));
 	height: calc(100% - 0px);
 	display: inline-block;
 	background: black;
 }
 #panel {
-	width: 200px;
-	border: ridge 3px black;
-	height: calc(100% - 6px);
+	width: var(--panel-width);
+	border: ridge var(--border-ridge) black;
+	height: calc(100% - var(--border-ridge) - var(--border-ridge));
 }
 #txtScreen {
 	
