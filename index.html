@@ -81,11 +81,12 @@
 					console.log(t.substring(0,1));
 					if(t.substring(0,1) != "/") {
 						postText(t,1);
-						$("#commandLine").val('');
+						
 					} else {
 						//
 						command(t);
 					}
+					$("#commandLine").val('');
 				}
 			});
 			function command(c) {
