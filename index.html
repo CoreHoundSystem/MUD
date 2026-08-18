@@ -34,6 +34,14 @@
 				postText(FittedPlateMail);
 			})
 			//commands
+			var spawn = {
+				entity: "",
+				quantity: 1,
+				execute: postText(spawn.entity,1), //should append current room with mob
+			}
+			var heal = {
+				execute: postText("You are healed",1);
+			}
 			$("#commandLine").keypress(function (e) {
 				if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 					e.preventDefault();
@@ -44,15 +52,21 @@
 						$("#commandLine").val('');
 					} else {
 						//
-						t = t.substring(1,t.length);
-						command = t;
-						if(t.indexOf(" ") != 0) {
-							command = t.substring(1,t.indexOf(" "));
-						}
-						console.log(command);
+						command(t);
 					}
 				}
 			});
+			function command(c) {
+				c = c.substring(1,t.length);
+				console.log(c);
+				if(c.indexOf(" ") != 0) {
+					code = c.substring(1,t.indexOf(" "));
+				} else {
+					code = c;
+				}
+				code.execute;
+				console.log(command);
+			}
 		</script>
 	</body>
 </html>
