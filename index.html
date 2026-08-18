@@ -47,7 +47,8 @@
 						$("#commandLine").val('');
 					} else {
 						postText(t,1);
-						t.substring(1,t.indexOf(" "));
+						command = t.substring(1,t.indexOf(" "));
+						console.log(command);
 					}
 				}
 			});
