@@ -71,7 +71,7 @@
 				code = c;
 				fullCode = c;
 				if(c.indexOf(" ") != -1) {						//checks to see if string can be parsed
-					code = c.substring(0,t.indexOf(" "));		//isolates primary command
+					code = c.substring(0,t.indexOf(" ")-1);		//isolates primary command
 					console.log(fullCode);
 					console.log(code);
 				}
