@@ -60,7 +60,7 @@
 				c = c.substring(1,t.length);
 				console.log(c.indexOf(" "));
 				if(c.indexOf(" ") != -1) {
-					code = c.substring(1,t.indexOf(" "));
+					code = c.substring(0,t.indexOf(" "));
 					fullCode = c.split(" ");
 					console.log(fullCode);
 					console.log(code);
@@ -70,6 +70,7 @@
 				} else {
 					code = c;
 					console.log(code);
+					code.execute;
 				}
 				//code.execute;
 				console.log(code);
