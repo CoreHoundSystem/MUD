@@ -1,3 +1,27 @@
 body {
-  background-image: url(/images/viking1.jpg);
+	margin: 10px;
+	background-image: url(/images/viking1.jpg);
+}
+#main {
+	width: calc(100vw - 20px - 6px);
+	height: calc(100vh - 20px - 6px);
+	border: ridge 3px black;
+	display: flex
+}
+#primary {
+	width: calc(100% - 200px - 6px);
+	height: calc(100% - 0px);
+	display: inline-block;
+	background: black;
+}
+#panel {
+	width: 200px;
+	border: ridge 3px black;
+	height: calc(100% - 6px);
+}
+#txtScreen {
+	
+}
+#commandLine {
+	
 }
