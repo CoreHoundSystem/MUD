@@ -40,15 +40,15 @@
 					t = $("#commandLine").val();
 					console.log(t.substring(0,1));
 					if(t.substring(0,1) != "/") {
-						x = {
-							color: "uncommon",
-							text: t,
-						}
-						postText(x);
+						postText(t,1);
 						$("#commandLine").val('');
 					} else {
-						postText(t,1);
-						command = t.substring(1,t.indexOf(" "));
+						//
+						t = t.substring(1,t.length());
+						command = t;
+						if(t.indexOf(" ") != 0) {
+							command = t.substring(1,t.indexOf(" "));
+						}
 						console.log(command);
 					}
 				}
