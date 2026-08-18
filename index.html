@@ -40,7 +40,7 @@
 				execute: postText(spawn.entity,1), //should append current room with mob
 			}
 			var heal = {
-				execute: postText("You are healed",1);
+				execute: postText("You are healed",1),
 			}
 			$("#commandLine").keypress(function (e) {
 				if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
