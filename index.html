@@ -47,7 +47,8 @@
 					postText("You are healed!",1);
 				} else {
 					console.log(y);
-					y = y.split(" ");
+					y = y.split(" ");						
+					//check if Y > 2 && check if y1 exists
 					postText(y[1] + " is healed!",1);
 				}
 			}
@@ -56,10 +57,14 @@
 				y = y.split(" ");
 				if(y.length < 2 || y.length > 3) {
 					postText(improperSyntax);
-				if(y[2]) {
-					postText(y[2] + " " +y[1] + " have appeared!",1);
+					//check if y1 are available
+					//implement random number generator option for y2
 				} else {
-					postText(y[1] + " has appeared!",1);
+					if(y[2]) {
+						postText(y[2] + " " +y[1] + " have appeared!",1);
+					} else {
+						postText(y[1] + " has appeared!",1);
+					}
 				}
 			}
 			function improperSyntax() {
