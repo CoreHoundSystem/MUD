@@ -39,8 +39,16 @@
 				entity: "",
 				quantity: 1,
 			}
-			var heal = {
+			/*var heal = {
 				execute: postText("You are healed",1),
+			}*/
+			function heal(y) {
+				if(y.indexOf(" ") == -1) {
+					postText("You are healed!",1);
+				} else {
+					y = y.split(" ");
+					postText(y[1] + '" is healed!")
+				}
 			}
 			$("#commandLine").keypress(function (e) {
 				if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
