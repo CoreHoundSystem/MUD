@@ -16,7 +16,7 @@
 		<script>
 			var version = {
 				color: "artifact",
-				text: "12:27",
+				text: "12:31",
 			}
 			var FittedPlateMail = {
 				color: "superior",
@@ -33,13 +33,14 @@
 			$("#commandLine").keypress(function (e) {
 				if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 					e.preventDefault();
-					x = {
-						color: "uncommon",
-						text: $("#commandLine").val(),
+					if(!$("#commandLine").val()startsWith('/')) {
+						x = {
+							color: "uncommon",
+							text: $("#commandLine").val(),
+						}
+						postText(x);
+						$("#commandLine").val('');
 					}
-					postText(x);
-					$("#commandLine").val('');
-				}
 			});
 		</script>
 	</body>
