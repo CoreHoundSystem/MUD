@@ -14,6 +14,10 @@
 			<div id="panel"></div>
 		</div>
 		<script>
+			var version = {
+				color: "artifact",
+				text: "12:14",
+			}
 			var FittedPlateMail = {
 				color: "superior",
 				text: "Fitted Plate Mail",
@@ -22,6 +26,7 @@
 				$('#txtScreen').append('<span class="' + a.color + '">' + a.text + '</span>');
 			}
 			$(function() {
+				postText(version);
 				postText(FittedPlateMail);
 			})
 			//commands
