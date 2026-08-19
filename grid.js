@@ -11,7 +11,8 @@ function loadGame(y) {
 		//load stuff
 		postText("Available Characters.",1);
 		for(i=0;i<characters.length;i++) {
-			postText(characters[i]);
+			console.log(characters[i]);
+			postText(characters[i],1);
 		}
 	}, 3000);
 }
@@ -22,7 +23,7 @@ function play(y) {
 	//check if Y > 2 && check if y1 exists
 	postText("Loading " + y[1] + "...",1);
 	setTimeout(function() {
-		postText(y[1] + " loaded.");
+		postText(y[1] + " loaded.",1);
 	}, 3000);
 }
 /*
