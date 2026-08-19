@@ -17,11 +17,10 @@ function loadGame(y) {
 }
 
 function play(y) {
-		console.log(y);
-		y = y.split(" ");						
-		//check if Y > 2 && check if y1 exists
-		postText("Loading " + y[1] + "...",1);
-	}
+	console.log(y);
+	y = y.split(" ");						
+	//check if Y > 2 && check if y1 exists
+	postText("Loading " + y[1] + "...",1);
 	setTimeout(function() {
 		postText(y[1] + " loaded.");
 	}, 3000);
