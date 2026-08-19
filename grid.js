@@ -1,3 +1,32 @@
+$(function() {
+	
+})
+
+var characters = ["Steve","Percival","Shandryll"];
+
+function loadGame(y) {
+	postText("Loading game...",1);
+	setTimeout(function() {
+		postText("Game loaded.",1);
+		//load stuff
+		postText("Available Characters.",1);
+		for(i=0;i<characters.length;i++) {
+			postText(characters[i]);
+		}
+	}, 3000);
+}
+
+function play(y) {
+		console.log(y);
+		y = y.split(" ");						
+		//check if Y > 2 && check if y1 exists
+		postText("Loading " + y[1] + "...",1);
+	}
+	setTimeout(function() {
+		postText(y[1] + " loaded.");
+	}, 3000);
+}
+/*
 gridName {
   mapID: name of map the grid belongs to,
   desc: description of grid,
@@ -13,3 +42,4 @@ gridName {
   loot: list of loot ('take' command)
 
   events: array of events paired with their triggers/frequencies
+*/
