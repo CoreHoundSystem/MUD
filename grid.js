@@ -35,6 +35,7 @@ function play(y) {
 function loadGrid(x) {
 	for(i=0;i<grid.eList.length;i++) {
 		clearInterval(window[grid.eList[i] + "Interval"]);
+		console.log("Clearing " + grid.eList[i] + "Interval");
 	}
 	grid = x;
 	console.log(x);
