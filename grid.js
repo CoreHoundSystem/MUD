@@ -39,14 +39,14 @@ function loadGrid(x) {
 	$('#txtScreen').append('</br>');
 	$('#txtScreen').append('<span style="color: white">Your available paths are:</span></br>');
 	for(i=0;i<x.paths.length;i++) {
-		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.paths[i] + '</span></br>');
+		$('#txtScreen').append('<span style="color: white;margin-left: 25px">' + x.paths[i] + '</span></br>');
 	}
 	$('#txtScreen').append('</br>');
 	for(i=0;i<x.mobs.length;i++) {
 		$('#txtScreen').append('<span style="color: white;margin-left: 25px">' + x.mobs[i] + '</span></br>');
 	}
 	for(i=0;i<x.take.length;i++) {
-		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.take[i] + '</span></br>');
+		$('#txtScreen').append('<span style="color: white;margin-left: 25px">' + x.take[i] + '</span></br>');
 	}
 	for(i=0;i<x.eList.length;i++) {
 		//
@@ -110,12 +110,12 @@ gridA4 = {
 		footsteps: {
 			post: "The sound of footsteps can be heard from the deck above.",
 			freq: 3000,
-			color: "common",
+			color: "white",
 		},
 		breeze: {
 			post: "A much needed breeze brings crisp ocean air into the hold.",
 			freq: 5000,
-			color: "common",
+			color: "white",
 		},
 	}
 }
