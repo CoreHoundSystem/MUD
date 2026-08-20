@@ -5,7 +5,9 @@ $(function() {
 //$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight));
 
 var characters = ["Steve","Percival","Shandryll"];
-var grid = {};
+var grid = {
+	eList: [""],
+};
 function loadGame(y) {
 	postText("Loading game...",1);
 	setTimeout(function() {
