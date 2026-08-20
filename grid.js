@@ -111,11 +111,11 @@ gridA4 = {
 			post: "The sound of footsteps can be heard from the deck above.",
 			freq: 3000,
 			color: "common",
-		}
+		},
 		breeze: {
 			post: "A much needed breeze brings crisp ocean air into the hold.",
 			freq: 5000,
 			color: "common",
-		}
+		},
 	}
 }
