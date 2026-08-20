@@ -56,8 +56,8 @@ function loadGrid(x) {
 		console.log(grid.eType[grid.eList[i]]);
 		y = grid.eType[grid.eList[i]]
 		setTimeout(function() {
-			$('#txtScreen').append('<span style="color: '+ y.color + '">' + grid.eType[grid.eList[i]].post + '</span></br>');
-		}, grid.eType[grid.eList[i]].frequency);
+			$('#txtScreen').append('<span style="color: '+ y.color + '">' + y.post + '</span></br>');
+		}, y.frequency);
 		
 	}
 }
