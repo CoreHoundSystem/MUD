@@ -60,6 +60,7 @@ function loadGrid(x) {
 		}, y.frequency);
 		
 	}
+	$('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight);
 }
 
 gridA4 = {
