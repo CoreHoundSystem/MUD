@@ -45,9 +45,13 @@ function loadGrid(x) {
 	for(i=0;i<x.take.length;i++) {
 		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.take[i] + '</span></br>');
 	}
-	for(i=0;i<x.effect.length;i++) {
+	for(i=0;i<x.eList.length;i++) {
 		//
 		console.log(x.effect);
+		setTimeout(function() {
+			$('#txtScreen').append('<span style="color: '+ x.effect[eList[i]].color + '">' + x.effect[eList[i]].post + '</span></br>');
+		}, x.effect[eList[i]].frequency);
+		
 	}
 }
 
@@ -94,6 +98,9 @@ gridA4 = {
 	],
 	take: [
 		"Soiled scrap of cloth",
+	]
+	eList: [
+		"ambience"
 	]
 	effect: {
 		ambience: {
