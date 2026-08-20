@@ -34,10 +34,10 @@ function loadGrid(x) {
 	grid = x;
 	console.log(x);
 	console.log(x.indexOf(" "));
-	if(x.indexOf(" ") == -1) {
+	if(x === 'object') {
 		//
 	} else {
-		x.split(" ");
+		x = x.split(" ");
 		grid = x[1];
 		console.log(x[1]);
 	}
