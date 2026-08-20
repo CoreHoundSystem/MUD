@@ -56,11 +56,13 @@ function loadGrid(x) {
 		console.log(grid.eList[i]);
 		console.log(grid.eType);
 		console.log(grid.eType[grid.eList[i]]);
-		y = grid.eType[grid.eList[i]]
+		y = grid.eType[grid.eList[i]];
+		console.log(y.frequency);
 		setTimeout(function() {
 			$('#txtScreen').append('<span style="color: '+ y.color + '">' + y.post + '</span></br>');
 		}, y.frequency);
 	}
+	$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight));
 }
 
 gridA4 = {
