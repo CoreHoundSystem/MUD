@@ -68,10 +68,18 @@ function loadGrid(x) {
 }
 
 function eventInterval(y) {
-	setTimeout(function() {
+	setInterval(function() {
 		$('#txtScreen').append('<span style="color: '+ y.color + '">' + y.post + '</span></br>');
 	}, y.freq);
 }
+
+/*
+function eventInterval(y) {
+	setInterval(function() {
+		$('#txtScreen').append('<span style="color: '+ y.color + '">' + y.post + '</span></br>');
+	}, y.freq);
+}
+*/
 
 gridA4 = {
 	name: "Breiðr Ormr - lower deck",
