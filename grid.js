@@ -50,7 +50,8 @@ function loadGrid(x) {
 	}
 	for(i=0;i<grid.eList.length;i++) {
 		//
-		console.log(grid.eType[grid.eList[i]].frequency);
+		console.log(grid.eList[i]);
+		console.log(grid.eType);
 		setTimeout(function() {
 			$('#txtScreen').append('<span style="color: '+ grid.eType[grid.eList[i]].color + '">' + grid.eType[grid.eList[i]].post + '</span></br>');
 		}, grid.eType[grid.eList[i]].frequency);
