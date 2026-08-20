@@ -33,7 +33,6 @@ function play(y) {
 function loadGrid(x) {
 	grid = x;
 	console.log(x);
-	console.log(x.indexOf(" "));
 	if(x === 'object') {
 		//
 	} else {
