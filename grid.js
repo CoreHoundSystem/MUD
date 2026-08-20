@@ -32,7 +32,8 @@ function play(y) {
 
 function loadGrid(x) {
 	grid = x;
-	if(Array.isArray(x)) {
+	if(x.indexOf(" ") != -1) {
+		x.split(" ");
 		grid = x[1];
 		console.log(x[1]);
 	}
