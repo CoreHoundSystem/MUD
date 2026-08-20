@@ -31,6 +31,9 @@ function play(y) {
 }
 
 function loadGrid(x) {
+	for(i=0;i<grid.eList.length;i++) {
+		clearInterval(window[grid.eList[i] + "Interval"]);
+	}
 	grid = x;
 	console.log(x);
 	if(typeof x === 'object') {
@@ -68,17 +71,25 @@ function loadGrid(x) {
 }
 
 function eventInterval(y) {
-	setInterval(function() {
+	y.interval = setInterval(function() {
 		$('#txtScreen').append('<span style="color: '+ y.color + '">' + y.post + '</span></br>');
 	}, y.freq);
 }
 
 /*
 function eventInterval(y) {
-	setInterval(function() {
+	y.interval = setInterval(function() {
 		$('#txtScreen').append('<span style="color: '+ y.color + '">' + y.post + '</span></br>');
 	}, y.freq);
 }
+for loadGrid
+	for(i=0;i<grid.eList.length;i++) {
+		clearInterval(grid.eList[i] + "Interval");
+	}
+	
+
+
+
 */
 
 gridA4 = {
@@ -134,11 +145,13 @@ gridA4 = {
 			post: "The sound of footsteps can be heard from the deck above.",
 			freq: 3000,
 			color: "white",
+			interval: footstepsInterval,
 		},
 		breeze: {
 			post: "A much needed breeze brings crisp ocean air into the hold.",
 			freq: 5000,
 			color: "white",
+			interval: breezeInterval,
 		},
 	}
 }
