@@ -62,11 +62,15 @@ function loadGrid(x) {
 		console.log(grid.eType[grid.eList[i]]);
 		y = grid.eType[grid.eList[i]];
 		console.log(y.freq);
-		setTimeout(function() {
-			$('#txtScreen').append('<span style="color: '+ y.color + '">' + y.post + '</span></br>');
-		}, y.freq);
+		eventInterval(y);
 	}
 	$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight));
+}
+
+function eventInterval(y) {
+	setTimeout(function() {
+		$('#txtScreen').append('<span style="color: '+ y.color + '">' + y.post + '</span></br>');
+	}, y.freq);
 }
 
 gridA4 = {
