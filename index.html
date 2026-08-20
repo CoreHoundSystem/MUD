@@ -29,6 +29,7 @@
 				} else {
 					$('#txtScreen').append('<span class="uncommon">' + a + '</span></br>');
 				}
+				$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight));
 			}
 			$(function() {
 				postText(version);
