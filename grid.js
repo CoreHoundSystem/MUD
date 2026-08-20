@@ -2,7 +2,7 @@ $(function() {
 	$('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight);
 })
 
-$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight););
+$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight));
 
 var characters = ["Steve","Percival","Shandryll"];
 var grid = {};
