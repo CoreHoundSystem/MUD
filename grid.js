@@ -32,6 +32,7 @@ function loadGrid(x) {
 	grid = x;
 	if(Array.isArray(x)) {
 		grid = x[1];
+		console.log(x[1]);
 	}
 	$('#txtScreen').append('<span style="color: yellow">' + grid.name + '</span></br>');
 	$('#txtScreen').append('</br>');
