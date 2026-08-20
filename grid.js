@@ -3,7 +3,7 @@ $(function() {
 })
 
 var characters = ["Steve","Percival","Shandryll"];
-
+var grid = {};
 function loadGame(y) {
 	postText("Loading game...",1);
 	setTimeout(function() {
@@ -24,11 +24,23 @@ function play(y) {
 	postText("Loading " + y[1] + "...",1);
 	setTimeout(function() {
 		postText(y[1] + " loaded.",1);
+		loadGrid(gridA4);
 	}, 3000);
 }
 
-function grid(x) {
-	
+function loadGrid(x) {
+	grid = x;
+	$('#txtScreen').append('<span style="color: yellow">' + x.name + '</span></br>');
+	$('#txtScreen').append('</br>');
+	$('#txtScreen').append('<span style="color: white">' + x.desc + '</span></br>');
+	$('#txtScreen').append('</br>');
+	$('#txtScreen').append('<span style="color: white">Your available paths are:</span></br>');
+	for(i=0;i<x.paths.length;i++) {
+		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.paths[i] + '</span></br>');
+	}
+	for(i=0;i<x.mobs.length;i++) {
+		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.mobs[i] + '</span></br>');
+	}
 }
 
 gridA4 = {
@@ -41,32 +53,44 @@ gridA4 = {
 	},
 	look: {
 		none: "All around you are the crestfallen faces of fellow warriors.",
+		up: "The stairs leading to the deck above are the cleanest part of this deck. The deck above seems packed with barrels and crates."
 	},
 	feel: {
 		none: "Your clothes are stained with sweat so thick that the fabric has become rigid and coarse.",
 	},
 	listen: {
 		none: "Despite being surrounded it is eerily silent here. All that can be heard are the waves slapping against the hull and the sound of footsteps from the decks above.",
+		up: "The sounds of sailors walking about can be heard.",
 	},
 	taste: {
 		none: "Your lips are salty with sweat.",
 	},
-	search: {},
+	search: {
+		none: "The floor is covered in sea water and filth. There is nothing of value here.",
+	},
+	open: {
+		none: "What would you like to open?",
+	},
+	sit: {
+		none: "You return to your makeshift bench.",
+	},
+	lay: {
+		none: "There is no room to lay down here.",
+	},
+	climb: {
+		none: "You could climb up the stairs to the deck above when you are ready.",
+	},
+	mobs: [
+		"Bilge Rat",
+		"Bilge Rat"
+	],
+	take: [
+		"Soiled scrap of cloth",
+	]
+	events: {
+		ambience: {
+			post: "The sound of footsteps can be heard from the deck above.",
+			freq: 30000,
+			color: "common",
+	}
 }
-/*
-gridName {
-  mapID: name of map the grid belongs to,
-  desc: description of grid,
-  paths: array of paths paired with gridName and detection methods!?
-
-  smells: array of things that can be smelled and their scents
-  look: array of things that can be looked at more closely and their descriptions
-  feel: array of things with a tactile quality and their descriptions
-  hear: array of things that can heard/listened to and their descriptions
-  taste: array of things that can be tasted and their descriptions
-
-  mobs: list of mobs
-  loot: list of loot ('take' command)
-
-  events: array of events paired with their triggers/frequencies
-*/
