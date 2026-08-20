@@ -40,7 +40,7 @@ function loadGrid(x) {
 	}
 	$('#txtScreen').append('</br>');
 	for(i=0;i<x.mobs.length;i++) {
-		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.mobs[i] + '</span></br>');
+		$('#txtScreen').append('<span style="color: white;margin-left: 25px">' + x.mobs[i] + '</span></br>');
 	}
 	for(i=0;i<x.take.length;i++) {
 		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.take[i] + '</span></br>');
@@ -49,8 +49,8 @@ function loadGrid(x) {
 		//
 		console.log(x.eType);
 		setTimeout(function() {
-			$('#txtScreen').append('<span style="color: '+ x.eType[eList[i]].color + '">' + x.eType[eList[i]].post + '</span></br>');
-		}, x.eType[eList[i]].frequency);
+			$('#txtScreen').append('<span style="color: '+ x.eType[x.eList[i]].color + '">' + x.eType[x.eList[i]].post + '</span></br>');
+		}, x.eType[x.eList[i]].frequency);
 		
 	}
 }
@@ -100,12 +100,18 @@ gridA4 = {
 		"Soiled scrap of cloth",
 	],
 	eList: [
-		"ambience"
+		"footsteps",
+		"breeze"
 	],
 	eType: {
-		ambience: {
+		footsteps: {
 			post: "The sound of footsteps can be heard from the deck above.",
 			freq: 3000,
+			color: "common",
+		}
+		breeze: {
+			post: "A much needed breeze brings crisp ocean air into the hold.",
+			freq: 5000,
 			color: "common",
 		}
 	}
