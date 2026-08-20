@@ -31,7 +31,7 @@ function grid(x) {
 	
 }
 
-gridA4 {
+gridA4 = {
 	name: "Breiðr Ormr - lower deck",
 	map: "Vey'Keng",
 	desc: "The hull of the Breiðr Ormr is broad and has multiple decks - this is the lowest deck. It is dark and humid with every breath adding to the suffocating melancholy of your shipmates.",
