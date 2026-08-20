@@ -1,6 +1,8 @@
 $(function() {
-	
+	$('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight);
 })
+
+$("#txtScreen").change();
 
 var characters = ["Steve","Percival","Shandryll"];
 var grid = {};
@@ -58,9 +60,7 @@ function loadGrid(x) {
 		setTimeout(function() {
 			$('#txtScreen').append('<span style="color: '+ y.color + '">' + y.post + '</span></br>');
 		}, y.frequency);
-		
 	}
-	$('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight);
 }
 
 gridA4 = {
