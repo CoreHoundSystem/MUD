@@ -105,7 +105,8 @@ gridA4 = {
 	eType: {
 		ambience: {
 			post: "The sound of footsteps can be heard from the deck above.",
-			freq: 30000,
+			freq: 3000,
 			color: "common",
+		}
 	}
 }
