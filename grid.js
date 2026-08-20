@@ -33,7 +33,7 @@ function play(y) {
 function loadGrid(x) {
 	grid = x;
 	console.log(x);
-	if(x === 'object') {
+	if(typeof x === 'object') {
 		//
 	} else {
 		x = x.split(" ");
