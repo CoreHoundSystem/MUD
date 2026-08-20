@@ -47,10 +47,10 @@ function loadGrid(x) {
 	}
 	for(i=0;i<x.eList.length;i++) {
 		//
-		console.log(x.effect);
+		console.log(x.eType);
 		setTimeout(function() {
-			$('#txtScreen').append('<span style="color: '+ x.effect[eList[i]].color + '">' + x.effect[eList[i]].post + '</span></br>');
-		}, x.effect[eList[i]].frequency);
+			$('#txtScreen').append('<span style="color: '+ x.eType[eList[i]].color + '">' + x.eType[eList[i]].post + '</span></br>');
+		}, x.eType[eList[i]].frequency);
 		
 	}
 }
@@ -98,11 +98,11 @@ gridA4 = {
 	],
 	take: [
 		"Soiled scrap of cloth",
-	]
+	],
 	eList: [
 		"ambience"
-	]
-	effect: {
+	],
+	eType: {
 		ambience: {
 			post: "The sound of footsteps can be heard from the deck above.",
 			freq: 30000,
