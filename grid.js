@@ -38,8 +38,16 @@ function loadGrid(x) {
 	for(i=0;i<x.paths.length;i++) {
 		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.paths[i] + '</span></br>');
 	}
+	$('#txtScreen').append('</br>');
 	for(i=0;i<x.mobs.length;i++) {
 		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.mobs[i] + '</span></br>');
+	}
+	for(i=0;i<x.take.length;i++) {
+		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.take[i] + '</span></br>');
+	}
+	for(i=0;i<x.events.length;i++) {
+		//
+		console.log(x.events);
 	}
 }
 
