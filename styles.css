@@ -38,7 +38,7 @@ body {
 	background: black;
 }
 #txtScreen {
-	height: calc(100% - calc(var(--border-ridge) * 2) - var(--text-field) - calc(var(--text-padding) * 2) - 50px);
+	height: calc(100% - calc(var(--border-ridge) * 2) - var(--text-field) - calc(var(--text-padding) * 2) - 40px);
 	padding: var(--text-padding);
 	overflow: auto;
 	padding-bottom: 50px;
