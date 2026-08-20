@@ -45,9 +45,9 @@ function loadGrid(x) {
 	for(i=0;i<x.take.length;i++) {
 		$('#txtScreen').append('<span style="color: white;indent: 5px">' + x.take[i] + '</span></br>');
 	}
-	for(i=0;i<x.events.length;i++) {
+	for(i=0;i<x.effect.length;i++) {
 		//
-		console.log(x.events);
+		console.log(x.effect);
 	}
 }
 
@@ -95,7 +95,7 @@ gridA4 = {
 	take: [
 		"Soiled scrap of cloth",
 	]
-	events: {
+	effect: {
 		ambience: {
 			post: "The sound of footsteps can be heard from the deck above.",
 			freq: 30000,
