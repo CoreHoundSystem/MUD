@@ -76,6 +76,7 @@ function loadGrid(x) {
 function eventInterval(y) {
 	y.interval = setInterval(function() {
 		$('#txtScreen').append('<span style="color: '+ y.color + '">' + y.post + '</span></br>');
+		$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight));
 	}, y.freq);
 }
 
