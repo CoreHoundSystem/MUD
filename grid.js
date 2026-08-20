@@ -37,7 +37,7 @@ function loadGrid(x) {
 		//
 	} else {
 		x = x.split(" ");
-		grid = x[1];
+		grid = window[x[1]];
 		console.log(x[1]);
 	}
 	$('#txtScreen').append('<span style="color: yellow">' + grid.name + '</span></br>');
