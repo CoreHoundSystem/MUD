@@ -30,6 +30,9 @@ function play(y) {
 
 function loadGrid(x) {
 	grid = x;
+	if(Array.isArray(x)) {
+		grid = x[1];
+	}
 	$('#txtScreen').append('<span style="color: yellow">' + x.name + '</span></br>');
 	$('#txtScreen').append('</br>');
 	$('#txtScreen').append('<span style="color: white">' + x.desc + '</span></br>');
