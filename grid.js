@@ -88,8 +88,6 @@ function up() {
 	loadGrid(grid.pathIDs[i]);
 }
 //test
-gridB4 = {}
-
 gridA4 = {
 	name: "Breiðr Ormr - lower deck",
 	map: "Vey'Keng",
