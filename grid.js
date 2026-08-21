@@ -95,12 +95,12 @@ gridA4 = {
 	map: "Vey'Keng",
 	desc: "The hull of the Breiðr Ormr is broad and has multiple decks - this is the lowest deck. It is dark and humid with every breath adding to the suffocating melancholy of your shipmates.",
 	paths: ["Up","Bow","Stern"],
-	pathIDs: [gridB4,"gridA5","gridA3"],
+	pathIDs: ["gridB4","gridA5","gridA3"],
 	smell: {
 		none: "The air is thick and heavy. The smell of body odor and filth chokes out all other scents except the occassional breeze of crisp ocean air that finds its way down from above.",
 	},
 	sEffect: {
-		none: " ",	//add a Nausea debuff - add debuffs
+		none: "Test ",	//add a Nausea debuff - add debuffs
 	}
 	look: {
 		none: "All around you are the crestfallen faces of fellow warriors.",
