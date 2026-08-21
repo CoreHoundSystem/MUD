@@ -82,7 +82,7 @@ function eventInterval(y) {
 
 //movement shortcuts
 function up() {
-	i = grid.paths.indexOf("up");
+	i = grid.paths.indexOf("Up");
 	console.log(i);
 	console.log(grid.pathIDs[i]);
 	loadGrid(grid.pathIDs[i]);
