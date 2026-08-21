@@ -6,6 +6,8 @@ Divide scripts into different files
 * core scripts (i.e., postText)
   /postText - expand this function
   /loadGrid
+  various movement commands: Up, Down, Front, Rear, East, West, North, South, Northeast, Northwest, Southeast, Southwest,
+  /follow [mob]
 * grids
   multiple JS - one per map plus a 'system' grid set
 * spells
