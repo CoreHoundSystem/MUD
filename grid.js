@@ -87,6 +87,8 @@ function up() {
 	console.log(grid.pathIDs[i]);
 	loadGrid(grid.pathIDs[i]);
 }
+//test
+gridB4 = {}
 
 gridA4 = {
 	name: "Breiðr Ormr - lower deck",
@@ -97,6 +99,9 @@ gridA4 = {
 	smell: {
 		none: "The air is thick and heavy. The smell of body odor and filth chokes out all other scents except the occassional breeze of crisp ocean air that finds its way down from above.",
 	},
+	sEffect : {
+		none: "",	//add a Nausea debuff - add debuffs
+	}
 	look: {
 		none: "All around you are the crestfallen faces of fellow warriors.",
 		up: "The stairs leading to the deck above are the cleanest part of this deck. The deck above seems packed with barrels and crates."
@@ -124,7 +129,8 @@ gridA4 = {
 		none: "There is no room to lay down here.",
 	},
 	climb: {
-		none: "You could climb up the stairs to the deck above when you are ready.",
+		none: "What would you like to climb?",
+		stairs: "You could climb up the stairs to the deck above when you are ready.",
 	},
 	mobs: [
 		"Bilge Rat",
