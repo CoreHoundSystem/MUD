@@ -1,7 +1,15 @@
 Divide scripts into different files
 * Admin commands
+* Temp commands
+  /play
+  /loadGame
 * core scripts (i.e., postText)
+  /postText - expand this function
+  /loadGrid
 * grids
+  multiple JS - one per map plus a 'system' grid set
 * spells
+  an alphabetized list of spells of all classes?
 * mobs
-* maps
+  a list of all mobs
+  
