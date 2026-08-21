@@ -101,7 +101,7 @@ gridA4 = {
 	},
 	sEffect: {
 		none: "Test ",	//add a Nausea debuff - add debuffs
-	}
+	},
 	look: {
 		none: "All around you are the crestfallen faces of fellow warriors.",
 		up: "The stairs leading to the deck above are the cleanest part of this deck. The deck above seems packed with barrels and crates.",
