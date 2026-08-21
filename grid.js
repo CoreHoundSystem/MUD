@@ -104,7 +104,7 @@ gridA4 = {
 	}
 	look: {
 		none: "All around you are the crestfallen faces of fellow warriors.",
-		up: "The stairs leading to the deck above are the cleanest part of this deck. The deck above seems packed with barrels and crates."
+		up: "The stairs leading to the deck above are the cleanest part of this deck. The deck above seems packed with barrels and crates.",
 	},
 	feel: {
 		none: "Your clothes are stained with sweat so thick that the fabric has become rigid and coarse.",
