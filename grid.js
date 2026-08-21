@@ -85,7 +85,7 @@ function up() {
 	i = grid.paths.indexOf("Up");
 	console.log(i);
 	console.log(grid.pathIDs);
-	loadGrid(grid.pathIDs[i]);
+	loadGrid([grid.pathIDs[i]]);
 }
 //test
 gridA4 = {
