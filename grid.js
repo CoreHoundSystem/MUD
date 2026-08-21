@@ -99,7 +99,7 @@ gridA4 = {
 	smell: {
 		none: "The air is thick and heavy. The smell of body odor and filth chokes out all other scents except the occassional breeze of crisp ocean air that finds its way down from above.",
 	},
-	sEffect : {
+	sEffect: {
 		none: " ",	//add a Nausea debuff - add debuffs
 	}
 	look: {
