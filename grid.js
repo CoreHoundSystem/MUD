@@ -84,7 +84,7 @@ function eventInterval(y) {
 function up() {
 	i = grid.paths.indexOf("Up");
 	console.log(i);
-	console.log(grid.pathIDs[i]);
+	console.log(grid.pathIDs);
 	loadGrid(grid.pathIDs[i]);
 }
 //test
