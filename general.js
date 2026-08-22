@@ -32,7 +32,7 @@ function command(c) {
 
 }
 
-function postText(a,b) {
+function post(a,b) {
 	$('#txtScreen').append('<span class="' + b + '">' + a + '</span></br>');
 	//this line moves scrollbar to bottom
 	$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight));
