@@ -3,7 +3,7 @@
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script src="grid.js"></script>
-		<script src="general.js"></script>
+		
 	</head>
 	<body>
 		<div id="main">
@@ -14,35 +14,7 @@
 				</div>
 			</div>
 			<div id="panel"></div>
-			<script>
-				$("#commandLine").keypress(function (e) {
-	if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
-		e.preventDefault();
-		console.log($("#commandLine").val());
-		command($("#commandLine").val());
-		/*
-		t = $("#commandLine").val();
-		console.log(t.substring(0,1));
-		if(t.substring(0,1) != "/") {
-			postText(t,1);
-			
-		} else {
-			//
-			command(t);
-		}
-		*/
-		
-		//clears command line
-		$("#commandLine").val('');
-	}
-});
-
-				function post(a,b) {
-	$('#txtScreen').append('<span class="' + b + '">' + a + '</span></br>');
-	//this line moves scrollbar to bottom
-	$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight));
-}
-			</script>
+			<script src="general.js"></script>
 		</div>
 	</body>
 </html>
