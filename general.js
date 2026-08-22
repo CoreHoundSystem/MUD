@@ -22,13 +22,16 @@ function command(c) {
 		if(c[0].toLowerCase() == "heal") {
 			console.log(character.name);
 			post(character.name + " heals themself!","positiveEnergy");
+			console.log(c);
 		}
 	}
 
 }
 
 function post(a,b) {
+	console.log(b);
 	$('#txtScreen').append('<span class="' + b + '">' + a + '</span></br>');
+	console.log(b);
 	//this line moves scrollbar to bottom
 	$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight));
 }
