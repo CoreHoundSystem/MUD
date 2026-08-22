@@ -14,6 +14,29 @@
 				</div>
 			</div>
 			<div id="panel"></div>
+			<script>
+				$("#commandLine").keypress(function (e) {
+	if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
+		e.preventDefault();
+		console.log($("#commandLine").val());
+		command($("#commandLine").val());
+		/*
+		t = $("#commandLine").val();
+		console.log(t.substring(0,1));
+		if(t.substring(0,1) != "/") {
+			postText(t,1);
+			
+		} else {
+			//
+			command(t);
+		}
+		*/
+		
+		//clears command line
+		$("#commandLine").val('');
+	}
+});
+			</script>
 		</div>
 	</body>
 </html>
