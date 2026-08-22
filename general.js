@@ -3,22 +3,14 @@ $("#commandLine").keypress(function (e) {
 		e.preventDefault();
 		console.log($("#commandLine").val());
 		command($("#commandLine").val());
-		/*
-		t = $("#commandLine").val();
-		console.log(t.substring(0,1));
-		if(t.substring(0,1) != "/") {
-			postText(t,1);
-			
-		} else {
-			//
-			command(t);
-		}
-		*/
-		
 		//clears command line
 		$("#commandLine").val('');
 	}
 });
+
+char = {
+	name: "Evander",
+}
 
 function command(c) {
 	console.log(c);
