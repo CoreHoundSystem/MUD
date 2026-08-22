@@ -16,7 +16,7 @@ function command(c) {
 	console.log(c);
 	c = c.split(" ");
 	console.log(c);
-	console.log(c.length);
+	console.log(c[0].lowerCase);
 	if(c.length == 1) {
 		if(c[0].lowerCase == "heal") {
 			post(char.name + " heals themself!","positiveEnergy");
