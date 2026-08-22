@@ -3,6 +3,7 @@
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script src="grid.js"></script>
+		<script src="general.js"></script>
 	</head>
 	<body>
 		<div id="main">
@@ -14,96 +15,5 @@
 			</div>
 			<div id="panel"></div>
 		</div>
-		<script>
-			var version = {
-				color: "artifact",
-				text: "12:45",
-			}
-			var FittedPlateMail = {
-				color: "superior",
-				text: "Fitted Plate Mail",
-			}
-			function postText(a,b) {
-				if(!b) {
-					$('#txtScreen').append('<span class="' + a.color + '">' + a.text + '</span></br>');
-				} else {
-					$('#txtScreen').append('<span class="uncommon">' + a + '</span></br>');
-				}
-				$("#txtScreen").change($('#txtScreen').scrollTop($('#txtScreen')[0].scrollHeight));
-			}
-			$(function() {
-				postText(version);
-				postText(FittedPlateMail);
-			})
-			//commands
-			/*var spawn = {
-				key: ["entity","quantity"],
-				entity: "",
-				quantity: 1,
-			}
-			var heal = {
-				execute: postText("You are healed",1),
-			}*/
-			function heal(y) {
-				if(y.indexOf(" ") == -1) {
-					postText("You are healed!",1);
-				} else {
-					console.log(y);
-					y = y.split(" ");						
-					//check if Y > 2 && check if y1 exists
-					postText(y[1] + " is healed!",1);
-				}
-			}
-			function spawn(y) {
-				console.log(y);
-				y = y.split(" ");
-				if(y.length < 2 || y.length > 3) {
-					postText(improperSyntax);
-					//check if y1 are available
-					//implement random number generator option for y2
-				} else {
-					if(y[2]) {
-						postText(y[2] + " " +y[1] + " have appeared!",1);
-					} else {
-						postText(y[1] + " has appeared!",1);
-					}
-				}
-			}
-			function improperSyntax() {
-				iS = {
-					color: "cursed",
-					text: "Improper Syntax",
-				}
-				postText(iS);
-			}
-			$("#commandLine").keypress(function (e) {
-				if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
-					e.preventDefault();
-					t = $("#commandLine").val();
-					console.log(t.substring(0,1));
-					if(t.substring(0,1) != "/") {
-						postText(t,1);
-						
-					} else {
-						//
-						command(t);
-					}
-					$("#commandLine").val('');
-				}
-			});
-			function command(c) {
-				c = c.substring(1,t.length);
-				console.log(c.indexOf(" "));					//gives us our string
-				code = c;
-				fullCode = c;
-				if(c.indexOf(" ") != -1) {						//checks to see if string can be parsed
-					code = c.substring(0,t.indexOf(" ")-1);		//isolates primary command
-					console.log(fullCode);
-					console.log(code);
-				}
-				console.log(code + " " + fullCode);
-				window[code](fullCode);
-			}
-		</script>
 	</body>
 </html>
