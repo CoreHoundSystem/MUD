@@ -62,7 +62,7 @@ function command(c) {
 	post(c,1);
 	console.log(c);
 	console.log(c.substring(0,c.indexOf(" ")));
-	if(c.substring(0,c.indexOf(" ")) == "say") {
+	if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say") {
 		says = c.substring(c.indexOf(" "),c.length);
 		console.log(says);
 		post(character.name + " says: " + says,0);
