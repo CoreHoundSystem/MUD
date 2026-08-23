@@ -65,7 +65,7 @@ function command(c) {
 	console.log(c[0].toLowerCase());
 	if(c[0].toLowerCase() == "say") {
 		says = c.substring(c.indexOf(" "),c.length);
-		post(character.name + " says: " + ,0);
+		post(character.name + " says: " + says,0);
 	} else {
 		if(c.length == 1) {
 			console.log(c);
