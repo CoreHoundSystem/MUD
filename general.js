@@ -60,14 +60,14 @@ function post(a,b) {
 function command(c) {
 	console.log(c);
 	post(c,1);
-	c = c.split(" ");
 	console.log(c);
-	console.log(c[0].toLowerCase());
-	if(c[0].toLowerCase() == "say") {
+	console.log(c.substring(0,c.indexOf(" ")));
+	if(c.substring(0,c.indexOf(" ")) == "say") {
 		says = c.substring(c.indexOf(" "),c.length);
 		console.log(says);
 		post(character.name + " says: " + says,0);
 	} else {
+		c = c.split(" ");
 		if(c.length == 1) {
 			console.log(c);
 			if(c[0].toLowerCase() == "heal") {
