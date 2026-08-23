@@ -80,46 +80,46 @@ span {
 }
 //spell schools
 .abjuration {
-	color: limegreen;
+	color: #ede786;
 }
 .alteration {
-	color: limegreen;
+	color: #c26800;
 }
 .auspex {
-	color: limegreen;
+	color: #6a5b7a;
 }
 .charm {
-	color: limegreen;
+	color: #0666d6;
 }
 .conjuration {
-	color: orange;
+	color: #dab522;
 }
 .divination {
-	color: skyblue;
+	color: #cdabc4;
 }
 .enchantment {
-	color: limegreen;
+	color: #0666d6;
 }
 .evocation {
-	color: limegreen;
+	color: #df1901;
 }
 .illusion {
 	color: lightgrey;
 }
 .invocation {
-	color: limegreen;
+	color: #df1901;
 }
 .necromancy {
 	color: darkgrey;
 }
 .phantasm {
-	color: limegreen;
+	color: #624d73;
 }
 .summoning {
-	color: limegreen;
+	color: #618c0a;
 }
 .transmutation {
-	color: limegreen;
+	color: #c26800;
 }
 //quality
 .common {
