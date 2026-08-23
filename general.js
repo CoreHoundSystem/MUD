@@ -11,7 +11,7 @@ classes = [
 		"normal",				//default
 		"playerCommand",		//player commands
 		"serverCommand",		//server responses to player commands
-		"adminCommands",		//admin commands
+		"adminCommands",		//admin commands and server updates
 		//spell schools (4-17)
 		"abjuration",			//mystical warding
 		"alteration",			//change a materials shape
@@ -82,3 +82,8 @@ function command(c) {
 		}
 	}
 }
+
+$(function() {
+	post("Loading game version 0.1.0.",4);
+	post("Game Loaded.",3);
+})
