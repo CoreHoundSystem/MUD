@@ -18,6 +18,9 @@ body {
 	margin: var(--margin-body);
 	background-image: url(/images/viking1.jpg);
 }
+span {
+	font-style: normal;
+}
 #main {
 	width: calc(100vw - calc(var(--margin-body) * 2) - calc(var(--border-ridge) * 2));
 	height: calc(100vh - calc(var(--margin-body) * 2) - calc(var(--border-ridge) * 2));
@@ -62,9 +65,79 @@ body {
 }
 
 //text styles
-span {
-	font-style: normal;
+.normal {
+	color: "white";
 }
+.playerCommand {
+	color: limegreen;
+	font-style: italic;
+}
+.serverCommand {
+	color: limegreen;
+	font-style: italic;
+}
+.adminCommands {
+	color: limegreen;
+	font-style: italic;
+}
+//spell schools
+.abjuration {
+	color: limegreen;
+	font-style: italic;
+}
+.alteration {
+	color: limegreen;
+	font-style: italic;
+}
+.auspex {
+	color: limegreen;
+	font-style: italic;
+}
+.charm {
+	color: limegreen;
+	font-style: italic;
+}
+.conjuration {
+	color: limegreen;
+	font-style: italic;
+}
+.divination {
+	color: limegreen;
+	font-style: italic;
+}
+.enchantment {
+	color: limegreen;
+	font-style: italic;
+}
+.evocation {
+	color: limegreen;
+	font-style: italic;
+}
+.illusion {
+	color: limegreen;
+	font-style: italic;
+}
+.invocation {
+	color: limegreen;
+	font-style: italic;
+}
+.necromancy {
+	color: limegreen;
+	font-style: italic;
+}
+.phantasm {
+	color: limegreen;
+	font-style: italic;
+}
+.summoning {
+	color: limegreen;
+	font-style: italic;
+}
+.transmutation {
+	color: limegreen;
+	font-style: italic;
+}
+//quality
 .common {
 	color: var(--lootCommon);
 }
