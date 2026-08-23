@@ -17,13 +17,14 @@
 body {
 	margin: var(--margin-body);
 	background-image: url(/images/viking1.jpg);
-	color: white;
 }
 #main {
 	width: calc(100vw - calc(var(--margin-body) * 2) - calc(var(--border-ridge) * 2));
 	height: calc(100vh - calc(var(--margin-body) * 2) - calc(var(--border-ridge) * 2));
 	border: ridge var(--border-ridge) black;
-	display: flex
+	display: flex;
+	color: white;
+	font-family: "Cutive Mono", monospace;
 }
 #primary {
 	width: calc(100% - var(--panel-width) - calc(var(--border-ridge) * 2));
