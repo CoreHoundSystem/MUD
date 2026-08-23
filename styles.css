@@ -11,6 +11,7 @@
 	--lootMagic: green;
 	--lootSuperior: blue;
 	--lootEpic: purple;
+	--lootSet: limegreen;
 	--lootArtifact: orange;
 	--lootCursed: red;
 }
@@ -66,76 +67,59 @@ span {
 
 //text styles
 .normal {
-	color: "white";
+	color: white;
 }
 .playerCommand {
-	color: limegreen;
-	font-style: italic;
+	color: #ddd;
 }
 .serverCommand {
-	color: limegreen;
-	font-style: italic;
+	color: #aaa;
 }
 .adminCommands {
 	color: limegreen;
-	font-style: italic;
 }
 //spell schools
 .abjuration {
 	color: limegreen;
-	font-style: italic;
 }
 .alteration {
 	color: limegreen;
-	font-style: italic;
 }
 .auspex {
 	color: limegreen;
-	font-style: italic;
 }
 .charm {
 	color: limegreen;
-	font-style: italic;
 }
 .conjuration {
-	color: limegreen;
-	font-style: italic;
+	color: orange;
 }
 .divination {
-	color: limegreen;
-	font-style: italic;
+	color: skyblue;
 }
 .enchantment {
 	color: limegreen;
-	font-style: italic;
 }
 .evocation {
 	color: limegreen;
-	font-style: italic;
 }
 .illusion {
-	color: limegreen;
-	font-style: italic;
+	color: lightgrey;
 }
 .invocation {
 	color: limegreen;
-	font-style: italic;
 }
 .necromancy {
-	color: limegreen;
-	font-style: italic;
+	color: darkgrey;
 }
 .phantasm {
 	color: limegreen;
-	font-style: italic;
 }
 .summoning {
 	color: limegreen;
-	font-style: italic;
 }
 .transmutation {
 	color: limegreen;
-	font-style: italic;
 }
 //quality
 .common {
@@ -156,6 +140,9 @@ span {
 }
 .epic {
 	color: var(--lootEpic);
+}
+.set {
+	color: var(--lootSet);
 }
 .artifact {
 	color: var(--lootArtifact);
