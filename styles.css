@@ -17,6 +17,7 @@
 body {
 	margin: var(--margin-body);
 	background-image: url(/images/viking1.jpg);
+	color: white;
 }
 #main {
 	width: calc(100vw - calc(var(--margin-body) * 2) - calc(var(--border-ridge) * 2));
