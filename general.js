@@ -1,4 +1,4 @@
-// modify these
+ // modify these
 
 character = {
 	name: "Evander",
@@ -64,7 +64,7 @@ function command(c) {
 	console.log(c);
 	console.log(c[0].toLowerCase());
 	if(c[0].toLowerCase() == "say") {
-		says = c.substring(c.indexOf(" "),c.length);
+		says = c.subString(c.indexOf(" "),c.length);
 		post(character.name + " says: " + says,0);
 	} else {
 		if(c.length == 1) {
