@@ -93,6 +93,7 @@ senses = [
 ]
 
 commands = [];
+commandIndex = commands.length;
 
 $("#commandLine").keypress(function (e) {
 	if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
@@ -101,15 +102,26 @@ $("#commandLine").keypress(function (e) {
 		command($("#commandLine").val());
 		//store commands
 		commands.push($("#commandLine").val());
+		commandIndex = commands.length;
 		//clears command line
 		$("#commandLine").val('');
 	}
 });
 
 $("#commandLine").keydown(function (e) {
+	i = commandIndex;
 	if(e.which === 38 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 		e.preventDefault();
 		console.log($("#commandLine").val());
+		i = i-1;
+		$("#commandLine").val(commands[i]);
+		
+	}
+	if(e.which === 40 && !e.shiftKey) { //includes option to ignore if SHIFT is held
+		e.preventDefault();
+		console.log($("#commandLine").val());
+		i = i+1;
+		$("#commandLine").val(commands[i]);
 	}
 });
 
