@@ -84,7 +84,11 @@ function command(c) {
 				post(character.name + " heals themself!",8);
 				console.log(c);
 			}
-			
+			if(c[0].toLowerCase() == "up" || c[0].toLowerCase() == "u") {
+				if(grid.paths.indexOf("Up") > -1) {
+					loadGrid(grid.pathIDs[grid.paths.indexOf("Up")]);
+				}
+			}
 		}
 		if(c.length == 2) {
 			
