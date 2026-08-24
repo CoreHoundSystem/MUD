@@ -107,10 +107,17 @@ function command(c) {
 	post(c,1);
 	console.log(c);
 	console.log(c.substring(0,c.indexOf(" ")));
-	if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say") {
-		says = c.substring(c.indexOf(" "),c.length);
-		console.log(says);
-		post(character.name + " says: " + says,0);
+	if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say" || c.substring(0,c.indexOf(" ")).toLowerCase() == "get") {
+		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say") {
+			says = c.substring(c.indexOf(" "),c.length);
+			console.log(says);
+			post(character.name + " says: " + says,0);
+		}
+		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "get") {
+			gets = c.substring(c.indexOf(" "),c.length);
+			console.log(gets);
+			post(post(character.name + " picks up " + gets,0);
+		}
 	} else {
 		c = c.split(" ");
 		if(c.length == 1) {
@@ -142,11 +149,7 @@ function command(c) {
 			}
 		}
 		if(c.length == 2) {
-			if(c[0] == "get") {
-				if(grid.get.indexOf(c[1]) >= 0) {
-					post(character.name + " picks up " + c[1]);
-				}
-			}
+			
 		}
 	}
 }
