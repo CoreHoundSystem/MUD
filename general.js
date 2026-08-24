@@ -122,6 +122,7 @@ $("#commandLine").keydown(function (e) {
 		commandIndex = commandIndex + 1;
 		$("#commandLine").val(commands[i]);
 	}
+	console.log(commandIndex);
 });
 
 function post(a,b) {
