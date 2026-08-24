@@ -153,6 +153,8 @@ function command(c) {
 				grid.get.splice(grid.get.indexOf(gets), 1);
 				trueGrid = window[grid.id];
 				trueGrid.get.splice(trueGrid.get.indexOf(gets), 1);
+				console.log(trueGrid);
+				console.log(window[trueGrid]);
 				loadGrid(window[trueGrid]);
 			} else {
 				post("There is no " + gets + " present.",2);
