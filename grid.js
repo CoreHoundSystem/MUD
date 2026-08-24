@@ -85,6 +85,7 @@ function up() {
 gridA4 = {
 	name: "Breiðr Ormr - lower deck",
 	map: "Vey'Keng",
+	id: "gridA4",
 	desc: "The hull of the Breiðr Ormr is broad and has multiple decks - this is the lowest deck. It is dark and humid with every breath adding to the suffocating melancholy of your shipmates.",
 	paths: ["Up","Bow","Stern"],
 	pathIDs: ["gridB4","gridA5","gridA3"],
