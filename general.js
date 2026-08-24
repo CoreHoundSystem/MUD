@@ -122,7 +122,7 @@ function command(c) {
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "get") {
 			gets = c.substring(c.indexOf(" "),c.length);
 			console.log(gets);
-			post(post(character.name + " picks up " + gets,0);
+			post(character.name + " picks up " + gets,0);
 		}
 	} else {
 		c = c.split(" ");
