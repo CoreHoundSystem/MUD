@@ -150,7 +150,8 @@ function command(c) {
 			console.log(gets);
 			if(grid.get.indexOf(gets) >= 0) {
 				post(character.name + " picks up " + gets,0);
-				grid.get.splice(t.indexOf(gets), 1);
+				grid.get.splice(grid.get.indexOf(gets), 1);
+				loadGrid(grid);
 			} else {
 				post("There is no " + gets + " present.",2);
 			}
