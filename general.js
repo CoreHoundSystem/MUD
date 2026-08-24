@@ -89,6 +89,11 @@ function command(c) {
 					loadGrid(window[grid.pathIDs[grid.paths.indexOf("Up")]]);
 				}
 			}
+			if(c[0].toLowerCase() == "down" || c[0].toLowerCase() == "d") {
+				if(grid.paths.indexOf("Down") > -1) {
+					loadGrid(window[grid.pathIDs[grid.paths.indexOf("Down")]]);
+				}
+			}
 		}
 		if(c.length == 2) {
 			
