@@ -18,6 +18,8 @@ character = {
 	},
 }
 
+healAMT = 15;
+
 // modify above
 
 //classes for postText
@@ -132,6 +134,7 @@ function command(c) {
 				console.log(character.name);
 				//conjuration
 				post(character.name + " heals themself!",8);
+				heal(character);	//adjust for target
 				console.log(c);
 			}
 			//check if path
@@ -175,4 +178,17 @@ function startBreathing(c) {
 			}
 		}
 	}, 5000);
+}
+
+function heal(c) {
+	if(c.hp.current < c.hp.max) {
+		tempNewHP = c.hp.current + healAMT;
+		if(tempNewHP >= c.hp.max) {
+			c.hp.current = c.hp.max;
+			post(character.name + " has fully recovered.",2);
+		} else {
+			c.hp.current = tempNewHP;
+		}
+	}
+	command("hp");
 }
