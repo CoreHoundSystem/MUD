@@ -136,6 +136,9 @@ function command(c) {
 				//sense = c[0].substring(0,1).toUpperCase() + c[0].substring(1);
 				//console.log(sense);
 				post(grid[c[0]].none,2);
+				if(grid[c[0] + "Effect"].none != "None") {
+					console.log(grid[c[0] + "Effect"].none);
+				}
 			}
 		}
 		if(c.length == 2) {
