@@ -3,6 +3,7 @@ $(function() {
 	post("Loading game version 0.1.0.",2);
 	post("Game Loaded.",2);
 	loadGrid(gridA4);
+	startBreathing(character);
 })
 
 
@@ -10,6 +11,11 @@ $(function() {
 
 character = {
 	name: "Evander",
+	hp: {
+		current: 1,
+		max: 97,
+		rate: 5,
+	},
 }
 
 // modify above
@@ -147,9 +153,26 @@ function command(c) {
 					console.log(grid[c[0] + "Effect"].none);
 				}
 			}
+			if(c[0].toLowerCase() == "hp") {
+				post(character.name + "'s HP: " + character.hp.current + "/" + character.hp.max + ".");
+			}
 		}
 		if(c.length == 2) {
 			
 		}
 	}
+}
+
+function startBreathing(c) {
+	breathe = setInterval(function() {
+		if(c.hp.current < c.hp.max) {
+			tempNewHP = c.hp.current + c.hp.rate;
+			if(tempNewHP >= c.hp.max) {
+				c.hp.current = c.hp.max;
+				post(character.name + " has fully recovered.",2);
+			} else {
+				c.hp.current = tempNewHP;
+			}
+		}
+	}, 5000);
 }
