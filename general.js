@@ -76,6 +76,14 @@ paths = [
 	"r",
 ]
 
+senses = [
+	"look",
+	"smell",
+	"taste",
+	"listen",
+	"feel",
+]
+
 $("#commandLine").keypress(function (e) {
 	if(e.which === 13 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 		e.preventDefault();
@@ -113,18 +121,8 @@ function command(c) {
 				post(character.name + " heals themself!",8);
 				console.log(c);
 			}
-			if(c[0].toLowerCase() == "up" || c[0].toLowerCase() == "u") {
-				if(grid.paths.indexOf("Up") > -1) {
-					loadGrid(window[grid.pathIDs[grid.paths.indexOf("Up")]]);
-				}
-			}
-			if(c[0].toLowerCase() == "down" || c[0].toLowerCase() == "d") {
-				if(grid.paths.indexOf("Down") > -1) {
-					loadGrid(window[grid.pathIDs[grid.paths.indexOf("Down")]]);
-				}
-			}
 			//check if path
-			console.log(paths.indexOf(c[0].toLowerCase()))
+			console.log(paths.indexOf(c[0].toLowerCase()));
 			if(paths.indexOf(c[0].toLowerCase()) >= 0) {
 				path = c[0].substring(0,1).toUpperCase() + c[0].substring(1);
 				console.log(path);
@@ -132,13 +130,13 @@ function command(c) {
 					loadGrid(window[grid.pathIDs[grid.paths.indexOf(path)]]);
 				}
 			}
-			
-			if(c[0].toLowerCase() == "down" || c[0].toLowerCase() == "d") {
-				if(grid.paths.indexOf("Down") > -1) {
-					loadGrid(window[grid.pathIDs[grid.paths.indexOf("Down")]]);
-				}
+			//check if senses
+			console.log(senses.indexOf(c[0].toLowerCase()));
+			if(senses.indexOf(c[0].toLowerCase()) >= 0) {
+				//sense = c[0].substring(0,1).toUpperCase() + c[0].substring(1);
+				//console.log(sense);
+				post(grid[c[0]].none,2);
 			}
-			
 		}
 		if(c.length == 2) {
 			
