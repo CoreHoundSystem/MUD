@@ -124,7 +124,13 @@ function command(c) {
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "get") {
 			gets = c.substring(c.indexOf(" "),c.length);
 			console.log(gets);
-			post(character.name + " picks up " + gets,0);
+			if(grid.get.indexOf(gets) >= 0) {
+				post(character.name + " picks up " + gets,0);
+				grid.get.splice(t.indexOf(gets), 1);
+			} else {
+				post("There is no " + gets + " present.",2);
+			}
+
 		}
 	} else {
 		c = c.split(" ");
@@ -157,7 +163,7 @@ function command(c) {
 				}
 			}
 			if(c[0].toLowerCase() == "hp") {
-				post(character.name + "'s HP: " + character.hp.current + "/" + character.hp.max + ".");
+				post(character.name + "'s HP: " + character.hp.current + "/" + character.hp.max + ".",2);
 			}
 		}
 		if(c.length == 2) {
