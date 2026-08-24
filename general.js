@@ -1,3 +1,11 @@
+//delete these
+$(function() {
+	post("Loading game version 0.1.0.",2);
+	post("Game Loaded.",2);
+	loadGrid(gridA4);
+})
+
+
 // modify these
 
 character = {
@@ -83,8 +91,3 @@ function command(c) {
 		}
 	}
 }
-
-$(function() {
-	post("Loading game version 0.1.0.",4);
-	post("Game Loaded.",3);
-})
