@@ -151,3 +151,12 @@ span {
 	color: var(--lootCursed);
 }
 
+@media all and (max-width: 600px) {
+	#panel {
+		display: none;
+	}
+	#primary {
+		width: calc(100%);
+		font-size: x-large;
+	}
+}
