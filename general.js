@@ -111,19 +111,19 @@ $("#commandLine").keypress(function (e) {
 $("#commandLine").keydown(function (e) {
 	if(e.which === 38 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 		e.preventDefault();
-		console.log($("#commandLine").val());
+		//console.log($("#commandLine").val());
 		commandIndex = commandIndex-1;
 		$("#commandLine").val(commands[commandIndex]);
 		
 	}
 	if(e.which === 40 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 		e.preventDefault();
-		console.log($("#commandLine").val());
+		//console.log($("#commandLine").val());
 		commandIndex = commandIndex + 1;
 		$("#commandLine").val(commands[commandIndex]);
 	}
-	console.log(commandIndex);
-	console.log(commands);
+	//console.log(commandIndex);
+	//console.log(commands);
 });
 
 function post(a,b) {
@@ -146,7 +146,7 @@ function command(c) {
 			post(character.name + " says: " + says,0);
 		}
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "get") {
-			gets = c.substring(c.indexOf(" "),c.length);
+			gets = c.substring(c.indexOf(" ")+1,c.length);
 			console.log(gets);
 			if(grid.get.indexOf(gets) >= 0) {
 				post(character.name + " picks up " + gets,0);
