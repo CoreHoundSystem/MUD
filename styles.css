@@ -159,4 +159,10 @@ span {
 		width: calc(100%);
 		font-size: x-large;
 	}
+	#txtScreen {
+		height: calc(100% - calc(var(--border-ridge) * 2) - var(--text-field) - calc(var(--text-padding) * 2) - 80px);
+	}
+	#commandArea {
+		zoom: 2;
+	}
 }
