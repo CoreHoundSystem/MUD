@@ -86,7 +86,7 @@ function command(c) {
 			}
 			if(c[0].toLowerCase() == "up" || c[0].toLowerCase() == "u") {
 				if(grid.paths.indexOf("Up") > -1) {
-					loadGrid(grid.pathIDs[grid.paths.indexOf("Up")]);
+					loadGrid(window[grid.pathIDs[grid.paths.indexOf("Up")]]);
 				}
 			}
 		}
