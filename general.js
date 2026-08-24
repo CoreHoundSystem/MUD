@@ -151,9 +151,9 @@ function command(c) {
 			if(grid.get.indexOf(gets) >= 0) {
 				post(character.name + " picks up " + gets,0);
 				grid.get.splice(grid.get.indexOf(gets), 1);
-				trueGrid = grid.id;
+				trueGrid = window[grid.id];
 				trueGrid.get.splice(trueGrid.get.indexOf(gets), 1);
-				loadGrid(trueGrid);
+				loadGrid(window[trueGrid]);
 			} else {
 				post("There is no " + gets + " present.",2);
 			}
