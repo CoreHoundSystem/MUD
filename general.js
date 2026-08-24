@@ -142,7 +142,11 @@ function command(c) {
 			}
 		}
 		if(c.length == 2) {
-			
+			if(c[0] == "get") {
+				if(grid.get.indexOf(c[1]) >= 0) {
+					post(character.name + " picks up " + c[1]);
+				}
+			}
 		}
 	}
 }
