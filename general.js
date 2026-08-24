@@ -109,18 +109,17 @@ $("#commandLine").keypress(function (e) {
 });
 
 $("#commandLine").keydown(function (e) {
-	i = commandIndex;
 	if(e.which === 38 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 		e.preventDefault();
 		console.log($("#commandLine").val());
-		i = i-1;
+		commandIndex = commandIndex-1;
 		$("#commandLine").val(commands[i]);
 		
 	}
 	if(e.which === 40 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 		e.preventDefault();
 		console.log($("#commandLine").val());
-		i = i+1;
+		commandIndex = commandIndex + 1;
 		$("#commandLine").val(commands[i]);
 	}
 });
