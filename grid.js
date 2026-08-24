@@ -52,8 +52,8 @@ function loadGrid(x) {
 	for(i=0;i<grid.mobs.length;i++) {
 		$('#txtScreen').append('<span style="color: white;margin-left: 25px">' + grid.mobs[i] + '</span></br>');
 	}
-	for(i=0;i<grid.take.length;i++) {
-		$('#txtScreen').append('<span style="color: white;margin-left: 25px">' + grid.take[i] + '</span></br>');
+	for(i=0;i<grid.get.length;i++) {
+		$('#txtScreen').append('<span style="color: white;margin-left: 25px">' + grid.get[i] + '</span></br>');
 	}
 	for(i=0;i<grid.eList.length;i++) {
 		//
@@ -128,7 +128,7 @@ gridA4 = {
 		"Bilge Rat",
 		"Bilge Rat"
 	],
-	take: [
+	get: [
 		"Soiled scrap of cloth",
 	],
 	eList: [
@@ -193,7 +193,7 @@ gridB4 = {
 		"Bilge Rat",
 		"Bilge Rat"
 	],
-	take: [
+	get: [
 		"Soiled scrap of cloth",
 	],
 	eList: [
@@ -259,7 +259,7 @@ gridA5 = {
 		"Bilge Rat",
 		"Bilge Rat"
 	],
-	take: [
+	get: [
 		"Soiled scrap of cloth",
 	],
 	eList: [
@@ -325,7 +325,7 @@ gridA3 = {
 		"Bilge Rat",
 		"Bilge Rat"
 	],
-	take: [
+	get: [
 		"Soiled scrap of cloth",
 	],
 	eList: [
