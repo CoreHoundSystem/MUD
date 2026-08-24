@@ -113,16 +113,17 @@ $("#commandLine").keydown(function (e) {
 		e.preventDefault();
 		console.log($("#commandLine").val());
 		commandIndex = commandIndex-1;
-		$("#commandLine").val(commands[i]);
+		$("#commandLine").val(commands[commandIndex]);
 		
 	}
 	if(e.which === 40 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 		e.preventDefault();
 		console.log($("#commandLine").val());
 		commandIndex = commandIndex + 1;
-		$("#commandLine").val(commands[i]);
+		$("#commandLine").val(commands[commandIndex]);
 	}
 	console.log(commandIndex);
+	console.log(commands);
 });
 
 function post(a,b) {
