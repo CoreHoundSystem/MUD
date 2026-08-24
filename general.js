@@ -110,6 +110,7 @@ $("#commandLine").keydown(function (e) {
 	if(e.which === 38 && !e.shiftKey) { //includes option to ignore if SHIFT is held
 		e.preventDefault();
 		console.log($("#commandLine").val());
+	}
 });
 
 function post(a,b) {
