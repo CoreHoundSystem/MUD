@@ -138,13 +138,13 @@ gridA4 = {
 	eType: {
 		footsteps: {
 			post: "The sound of footsteps can be heard from the deck above.",
-			freq: 3000,
+			freq: 15000,
 			color: "white",
 			interval: "footstepsInterval",
 		},
 		breeze: {
 			post: "A much needed breeze brings crisp ocean air into the hold.",
-			freq: 5000,
+			freq: 25000,
 			color: "white",
 			interval: "breezeInterval",
 		},
