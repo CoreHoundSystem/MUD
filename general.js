@@ -9,26 +9,60 @@ $(function() {
 
 // modify these
 
+longsword = {
+	skill: "sword",
+	damage: "1d8",
+}
+
+bite = {
+	skill: "natural",
+	damage: "1d2",
+}
+
 character = {
 	name: "Evander",
+	lvl: 20,
 	hp: {
 		current: 1,
 		max: 97,
 		rate: 5,
 	},
+	attr: [
+		{ str: 21, },
+		{ dex: 40, },
+	],
+	skill: [
+		{ sword: 105, }
+	],
+	weapon: "Longsword",
 }
 bilgeRat = {
 	name: "Bilge Rat",
+	lvl: -1,
 	id: "bilgeRat",
-	hp: 10,
+	hp: 30,
+	weapon: "bite",
 	special: ["flee"],
 	specialDetails: [25],
+	specialFreq: [25],
 }
 
-function flee(x,y) {
-	if(Math.floor(Math.random()*100)+1 < y) {
-		post(x.name + " flees!",4);
-		command("despawn " + x.id);
+function combat(x,y) {
+	//enter 'combatMode'
+	//x = player, y = target
+	//build numbers
+	//start interval
+	miss = (((character.attr.dex - character.level) / character.level) * 10) * ((character.skill.sword - (character.level * 5)) / ((character.level + bilgeRat) * 5) + 1);
+	
+	
+	
+		console.log(x.name + " attacks " + y.name + ".");
+		console.log("Miss chance " + miss);
+		
+
+		+ Math.floor(Math.random()*100)+1 < y) {
+		
+		
 	}
 }
 
@@ -153,7 +187,7 @@ function command(c) {
 	post(c,1);
 	console.log(c);
 	console.log(c.substring(0,c.indexOf(" ")));
-	if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say" || c.substring(0,c.indexOf(" ")).toLowerCase() == "get") {
+	if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say" || c.substring(0,c.indexOf(" ")).toLowerCase() == "get" || c.substring(0,c.indexOf(" ")).toLowerCase() == "attack") {
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say") {
 			says = c.substring(c.indexOf(" "),c.length);
 			console.log(says);
@@ -172,6 +206,14 @@ function command(c) {
 			} else {
 				post("There is no " + gets + " present.",2);
 			}
+		}
+		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "attack") {
+			target = c.substring(c.indexOf(" ")+1,c.length);
+			console.log(target);
+			post(character.name + " attacks " + target,0);
+			tI = grid.mobs.indexOf(target); 	//may not be mob
+			//confirm target
+			combat(character,grid.mobIDs[tI]);
 		}
 	} else {
 		c = c.split(" ");
