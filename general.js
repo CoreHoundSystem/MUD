@@ -58,7 +58,13 @@ function combat(x,y) {
 	
 		console.log(x.name + " attacks " + y.name + ".");
 		console.log("Miss chance " + miss);
-		
+		result = "";
+		if (Math.floor(Math.random()*100)+1 < miss) {
+			result = "misses.";
+		} else {
+			result = "hits!";
+		}
+		console.log(Math.floor(Math.random()*100)+1 + " " + result);
 
 		//+ Math.floor(Math.random()*100)+1 < y) {
 		
