@@ -29,10 +29,10 @@ character = {
 	},
 	attr: {
 		str: 21,
-		dex: 10,
+		dex: 40,
 	},
 	skill: {
-		sword: 50,
+		sword: 105,
 	},
 	weapon: "Longsword",
 }
