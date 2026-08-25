@@ -27,13 +27,13 @@ character = {
 		max: 97,
 		rate: 5,
 	},
-	attr: [
-		{ str: 21, },
-		{ dex: 40, },
-	],
-	skill: [
-		{ sword: 105, }
-	],
+	attr: {
+		str: 21,
+		dex: 40,
+	},
+	skill: {
+		sword: 105,
+	},
 	weapon: "Longsword",
 }
 bilgeRat = {
