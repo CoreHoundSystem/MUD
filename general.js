@@ -29,7 +29,7 @@ character = {
 	},
 	attr: {
 		str: 21,
-		dex: 40,
+		dex: 20,
 	},
 	skill: {
 		sword: 105,
