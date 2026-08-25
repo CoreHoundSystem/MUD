@@ -160,14 +160,13 @@ function command(c) {
 			post(character.name + " says: " + says,0);
 		}
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "get") {
-			gets = c.substring(c.indexOf(" ")+1,c.length);
+			gets = c.substring(c.indexOf(" ")+1,c.length);				//identifies get request string
 			console.log(gets);
-			if(grid.get.indexOf(gets) >= 0) {
-				post(character.name + " picks up " + gets,0);
-				grid.get.splice(grid.get.indexOf(gets), 1);
-				trueGrid = window[grid.id];
-				trueGrid.get.splice(trueGrid.get.indexOf(gets), 1);
-				console.log(trueGrid);
+			getI = grid.get.indexOf(gets);								//sets index of get request
+			if(getI >= 0) {												//gets index of gets from 'get' array
+				post(character.name + " picks up " + gets,0);			
+				grid.get.splice(getI, 1);								//updates active grid get line
+				window[grid.id] = grid;									//
 				console.log(trueGrid);
 				loadGrid(trueGrid);
 			} else {
@@ -209,14 +208,25 @@ function command(c) {
 			}
 		}
 		if(c.length == 2) {
+			if(c[0] == "flee") {
+				mobID = c[1];
+				mobI = grid.mobIDs.indexOf(mobID);
+				if(mobI >= 0) {
+					if(Math.floor(Math.random()*100)+1 < y) {
+						post(grid.mobs[mobI] + " flees!",2);
+						command("despawn " + mobID);
+					}
+				}
+			}
 			if(c[0] == "despawn") {
-				mob = grid.mobIDs.indexOf(c[1]);						//this is the index of the mob
-				grid.mobs.splice(mob, 1);								//this changes the array to remove mob name (current)
-				trueGrid = window[grid.id];								//this shows mobID
-				trueGrid.mobs.splice(mob, 1);							//this changes the array to remove mob name (source)
-				console.log(trueGrid);										//this is janky
-				console.log(trueGrid);										//create an update grid function
-				loadGrid(trueGrid);
+				mobID = c[1];
+				mobI = grid.mobIDs.indexOf(mobID);
+				if(mobI >= 0) {						
+					grid.mobs.splice(mobI, 1);
+					grid.mobIDs.splice(mobI, 1);
+					window[grid.id] = grid;									//create an update grid function
+					loadGrid(window[grid.id]);
+				}
 			}
 		}
 	}
