@@ -60,7 +60,7 @@ function combat(x,y) {
 		console.log("Miss chance " + miss);
 		
 
-		+ Math.floor(Math.random()*100)+1 < y) {
+		//+ Math.floor(Math.random()*100)+1 < y) {
 		
 		
 	}
