@@ -52,7 +52,7 @@ function combat(x,y) {
 	//x = player, y = target
 	//build numbers
 	//start interval
-	miss = (((character.attr.dex - character.level) / character.level) * 10) * ((character.skill.sword - (character.level * 5)) / ((character.level + bilgeRat.level) * 5) + 1);
+	bonus = (((character.attr.dex - character.level) / character.level) * 10) * ((character.skill.sword - (character.level * 5)) / ((character.level + bilgeRat.level) * 5) + 1);
 	
 	
 		console.log(character.attr.dex);
@@ -67,7 +67,7 @@ function combat(x,y) {
 		console.log(x.name + " attacks " + y + ".");
 		console.log("Miss chance " + miss);
 		result = "";
-		if (Math.floor(Math.random()*100)+1 < miss) {
+		if (Math.floor(Math.random()*100)+1 > (bonus + 95)) {
 			result = "misses.";
 		} else {
 			result = "hits!";
