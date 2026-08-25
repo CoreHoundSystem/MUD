@@ -62,8 +62,8 @@ function combat(x,y) {
 		console.log(character.skill.sword);
 		console.log(bilgeRat.level);
 		console.log(character.attr.dex - character.level);
-		console.log((character.attr.dex - character.level) / character.level);
-		console.log(((character.attr.dex - character.level) / character.level) * 10);
+		//console.log((character.attr.dex - character.level) / character.level);
+		//console.log(((character.attr.dex - character.level) / character.level) * 10);
 		console.log(character.skill.sword - (character.level * 5));
 		console.log((character.level + bilgeRat.level) * 5);
 		console.log(x.name + " attacks " + y + ".");
