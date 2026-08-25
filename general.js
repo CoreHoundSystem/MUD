@@ -69,7 +69,6 @@ function combat(x,y) {
 		//+ Math.floor(Math.random()*100)+1 < y) {
 		
 		
-	}
 }
 
 healAMT = 15;
