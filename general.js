@@ -21,7 +21,7 @@ bite = {
 
 character = {
 	name: "Evander",
-	lvl: 20,
+	level: 20,
 	hp: {
 		current: 1,
 		max: 97,
@@ -38,7 +38,7 @@ character = {
 }
 bilgeRat = {
 	name: "Bilge Rat",
-	lvl: -1,
+	level: -1,
 	id: "bilgeRat",
 	hp: 30,
 	weapon: "bite",
@@ -52,10 +52,18 @@ function combat(x,y) {
 	//x = player, y = target
 	//build numbers
 	//start interval
-	miss = (((character.attr.dex - character.level) / character.level) * 10) * ((character.skill.sword - (character.level * 5)) / ((character.level + bilgeRat) * 5) + 1);
+	miss = (((character.attr.dex - character.level) / character.level) * 10) * ((character.skill.sword - (character.level * 5)) / ((character.level + bilgeRat.level) * 5) + 1);
 	
 	
-	
+		console.log(character.attr.dex);
+		console.log(character.level);
+		console.log(character.skill.sword);
+		console.log(bilgeRat.level);
+		console.log(character.attr.dex - character.level);
+		console.log((character.attr.dex - character.level) / character.level);
+		console.log(((character.attr.dex - character.level) / character.level) * 10);
+		console.log(character.skill.sword - (character.level * 5));
+		console.log((character.level + bilgeRat.level) * 5);
 		console.log(x.name + " attacks " + y.name + ".");
 		console.log("Miss chance " + miss);
 		result = "";
