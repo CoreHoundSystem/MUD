@@ -127,7 +127,11 @@ gridA4 = {
 	},
 	mobs: [
 		"Bilge Rat",
-		"Bilge Rat"
+		"Bilge Rat",
+	],
+	mobIDs: [
+		"bilgeRat",
+		"bilgeRat2",
 	],
 	get: [
 		"Soiled scrap of cloth",
