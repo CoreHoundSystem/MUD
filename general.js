@@ -32,7 +32,7 @@ character = {
 		dex: 10,
 	},
 	skill: {
-		sword: 105,
+		sword: 50,
 	},
 	weapon: "Longsword",
 }
@@ -67,12 +67,13 @@ function combat(x,y) {
 		console.log(x.name + " attacks " + y + ".");
 		console.log("Miss chance " + miss);
 		result = "";
-		if (Math.floor(Math.random()*100)+1 > (bonus + 95)) {
+		roll = Math.floor(Math.random()*100)+1;
+		if (roll > (bonus + 95)) {
 			result = "misses.";
 		} else {
 			result = "hits!";
 		}
-		console.log(Math.floor(Math.random()*100)+1 + " " + result);
+		console.log(roll + " " + result);
 
 		//+ Math.floor(Math.random()*100)+1 < y) {
 		
