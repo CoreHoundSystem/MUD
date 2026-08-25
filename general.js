@@ -52,7 +52,9 @@ function combat(x,y) {
 	//x = player, y = target
 	//build numbers
 	//start interval
-	bonus = (((character.attr.dex - character.level) / character.level) * 10) * ((character.skill.sword - (character.level * 5)) / ((character.level + bilgeRat.level) * 5) + 1);
+	bonus = ((character.attr.dex - character.level) 
+		+ ((character.skill.sword - (character.level * 5)))
+		/ ((character.level + bilgeRat.level) * 5));
 	
 	
 		console.log(character.attr.dex);
