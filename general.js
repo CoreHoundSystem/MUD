@@ -65,7 +65,7 @@ function combat(x,y) {
 		console.log(character.skill.sword - (character.level * 5));
 		console.log((character.level + bilgeRat.level) * 5);
 		console.log(x.name + " attacks " + y + ".");
-		console.log("Miss chance " + miss);
+		console.log("Hit chance " + (95 + bonus));
 		result = "";
 		roll = Math.floor(Math.random()*100)+1;
 		if (roll > (bonus + 95)) {
