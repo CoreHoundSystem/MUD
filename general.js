@@ -64,7 +64,7 @@ function combat(x,y) {
 		console.log(((character.attr.dex - character.level) / character.level) * 10);
 		console.log(character.skill.sword - (character.level * 5));
 		console.log((character.level + bilgeRat.level) * 5);
-		console.log(x.name + " attacks " + y.name + ".");
+		console.log(x.name + " attacks " + y + ".");
 		console.log("Miss chance " + miss);
 		result = "";
 		if (Math.floor(Math.random()*100)+1 < miss) {
@@ -226,6 +226,7 @@ function command(c) {
 			post(character.name + " attacks " + target,0);
 			tI = grid.mobs.indexOf(target); 	//may not be mob
 			//confirm target
+			console.log(grid.mobIDs[tI]);
 			combat(character,grid.mobIDs[tI]);
 		}
 	} else {
