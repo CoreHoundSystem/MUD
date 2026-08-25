@@ -17,6 +17,20 @@ character = {
 		rate: 5,
 	},
 }
+bilgeRat = {
+	name: "Bilge Rat",
+	id: "bilgeRat",
+	hp: 10,
+	special: ["flee"],
+	specialDetails: [25],
+}
+
+function flee(x,y) {
+	if(Math.floor(Math.random()*100)+1 < y) {
+		post(x.name + " flees!",4);
+		command("despawn " + x.id);
+	}
+}
 
 healAMT = 15;
 
@@ -159,7 +173,6 @@ function command(c) {
 			} else {
 				post("There is no " + gets + " present.",2);
 			}
-
 		}
 	} else {
 		c = c.split(" ");
@@ -196,7 +209,15 @@ function command(c) {
 			}
 		}
 		if(c.length == 2) {
-			
+			if(c[0] == "despawn") {
+				mob = grid.mobIDs.indexOf(c[1]);						//this is the index of the mob
+				grid.mobs.splice(mob, 1);								//this changes the array to remove mob name (current)
+				trueGrid = window[grid.id];								//this shows mobID
+				trueGrid.mobs.splice(mob, 1);							//this changes the array to remove mob name (source)
+				console.log(trueGrid);										//this is janky
+				console.log(trueGrid);										//create an update grid function
+				loadGrid(trueGrid);
+			}
 		}
 	}
 }
