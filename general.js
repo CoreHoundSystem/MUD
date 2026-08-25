@@ -54,7 +54,7 @@ function combat(x,y) {
 	//start interval
 	bonus = ((character.attr.dex - character.level) 
 		+ (character.skill.sword - (character.level * 5)))
-		/ ((character.level + bilgeRat.level) * .05));
+		/ ((character.level + bilgeRat.level) * .05);
 	
 	
 		console.log(character.attr.dex);
