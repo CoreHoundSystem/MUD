@@ -80,7 +80,7 @@ function combat(x,y) {
 		roll = Math.floor(Math.random()*100)+1;
 		baseBonus = bonus + 95;
 		max = 95;
-		effectiveBonus = if(baseBonus > max) { return max; } else { return baseBonus; }
+		effectiveBonus = function() { if(baseBonus > max) { return max; } else { return baseBonus; } }
 		if (roll > effectiveBonus) {
 			result = "misses.";
 		} else {
