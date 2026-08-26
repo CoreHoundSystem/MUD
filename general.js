@@ -6,6 +6,8 @@ $(function() {
 	startBreathing(character);
 	save();
 	load();
+	$.cookie('character', character);
+	console.log($.cookie('character'));
 })
 
 
