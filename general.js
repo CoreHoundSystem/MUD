@@ -78,7 +78,10 @@ function combat(x,y) {
 		console.log("Hit chance " + (95 + bonus));
 		result = "";
 		roll = Math.floor(Math.random()*100)+1;
-		if (roll > (bonus + 95)) {
+		baseBonus = bonus + 95;
+		max = 95;
+		effectiveBonus = if(baseBonus > max) { return max; } else { return baseBonus; }
+		if (roll > effectiveBonus) {
 			result = "misses.";
 		} else {
 			result = "hits!";
