@@ -4,10 +4,18 @@ $(function() {
 	post("Game Loaded.",2);
 	loadGrid(gridA4);
 	startBreathing(character);
+	save();
 })
 
 
 // modify these
+function save() {
+	Cookies.set("character", character);
+}
+
+function load() {
+	console.log(Cookies.get("character"));
+}
 
 longsword = {
 	skill: "sword",
