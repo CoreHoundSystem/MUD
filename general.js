@@ -6,18 +6,18 @@ $(function() {
 	startBreathing(character);
 	save();
 	load();
-	Cookies.set('character', character);
-	console.log(Cookies.get('character'));
+	//Cookies.set('character', character);
+	//console.log(Cookies.get('character'));
 })
 
 
 // modify these
 function save() {
-	document.cookie = character;
+	document.cookie = JSON.stringify(character);
 }
 
 function load() {
-	console.log(document.cookie);
+	console.log(JSON.parse(document.cookie));
 }
 
 longsword = {
