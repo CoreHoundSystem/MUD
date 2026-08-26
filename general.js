@@ -5,6 +5,7 @@ $(function() {
 	loadGrid(gridA4);
 	startBreathing(character);
 	save();
+	load();
 })
 
 
