@@ -10,11 +10,11 @@ $(function() {
 
 // modify these
 function save() {
-	Cookies.set("character", character);
+	document.cookie = character;
 }
 
 function load() {
-	console.log(Cookies.get("character"));
+	console.log(document.cookie);
 }
 
 longsword = {
