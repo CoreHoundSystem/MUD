@@ -81,6 +81,7 @@ function combat(x,y) {
 		baseBonus = bonus + 95;
 		max = 95;
 		effectiveBonus = function() { if(baseBonus > max) { return max; } else { return baseBonus; } }
+		console.log("Hit chance " + effectiveBonus);
 		if (roll > effectiveBonus) {
 			result = "misses.";
 		} else {
