@@ -1,5 +1,5 @@
 character = {
-	name: "Evander2",
+	name: "Evander",
 	grid: "gridA4",
 	level: 1,
 	xp: 0,
