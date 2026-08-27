@@ -2,8 +2,6 @@
 $(function() {
 	post("Loading game version 0.1.0.",2);
 	post("Game Loaded.",2);
-	
-	
 	if(document.cookie == "null") {
 		console.log(document.cookie);
 		//prompt to select character
@@ -11,14 +9,9 @@ $(function() {
 		console.log(document.cookie);
 		character = JSON.parse(document.cookie);
 	}
-	//load();
-	//this line autmatically loads some character, or at least tries to.
 	loadGrid(window[character.grid]);
 	startBreathing(character);
-	//Cookies.set('character', character);
-	//console.log(Cookies.get('character'));
 })
-
 
 // modify these
 function save() {
@@ -38,6 +31,17 @@ longsword = {
 bite = {
 	skill: "natural",
 	damage: "1d2",
+}
+
+bilgeRat = {
+	name: "Bilge Rat",
+	level: -1,
+	id: "bilgeRat",
+	hp: 30,
+	weapon: "bite",
+	special: ["flee"],
+	specialDetails: [25],
+	specialFreq: [25],
 }
 
 character = {
@@ -202,10 +206,6 @@ character = {
 			rating: 1,
 			xp: 0,
 		},
-		unarmed: {
-			rating: 1,
-			xp: 0,
-		},
 	},
 	equipped: {
 		mainhand: "",
@@ -238,60 +238,6 @@ character = {
 		"Scrap of bread",
 	],
 	
-}
-bilgeRat = {
-	name: "Bilge Rat",
-	level: -1,
-	id: "bilgeRat",
-	hp: 30,
-	weapon: "bite",
-	special: ["flee"],
-	specialDetails: [25],
-	specialFreq: [25],
-}
-
-function combat(x,y) {
-	//enter 'combatMode'
-	//x = player, y = target
-	//build numbers
-	//start interval
-	bonus = ((character.attr.dex - character.level) 
-		+ (character.skill.sword - (character.level * 5)))
-		/ ((character.level + bilgeRat.level) * .05);
-	
-	
-		console.log(character.attr.dex);
-		console.log(character.level);
-		console.log(character.skill.sword);
-		console.log(bilgeRat.level);
-		console.log(character.attr.dex - character.level);
-		//console.log((character.attr.dex - character.level) / character.level);
-		//console.log(((character.attr.dex - character.level) / character.level) * 10);
-		console.log(character.skill.sword - (character.level * 5));
-		console.log((character.level + bilgeRat.level) * 5);
-		console.log(x.name + " attacks " + y + ".");
-		console.log("Hit chance " + (95 + bonus));
-		result = "";
-		roll = Math.floor(Math.random()*100)+1;
-		baseBonus = bonus + 95;
-		max = 95;
-		effectiveBonus = 0;
-		if(baseBonus > max) { 
-			effectiveBonus = max; 
-		} else {
-			effectiveBonus = baseBonus; 
-		}
-		console.log("Hit chance " + effectiveBonus);
-		if (roll > effectiveBonus) {
-			result = "misses.";
-		} else {
-			result = "hits!";
-		}
-		console.log(roll + " " + result);
-
-		//+ Math.floor(Math.random()*100)+1 < y) {
-		
-		
 }
 
 healAMT = 15;
@@ -494,7 +440,7 @@ function command(c) {
 				for(i=0;i<character.inventory.length;i++) {
 					post(character.inventory[i],4);
 				}
-				post("********** " + i + " items **********",2);
+				post("********** " + i + " item(s) **********",2);
 			}
 			if(c[0].toLowerCase() == "heal") {
 				console.log(character.name);
