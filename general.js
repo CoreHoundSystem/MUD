@@ -257,8 +257,8 @@ function command(c) {
 				character.inventory = inv;
 				post(character.name + " picks up " + gets,0);			
 				grid.get.splice(getI, 1);								//updates active grid get line
-				window[grid.id] = grid;									//
-				console.log(window[grid.id]);
+				//window[grid.id] = grid;									//
+				console.log(grid);
 				loadGrid(window[grid.id]);
 			} else {
 				post("There is no " + gets + " present.",2);
