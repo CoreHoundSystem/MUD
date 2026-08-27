@@ -268,7 +268,7 @@ function command(c) {
 		}
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "i" || c.substring(0,c.indexOf(" ")).toLowerCase() == "inv" || c.substring(0,c.indexOf(" ")).toLowerCase() == "inventory") {
 			post("********** Inventory **********",2);
-			if(i=0;i<character.inventory.length;i++) {
+			for(i=0;i<character.inventory.length;i++) {
 				post(character.inventory[i],4);
 			}
 		}
