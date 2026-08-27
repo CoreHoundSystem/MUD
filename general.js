@@ -4,7 +4,11 @@ $(function() {
 	post("Game Loaded.",2);
 	
 	
-
+	if(document.cookie) {
+		console.log("Cookie found");
+	} else {
+		console.log("No cookie");
+	}
 	load();
 	loadGrid(window[character.grid]);
 	startBreathing(character);
@@ -48,7 +52,10 @@ character = {
 	skill: {
 		sword: 105,
 	},
-	weapon: "Longsword",
+	equipped: {
+		mainhand: "Longsword",
+	}
+	
 }
 bilgeRat = {
 	name: "Bilge Rat",
@@ -264,6 +271,13 @@ function command(c) {
 				//conjuration
 				post(character.name + " heals themself!",8);
 				heal(character);	//adjust for target
+				console.log(c);
+			}
+			if(c[0].toLowerCase() == "reset") {
+				console.log(character.name);
+				
+				post("Reseting " + character.name + ".",2);
+				document.cookie = "";
 				console.log(c);
 			}
 			//check if path
