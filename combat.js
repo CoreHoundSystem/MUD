@@ -38,6 +38,7 @@ function combat(x,y) {
 				console.log("Hit chance " + effectiveBonus);
 				if (roll > effectiveBonus) {
 					result = "misses.";
+					console.log(Math.floor(Math.random() * attack.length)+1);
 					attackRan = attack[Math.floor(Math.random() * attack.length)+1];
 					missRan = miss[Math.floor(Math.random() * miss.length)+1];
 					post(character.name + attackRan + character.equiped.mainhand + missRan,3);
