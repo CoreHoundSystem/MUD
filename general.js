@@ -253,7 +253,7 @@ function command(c) {
 			dropI = inv.indexOf(drops);
 			if(dropI >= 0) {
 				inv.splice(dropI, 1);
-				chracter.inventory = inv;
+				character.inventory = inv;
 				gets = grid.get;
 				gets.push(drops);
 				grid.get = gets;
