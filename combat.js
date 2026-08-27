@@ -7,6 +7,7 @@ function combat(x,y) {
 	threat = ((character.level + bilgeRat.level) * .05);
 	if(threat == 0) {
 		threat = .05;
+	}
 	bonus = ((character.attr.dex - character.level) 
 		+ (character.skill.sword.rating - (character.level * 5)))
 		/ threat;
