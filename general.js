@@ -294,13 +294,35 @@ function command(c) {
 
 function startBreathing(c) {
 	breathe = setInterval(function() {
-		if(c.hp.current < c.hp.max) {
-			tempNewHP = c.hp.current + c.hp.rate;
-			if(tempNewHP >= c.hp.max) {
-				c.hp.current = c.hp.max;
-				post(character.name + " has fully recovered.",2);
-			} else {
-				c.hp.current = tempNewHP;
+		if(c.hp.current == 0) {
+			clearInterval(breathe);
+		} else {
+			if(c.hp.current < c.hp.max) {
+				tempNewHP = c.hp.current + c.hp.rate;
+				if(tempNewHP >= c.hp.max) {
+					c.hp.current = c.hp.max;
+					post(character.name + " has fully recovered.",2);
+				} else {
+					c.hp.current = tempNewHP;
+				}
+			}
+			if(c.energy.current < c.energy.max) {
+				tempNewEnergy = c.energy.current + c.energy.rate;
+				if(tempNewEnergy >= c.energy.max) {
+					c.energy.current = c.energy.max;
+					post(character.name + " has fully recovered their focus.",2);
+				} else {
+					c.energy.current = tempNewEnergy;
+				}
+			}
+			if(c.mana.current < c.mana.max) {
+				tempNewMana = c.mana.current + c.mana.rate;
+				if(tempNewMana >= c.mana.max) {
+					c.mana.current = c.mana.max;
+					post(character.name + " has fully recovered their mana.",2);
+				} else {
+					c.mana.current = tempNewMana;
+				}
 			}
 		}
 	}, 5000);
