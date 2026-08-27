@@ -251,7 +251,10 @@ function command(c) {
 			console.log(gets);
 			getI = grid.get.indexOf(gets);								//sets index of get request
 			if(getI >= 0) {												//gets index of gets from 'get' array
-				character.inventory.push(gets);
+				//character.inventory.push(gets);
+				inv = character.inventory;
+				inv.push(gets);
+				character.inventory = inv;
 				post(character.name + " picks up " + gets,0);			
 				grid.get.splice(getI, 1);								//updates active grid get line
 				window[grid.id] = grid;									//
