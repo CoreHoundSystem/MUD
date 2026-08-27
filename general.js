@@ -9,7 +9,7 @@ $(function() {
 		
 	} else {
 		console.log(document.cookie);
-		character = document.cookie;
+		character = JSON.parse(document.cookie);
 	}
 	load();
 	loadGrid(window[character.grid]);
