@@ -23,7 +23,6 @@ function load() {
 	console.log(JSON.parse(document.cookie));
 }
 
-character = "";
 healAMT = 15;
 
 // modify above
