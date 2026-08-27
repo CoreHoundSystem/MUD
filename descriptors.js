@@ -3,7 +3,7 @@ att = [
 	" swings their ",
 ]
 
-hits = [
+hit = [
 	" and hits true.",
 	" and strikes a mighty blow.",
 ]
