@@ -35,12 +35,16 @@ function combat(x,y) {
 			console.log("Hit chance " + effectiveBonus);
 			if (roll > effectiveBonus) {
 				result = "misses.";
+				attackRan = attack[Math.floor(Math.random() * miss.length)+1];
+				missRan = miss[Math.floor(Math.random() * miss.length)+1];
+				post(character.name + attackRan + character.equiped.mainhand + missRan",3);
 			} else {
 				result = "hits!";
+				
 			}
 			console.log(roll + " " + result);
 		} else {
-			post(character.name + " uses " + qSpell);
+			post(character.name + " uses " + qSpell,2);	//class should originate from ability
 			qSpell = "";
 			console.log(character);
 		}
