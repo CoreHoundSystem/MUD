@@ -259,7 +259,7 @@ function command(c) {
 				grid.get.splice(getI, 1);								//updates active grid get line
 				//window[grid.id] = grid;									//
 				console.log(grid);
-				loadGrid(window[grid.id]);
+				loadGrid(grid);
 			} else {
 				post("There is no " + gets + " present.",2);
 			}
