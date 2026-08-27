@@ -12,9 +12,11 @@ function combat(x,y) {
 			if(qSpell == "") {
 				cAtt = character.attr.str;
 				cSkill = character.skill.unarmed.rating;
+				cWeapon = "fist";
 				if(character.equipped.mainhand !== "") {
 					//build database of weapons and skills
 					console.log(character.equipped.mainhand);
+					cWeapon = character.equipped.mainhand;
 				}
 				cLvl = character.level;
 				threat = ((cLvl + window[y].level) * .05);
@@ -41,7 +43,7 @@ function combat(x,y) {
 					console.log(Math.floor(Math.random() * miss.length));
 					attRan = att[Math.floor(Math.random() * att.length)];
 					missRan = miss[Math.floor(Math.random() * miss.length)];
-					post(character.name + attRan + character.equipped.mainhand + missRan,3);
+					post(character.name + attRan + cWeapon + missRan,3);
 				} else {
 					result = "hits!";
 					
