@@ -1,4 +1,4 @@
-attacks = [
+att = [
 	" lunges with their ",
 	" swings their ",
 ]
