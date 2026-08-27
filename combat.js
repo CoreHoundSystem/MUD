@@ -4,9 +4,12 @@ function combat(x,y) {
 	//x = player, y = target
 	//build numbers
 	//start interval
+	threat = ((character.level + bilgeRat.level) * .05);
+	if(threat == 0) {
+		threat = .05;
 	bonus = ((character.attr.dex - character.level) 
 		+ (character.skill.sword.rating - (character.level * 5)))
-		/ ((character.level + bilgeRat.level) * .05);
+		/ threat;
 	//
 	console.log(character.attr.dex);
 	console.log(character.level);
