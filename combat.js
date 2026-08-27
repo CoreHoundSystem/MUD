@@ -42,6 +42,7 @@ function combat(x,y) {
 		} else {
 			post(character.name + " uses " + qSpell);
 			qSpell = "";
+			console.log(character);
 		}
 	}, 3000);
 }
