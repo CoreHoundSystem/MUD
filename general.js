@@ -125,11 +125,19 @@ healAMT = 15;
 
 //classes for postText
 classes = [
+	//player and system (0-10)
 	"normal",				//default
 	"playerCommand",		//player commands
 	"serverCommand",		//server responses to player commands
 	"adminCommands",		//admin commands and server updates
-	//spell schools (4-17)
+	"list",					//indents items in a list for readability
+	"notSet",
+	"notSet",
+	"notSet",
+	"notSet",
+	"notSet",
+	"notSet",
+	//spell schools (11-30)
 	"abjuration",			//mystical warding
 	"alteration",			//change a materials shape
 	"auspex",				//enhance or displace senses 
@@ -144,7 +152,13 @@ classes = [
 	"phantasm",				//impact an entity's senses by enforcing your will on their psyche (a subjective experience)
 	"summoning",			//bring an entity from another location or plane
 	"transmutation",		//change a materials makeup
-	//quality (18-26)
+	"notSet",
+	"notSet",
+	"notSet",
+	"notSet",
+	"notSet",
+	"notSet",
+	//quality (31-45)
 	"common",				//
 	"uncommon",				//
 	"masterwork",			//
@@ -154,6 +168,12 @@ classes = [
 	"set",					//
 	"artifact",				//
 	"cursed",				//
+	"notSet",
+	"notSet",
+	"notSet",
+	"notSet",
+	"notSet",
+	"notSet",
 ]
 
 paths = [
@@ -240,11 +260,17 @@ function command(c) {
 	post(c,1);
 	console.log(c);
 	console.log(c.substring(0,c.indexOf(" ")));
-	if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say" || c.substring(0,c.indexOf(" ")).toLowerCase() == "drop" || c.substring(0,c.indexOf(" ")).toLowerCase() == "get" || c.substring(0,c.indexOf(" ")).toLowerCase() == "attack") {
+	if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say" || c.substring(0,c.indexOf(" ")).toLowerCase() == "inv" || c.substring(0,c.indexOf(" ")).toLowerCase() == "inventory" || c.substring(0,c.indexOf(" ")).toLowerCase() == "i" || c.substring(0,c.indexOf(" ")).toLowerCase() == "drop" || c.substring(0,c.indexOf(" ")).toLowerCase() == "get" || c.substring(0,c.indexOf(" ")).toLowerCase() == "attack") {
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say") {
 			says = c.substring(c.indexOf(" "),c.length);
 			console.log(says);
 			post(character.name + " says: " + says,0);
+		}
+		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "i" || c.substring(0,c.indexOf(" ")).toLowerCase() == "inv" || c.substring(0,c.indexOf(" ")).toLowerCase() == "inventory") {
+			post("********** Inventory **********",2);
+			if(i=0;i<character.inventory.length;i++) {
+				post(character.inventory[i],4);
+			}
 		}
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "drop") {
 			drops = c.substring(c.indexOf(" ")+1,c.length);
@@ -295,7 +321,7 @@ function command(c) {
 			if(c[0].toLowerCase() == "heal") {
 				console.log(character.name);
 				//conjuration
-				post(character.name + " heals themself!",8);
+				post(character.name + " heals themself!",15);
 				heal(character);	//adjust for target
 				console.log(c);
 			}
