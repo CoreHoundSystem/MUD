@@ -13,10 +13,13 @@ function combat(x,y) {
 				cAtt = character.attr.str;
 				cSkill = character.skill.unarmed.rating;
 				cWeapon = "fist";
+				cCrit = 5;
+				doCrit = 0;
 				if(character.equipped.mainhand !== "") {
 					//build database of weapons and skills
 					console.log(character.equipped.mainhand);
 					cWeapon = character.equipped.mainhand;
+					cCrit = "";
 				}
 				cLvl = character.level;
 				threat = ((cLvl + window[y].level) * .05);
@@ -37,13 +40,23 @@ function combat(x,y) {
 				} else {
 					effectiveBonus = bonus + 95; 
 				}
+				critCheck = Math.floor(Math.random()*100)+1;
+				if(critCheck < cCrit) { 
+					doCrit = 1;
+				}
 				console.log("Hit chance " + effectiveBonus);
 				if (roll > effectiveBonus) {
 					result = "misses.";
 					console.log(Math.floor(Math.random() * miss.length));
 					attRan = att[Math.floor(Math.random() * att.length)];
-					missRan = miss[Math.floor(Math.random() * miss.length)];
-					post(character.name + attRan + cWeapon + missRan,3);
+					if(doCrit == 0) {
+						missRan = miss[Math.floor(Math.random() * miss.length)];
+						post(character.name + attRan + cWeapon + missRan,3);
+					} else {
+						stumRan = miss[Math.floor(Math.random() * stum.length)];
+						post(character.name + attRan + cWeapon + stumRan,3);
+						qSpell = "his action to regain composure.";
+					}
 				} else {
 					result = "hits!";
 					
