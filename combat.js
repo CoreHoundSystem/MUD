@@ -40,7 +40,7 @@ function combat(x,y) {
 			}
 			console.log(roll + " " + result);
 		} else {
-			post(charcter.name + " uses " + qSpell);
+			post(character.name + " uses " + qSpell);
 			qSpell = "";
 		}
 	}, 3000);
