@@ -49,15 +49,53 @@ character = {
 		max: 97,
 		rate: 5,
 	},
+	rage: {
+		current: 0,
+		max: 100,
+		rate: 0,
+	},
+	energy: {
+		current: 100,
+		max: 100,
+		rate: 20,
+	},
+	mana: {
+		current: 100,
+		max: 100,
+		rate: 5,
+	},
 	attr: {
 		str: 21,
 		dex: 40,
+		con: 30,
+		inte: 15,
+		wis: 12,
+		cha: 15,
 	},
 	skill: {
+		blunt: 105,
 		sword: 105,
+		unarmed: 105,
 	},
 	equipped: {
 		mainhand: "Longsword",
+		offhand: "",
+		armor: {
+			helm: "",
+			shoulders: "",
+			chest: "",
+			hands: "",
+			legs: "",
+			feet: "",
+		},
+		cloths: {
+			back: "",
+			neck: "",
+			chest: "",
+			finger1: "",
+			finger2: "",
+			waist: "",
+		},
 	},
 	inventory: [
 		"Scrap of bread",
@@ -266,12 +304,6 @@ function command(c) {
 			console.log(says);
 			post(character.name + " says: " + says,0);
 		}
-		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "i" || c.substring(0,c.indexOf(" ")).toLowerCase() == "inv" || c.substring(0,c.indexOf(" ")).toLowerCase() == "inventory") {
-			post("********** Inventory **********",2);
-			for(i=0;i<character.inventory.length;i++) {
-				post(character.inventory[i],4);
-			}
-		}
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "drop") {
 			drops = c.substring(c.indexOf(" ")+1,c.length);
 			console.log(drops);
@@ -318,6 +350,13 @@ function command(c) {
 		c = c.split(" ");
 		if(c.length == 1) {
 			console.log(c);
+			if(c[0] == "i" || c[0] == "inv" || c[0] == "inventory") {
+				console.log(c);
+				post("********** Inventory **********",2);
+				for(i=0;i<character.inventory.length;i++) {
+					post(character.inventory[i],4);
+				}
+			}
 			if(c[0].toLowerCase() == "heal") {
 				console.log(character.name);
 				//conjuration
