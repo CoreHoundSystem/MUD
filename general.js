@@ -12,6 +12,7 @@ $(function() {
 		character = JSON.parse(document.cookie);
 	}
 	//load();
+	//this line autmatically loads some character, or at least tries to.
 	loadGrid(window[character.grid]);
 	startBreathing(character);
 	//Cookies.set('character', character);
@@ -250,8 +251,8 @@ function command(c) {
 				post(character.name + " picks up " + gets,0);			
 				grid.get.splice(getI, 1);								//updates active grid get line
 				window[grid.id] = grid;									//
-				console.log(trueGrid);
-				loadGrid(trueGrid);
+				console.log(window[grid.id]);
+				loadGrid(window[grid.id]);
 			} else {
 				post("There is no " + gets + " present.",2);
 			}
