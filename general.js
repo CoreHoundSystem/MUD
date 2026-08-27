@@ -73,8 +73,41 @@ character = {
 		cha: 15,
 	},
 	skill: {
+		athletics: 105,
+		axe: 105,
 		blunt: 105,
+		channeling: 105,
 		sword: 105,
+		unarmed: 105,
+	},
+	sphere: {
+		air: 105,
+		earth: 105,
+		evil: 105,
+		fire: 105,
+		good: 105,
+		healing: 105,
+		magic: 105,
+		purification: 105,
+		undeath: 105,
+		war: 105,
+		water: 105,
+	},
+	school: {
+		abjuration: 105,
+		alteration: 105,
+		auspex: 105,
+		charm: 105,
+		conjuration: 105,
+		divination: 105,
+		enchantment: 105,
+		evocation: 105,
+		illusion: 105,
+		invocation: 105,
+		necromancy: 105,
+		phantasm: 105,
+		summoning: 105,
+		transmutation: 105,
 		unarmed: 105,
 	},
 	equipped: {
@@ -353,9 +386,11 @@ function command(c) {
 			if(c[0] == "i" || c[0] == "inv" || c[0] == "inventory") {
 				console.log(c);
 				post("********** Inventory **********",2);
+				i = 0;
 				for(i=0;i<character.inventory.length;i++) {
 					post(character.inventory[i],4);
 				}
+				post("********** " + i + " items **********",2);
 			}
 			if(c[0].toLowerCase() == "heal") {
 				console.log(character.name);
