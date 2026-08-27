@@ -267,6 +267,10 @@ function command(c) {
 			}
 		}
 		if(c.length == 2) {
+			if(c[0] == "cast") {
+				//verify ability and pools 
+				qSpell = c[1];
+			}			
 			if(c[0] == "flee") {
 				mobID = c[1];
 				mobI = grid.mobIDs.indexOf(mobID);
