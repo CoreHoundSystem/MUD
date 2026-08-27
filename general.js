@@ -16,7 +16,7 @@ $(function() {
 // modify these
 function save() {
 	document.cookie = JSON.stringify(character);
-	console.log(document.cookie);
+	//console.log(document.cookie);
 }
 
 function load() {
@@ -45,7 +45,7 @@ bilgeRat = {
 }
 
 character = {
-	name: "",
+	name: "Evander",
 	grid: "gridA4",
 	level: 1,
 	xp: 0,
