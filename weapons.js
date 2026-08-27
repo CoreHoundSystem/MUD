@@ -5,5 +5,10 @@ longsword = {
 
 bite = {
 	skill: "natural",
+	damage: "1d3",
+}
+
+unarmed = {
+	skill: "unarmed",
 	damage: "1d2",
 }
