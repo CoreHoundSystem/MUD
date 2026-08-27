@@ -2,10 +2,12 @@
 $(function() {
 	post("Loading game version 0.1.0.",2);
 	post("Game Loaded.",2);
-	loadGrid(gridA4);
-	startBreathing(character);
-	save();
+	
+	
+
 	load();
+	loadGrid(window[character.grid]);
+	startBreathing(character);
 	//Cookies.set('character', character);
 	//console.log(Cookies.get('character'));
 })
@@ -32,6 +34,7 @@ bite = {
 
 character = {
 	name: "Evander",
+	grid: "gridA4",
 	level: 20,
 	hp: {
 		current: 1,
