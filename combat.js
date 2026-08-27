@@ -2,17 +2,17 @@ function combat(x,y) {
 	console.log(x);
 	console.log(y);
 	//enter 'combatMode'
-	//x = player, y = target
+	//x = target
 	//build numbers
 	//find att and skill
-	cAtt = x.attr.str;
-	cSkill = x.skill.unarmed.rating;
-	if(x.equipped.mainhand !== "") {
+	cAtt = character.attr.str;
+	cSkill = character.skill.unarmed.rating;
+	if(character.equipped.mainhand !== "") {
 		//build database of weapons and skills
-		console.log(x.equipped.mainhand);
+		console.log(character.equipped.mainhand);
 	}
-	cLvl = x.level;
-	threat = ((cLvl + y.level) * .05);
+	cLvl = character.level;
+	threat = ((cLvl + x.level) * .05);
 	console.log(threat);
 	console.log(x.level);
 	if(threat == 0) {
