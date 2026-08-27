@@ -58,7 +58,10 @@ character = {
 	},
 	equipped: {
 		mainhand: "Longsword",
-	}
+	},
+	inventory: [
+		"Scrap of bread",
+	],
 	
 }
 bilgeRat = {
@@ -248,6 +251,7 @@ function command(c) {
 			console.log(gets);
 			getI = grid.get.indexOf(gets);								//sets index of get request
 			if(getI >= 0) {												//gets index of gets from 'get' array
+				character.inventory.push(gets);
 				post(character.name + " picks up " + gets,0);			
 				grid.get.splice(getI, 1);								//updates active grid get line
 				window[grid.id] = grid;									//
