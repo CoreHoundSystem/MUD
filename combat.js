@@ -1,5 +1,6 @@
-
 function combat(x,y) {
+	console.log(x);
+	console.log(y);
 	//enter 'combatMode'
 	//x = player, y = target
 	//build numbers
