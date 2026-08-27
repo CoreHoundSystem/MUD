@@ -291,8 +291,8 @@ function command(c) {
 				console.log(path);
 				if(grid.paths.indexOf(path) > -1) {
 					loadGrid(window[grid.pathIDs[grid.paths.indexOf(path)]]);
-					character.grid = window[grid.pathIDs[grid.paths.indexOf(path)]];
-					console.log(window[grid.pathIDs[grid.paths.indexOf(path)]]);
+					character.grid = grid.paths.indexOf(path);
+					console.log(grid.paths.indexOf(path));
 				}
 			}
 			//check if senses
