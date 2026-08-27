@@ -258,8 +258,8 @@ function command(c) {
 				post(character.name + " picks up " + gets,0);			
 				grid.get.splice(getI, 1);								//updates active grid get line
 				window[grid.id] = grid;									//
-				console.log(window[grid.id]);
-				loadGrid(window[grid.id]);
+				console.log(grid);
+				loadGrid(grid);
 			} else {
 				post("There is no " + gets + " present.",2);
 			}
