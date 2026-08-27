@@ -53,7 +53,7 @@ function combat(x,y) {
 						missRan = miss[Math.floor(Math.random() * miss.length)];
 						post(character.name + attRan + cWeapon + missRan,3);
 					} else {
-						stumRan = miss[Math.floor(Math.random() * stum.length)];
+						stumRan = stum[Math.floor(Math.random() * stum.length)];
 						post(character.name + attRan + cWeapon + stumRan,3);
 						qSpell = "his action to regain composure.";
 					}
