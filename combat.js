@@ -6,16 +6,18 @@ function combat(x,y) {
 	//find att and skill
 	cAtt = x.attr.str;
 	cSkill = x.skill.unarmed.rating;
-	if(x.mainhand !== "") {
+	if(x.equipped.mainhand !== "") {
 		//build database of weapons and skills
+		console.log(x.equipped.mainhand);
 	}
 	cLvl = x.level;
 	threat = ((cLvl + y.level) * .05);
 	if(threat == 0) {
 		threat = .05;
 	}
+	console.log(threat);
 	bonus = ((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
-	
+	console.log(bonus);
 	result = "";
 	roll = Math.floor(Math.random()*100)+1;
 	max = 95;	//dual wield and two hander
