@@ -240,11 +240,26 @@ function command(c) {
 	post(c,1);
 	console.log(c);
 	console.log(c.substring(0,c.indexOf(" ")));
-	if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say" || c.substring(0,c.indexOf(" ")).toLowerCase() == "get" || c.substring(0,c.indexOf(" ")).toLowerCase() == "attack") {
+	if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say" || c.substring(0,c.indexOf(" ")).toLowerCase() == "drop" || c.substring(0,c.indexOf(" ")).toLowerCase() == "get" || c.substring(0,c.indexOf(" ")).toLowerCase() == "attack") {
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "say") {
 			says = c.substring(c.indexOf(" "),c.length);
 			console.log(says);
 			post(character.name + " says: " + says,0);
+		}
+		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "drop") {
+			drops = c.substring(c.indexOf(" ")+1,c.length);
+			console.log(drops);
+			inv = character.inventory;
+			dropI = inv.indexOf(drops);
+			if(dropI >= 0) {
+				inv.splice(dropI, 1);
+				chracter.inventory = inv;
+				gets = grid.get;
+				gets.push(drops);
+				grid.get = gets;
+				console.log(grid);
+				loadGrid(grid);
+			}
 		}
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "get") {
 			gets = c.substring(c.indexOf(" ")+1,c.length);				//identifies get request string
