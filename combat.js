@@ -51,15 +51,24 @@ function combat(x,y) {
 					attRan = att[Math.floor(Math.random() * att.length)];
 					if(doCrit == 0) {
 						missRan = miss[Math.floor(Math.random() * miss.length)];
-						post(character.name + attRan + cWeapon + missRan,3);
+						post(character.name + attRan + cWeapon + missRan,7);
 					} else {
 						stumRan = stum[Math.floor(Math.random() * stum.length)];
-						post(character.name + attRan + cWeapon + stumRan,3);
+						post(character.name + attRan + cWeapon + stumRan,8);
 						qSpell = "his action to regain composure.";
 					}
 				} else {
 					result = "hits!";
-					
+					console.log(Math.floor(Math.random() * miss.length));
+					attRan = att[Math.floor(Math.random() * att.length)];
+					if(doCrit == 0) {
+						hitRan = miss[Math.floor(Math.random() * hit.length)];
+						post(character.name + attRan + cWeapon + hitRan,7);
+					} else {
+						critRan = crit[Math.floor(Math.random() * crit.length)];
+						post(character.name + attRan + cWeapon + critRan,8);
+						qSpell = "his skill to attack twice!";
+					}	
 				}
 				console.log(roll + " " + result);
 			} else {
