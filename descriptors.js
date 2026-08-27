@@ -4,8 +4,13 @@ att = [
 ]
 
 hit = [
-	" and hits true.",
-	" and strikes a mighty blow.",
+	" and hits his target.",
+	" and strikes a solid blow.",
+]
+
+crit = [
+	" and hits true!",
+	" and scores a mighty blow!",
 ]
 
 miss = [
@@ -14,7 +19,7 @@ miss = [
 ]
 
 stum = [
-	" and trips and falls to the ground.",
-	" and stumbles forward.",
-	" and nearly injures themself.",
+	" and trips and falls to the ground!",
+	" and stumbles forward!",
+	" and nearly injures themself!",
 ]
