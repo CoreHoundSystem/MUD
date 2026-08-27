@@ -290,9 +290,9 @@ function command(c) {
 				path = c[0].substring(0,1).toUpperCase() + c[0].substring(1);
 				console.log(path);
 				if(grid.paths.indexOf(path) > -1) {
-					loadGrid(window[grid.pathIDs[grid.paths.indexOf(path)]]);
 					character.grid = grid.pathIDs[grid.paths.indexOf(path)];
 					console.log(grid.pathIDs[grid.paths.indexOf(path)]);
+					loadGrid(window[grid.pathIDs[grid.paths.indexOf(path)]]);
 				}
 			}
 			//check if senses
