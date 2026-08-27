@@ -6,12 +6,12 @@ $(function() {
 	
 	if(document.cookie == "null") {
 		console.log(document.cookie);
-		
+		//prompt to select character
 	} else {
 		console.log(document.cookie);
 		character = JSON.parse(document.cookie);
 	}
-	load();
+	//load();
 	loadGrid(window[character.grid]);
 	startBreathing(character);
 	//Cookies.set('character', character);
@@ -282,6 +282,7 @@ function command(c) {
 				post("Reseting " + character.name + ".",2);
 				character = null;
 				console.log(c);
+				//reset game
 			}
 			//check if path
 			console.log(paths.indexOf(c[0].toLowerCase()));
@@ -291,6 +292,7 @@ function command(c) {
 				if(grid.paths.indexOf(path) > -1) {
 					loadGrid(window[grid.pathIDs[grid.paths.indexOf(path)]]);
 					character.grid = grid.pathIDs[grid.paths.indexOf(path)];
+					console.log(grid.pathIDs[grid.paths.indexOf(path)]);
 				}
 			}
 			//check if senses
