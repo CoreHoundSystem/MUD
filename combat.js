@@ -14,7 +14,7 @@ function combat(x,y) {
 	cLvl = x.level;
 	threat = ((cLvl + y.level) * .05);
 	console.log(threat);
-	console.log(y.level);
+	console.log(x.level);
 	if(threat == 0) {
 		threat = .05;
 	}
@@ -39,31 +39,4 @@ function combat(x,y) {
 	console.log(roll + " " + result);
 	//start interval
 	
-
-
-	
-	
-	
-	
-	/*
-	bonus = ((character.attr.dex - cLvl) 
-		+ (character.skill.sword.rating - (cLvl * 5)))
-		/ threat;
-	//
-	console.log(character.attr.dex);
-	console.log(character.level);
-	console.log(character.skill.sword);
-	console.log(bilgeRat.level);
-	console.log(character.attr.dex - character.level);
-	//console.log((character.attr.dex - character.level) / character.level);
-	//console.log(((character.attr.dex - character.level) / character.level) * 10);
-	console.log(character.skill.sword.rating - (character.level * 5));
-	console.log((character.level + bilgeRat.level) * 5);
-	console.log(x.name + " attacks " + y + ".");
-	console.log("Hit chance " + (95 + bonus));
-	*/
-
-	//+ Math.floor(Math.random()*100)+1 < y) {
-		
-		
 }
