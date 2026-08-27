@@ -37,7 +37,7 @@ function combat(x,y) {
 				result = "misses.";
 				attackRan = attack[Math.floor(Math.random() * miss.length)+1];
 				missRan = miss[Math.floor(Math.random() * miss.length)+1];
-				post(character.name + attackRan + character.equiped.mainhand + missRan",3);
+				post(character.name + attackRan + character.equiped.mainhand + missRan,3);
 			} else {
 				result = "hits!";
 				
