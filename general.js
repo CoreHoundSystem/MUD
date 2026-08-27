@@ -278,7 +278,7 @@ function command(c) {
 				console.log(character.name);
 				
 				post("Reseting " + character.name + ".",2);
-				character = "none";
+				character = null;
 				console.log(c);
 			}
 			//check if path
