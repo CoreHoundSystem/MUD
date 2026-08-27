@@ -4,7 +4,7 @@ $(function() {
 	post("Game Loaded.",2);
 	
 	
-	if(document.cookie = "null") {
+	if(document.cookie == "null") {
 		console.log(document.cookie);
 		
 	} else {
