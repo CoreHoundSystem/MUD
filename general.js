@@ -277,7 +277,7 @@ function command(c) {
 				console.log(character.name);
 				
 				post("Reseting " + character.name + ".",2);
-				document.cookie = "";
+				character = "none";
 				console.log(c);
 			}
 			//check if path
