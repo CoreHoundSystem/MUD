@@ -41,7 +41,7 @@ function combat(x,y) {
 					console.log(Math.floor(Math.random() * miss.length)+1);
 					attRan = att[Math.floor(Math.random() * att.length)+1];
 					missRan = miss[Math.floor(Math.random() * miss.length)+1];
-					post(character.name + attackRan + character.equiped.mainhand + missRan,3);
+					post(character.name + attRan + character.equiped.mainhand + missRan,3);
 				} else {
 					result = "hits!";
 					
