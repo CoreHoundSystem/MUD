@@ -6,6 +6,7 @@ $(function() {
 	
 	if(document.cookie) {
 		console.log("Cookie found");
+		character = document.cookie;
 	} else {
 		console.log("No cookie");
 	}
