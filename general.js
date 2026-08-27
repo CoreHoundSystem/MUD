@@ -312,6 +312,7 @@ function command(c) {
 			}
 		}
 	}
+	save();
 }
 
 function startBreathing(c) {
