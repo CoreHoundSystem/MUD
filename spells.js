@@ -1,0 +1,4 @@
+heroicStrike = {
+	//requirements
+	
+}
