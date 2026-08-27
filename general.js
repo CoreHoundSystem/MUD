@@ -4,11 +4,12 @@ $(function() {
 	post("Game Loaded.",2);
 	
 	
-	if(document.cookie) {
-		console.log("Cookie found");
-		character = document.cookie;
+	if(document.cookie = null) {
+		console.log(document.cookie);
+		
 	} else {
-		console.log("No cookie");
+		console.log(document.cookie);
+		character = document.cookie;
 	}
 	load();
 	loadGrid(window[character.grid]);
