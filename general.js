@@ -22,6 +22,7 @@ $(function() {
 // modify these
 function save() {
 	document.cookie = JSON.stringify(character);
+	console.log(document.cookie);
 }
 
 function load() {
