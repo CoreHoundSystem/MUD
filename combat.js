@@ -17,21 +17,31 @@ function combat(x,y) {
 		xMain = x.equipped.mainhand;
 		xOff = x.equipped.offhand;
 		yWeapon = y.weapon;
-		console.log(window[xMain]);
-		console.log(window[xOff]);
+		console.log(window[xMain].used);
+		console.log(window[xOff].used);
 		console.log(window[yWeapon].used);
+		xMainFreq = 0;
+		xOffFreq = 0;
+		yWeaponFreq = 0;
+		if(x.equipped.mainhand == "") {
+			xMain = unarmed;
+		}
 		if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && (window[xOff].used == "offhand" || window[xOff].used == "mainhand")) {
 			//player is dualwielding
 			base = 76;
+			xMainFreq = ;
+			xOffFreq = ;
 		}
 		if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && window[xOff].used == "shield") {
 			//player is using a shield
 			base = 85;
 			block = window[xOff].block;
+			xMainFreq = ;
 		}
 		if(window[xMain].used == "twohand") {
 			//player is using both hands
 			base = 89;
+			xMainFreq = ;
 		}
 		
 	}
