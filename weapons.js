@@ -4,6 +4,7 @@ longsword = {
 	used: "mainhand",
 	parry: 10,
 	speed: 3,
+	attr: "str",
 }
 
 greatsword = {
@@ -12,6 +13,7 @@ greatsword = {
 	used: "twohand",
 	parry: 20,
 	speed: 5,
+	attr: "str",
 }
 
 dagger = {
@@ -20,6 +22,7 @@ dagger = {
 	used: "onehand",
 	parry: 5,
 	speed: 1,
+	attr: "dex",
 }
 
 parryingDagger = {
@@ -28,6 +31,7 @@ parryingDagger = {
 	used: "offhand",
 	parry: 15,
 	speed: 2,
+	attr: "str",
 }
 
 bite = {
@@ -36,6 +40,7 @@ bite = {
 	used: "twohand",
 	parry: 0,
 	speed: 3,
+	attr: "str",
 }
 
 unarmed = {
@@ -44,6 +49,7 @@ unarmed = {
 	used: "twohand",
 	parry: 0,
 	speed: 3,
+	attr: "str",
 }
 
 shield = {
@@ -52,4 +58,5 @@ shield = {
 	used: "shield",
 	block: 30,
 	speed: 3,
+	attr: "str",
 }
