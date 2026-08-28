@@ -24,26 +24,28 @@ function combat(x,y) {
 		xOffFreq = 0;
 		yWeaponFreq = 0;
 		if(x.equipped.mainhand == "") {
-			xMain = unarmed;
-		}
-		if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && (window[xOff].used == "offhand" || window[xOff].used == "mainhand")) {
-			//player is dualwielding
-			base = 76;
-			xMainFreq = ;
-			xOffFreq = ;
-		}
-		if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && window[xOff].used == "shield") {
-			//player is using a shield
-			base = 85;
-			block = window[xOff].block;
-			xMainFreq = ;
-		}
-		if(window[xMain].used == "twohand") {
-			//player is using both hands
+			xMain = "unarmed";
 			base = 89;
-			xMainFreq = ;
+			xMainFreq = window[xMain].speed;
+		} else {
+			if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && (window[xOff].used == "offhand" || window[xOff].used == "mainhand")) {
+				//player is dualwielding
+				base = 76;
+				xMainFreq = window[xMain].speed;
+				xOffFreq = window[xOff].speed;
+			}
+			if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && window[xOff].used == "shield") {
+				//player is using a shield
+				base = 85;
+				block = window[xOff].block;
+				xMainFreq = window[xMain].speed;
+			}
+			if(window[xMain].used == "twohand") {
+				//player is using both hands
+				base = 89;
+				xMainFreq = window[xMain].speed;
+			}
 		}
-		
 	}
 	//get character data once
 		//start with weapon - it defines a lot
