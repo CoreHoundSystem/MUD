@@ -73,7 +73,16 @@ function combat(x,y) {
 			console.log(x.attr[xMainAttr]);
 			bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating + (x.level * 5))) / threat;
 			console.log(bonus);
-			Math.floor(Math.random() * 100) +1;
+			aRating = bonus + base;
+			aMax = 95;
+			if(aRating >= aMax) {
+				aRating = aMax
+			}
+			if((Math.floor(Math.random() * 100) + 1) < aRating) {
+				console.log("Hit");
+			} else {
+				console.log("Miss");
+			}
 		}, xMainFreq * 1000);
 		
 		
