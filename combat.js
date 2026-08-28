@@ -51,13 +51,17 @@ function combat(x,y) {
 		xOffParry = 0;
 		//yWeaponParry = 0;
 		xMainSkill = window[xMain].skill;
-		xOffSkill = window[xOff].skill;
 		//yWeaponSkill = "";
 		xMainFreq = window[xMain].speed;
 		xMainParry = window[xMain].parry;
 		xMainAttr = window[xMain].attr;
 		yWeaponAttr = window[yWeapon].attr;
+		threat = ((x.level + y.level) * .05);
+		if(threat == 0) {
+			threat = .05;
+		}
 		if(dualWield == 1) {
+			xOffSkill = window[xOff].skill;
 			xOffFreq = window[xOff].speed;
 			xMainParry = window[xMain].parry + window[xOff].parry;
 			xOffAttr = window[xOff].attr;
@@ -65,9 +69,10 @@ function combat(x,y) {
 		//launch attacks
 		xMainInterval = setInterval(function() {
 			//((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
+			//((cLvl + window[y].level) * .05)
 			console.log(x.attr[xMainAttr]);
-			bonus = (x.attr[xMainAttr] - x.level);
-			
+			bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill] + (x.level * 5))) / threat;
+			console.log(bonus);
 			Math.floor(Math.random() * 100) +1;
 		}, xMainFreq);
 		
