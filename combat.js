@@ -18,7 +18,7 @@ function combat(x,y) {
 		xOff = x.equipped.offhand;
 		yWeapon = y.weapon;
 		console.log(window[xMain]);
-		console.log(window[xOff]used);
+		console.log(window[xOff]);
 		console.log(window[yWeapon].used);
 		if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && (window[xOff].used == "offhand" || window[xOff].used == "mainhand")) {
 			//player is dualwielding
