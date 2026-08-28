@@ -5,7 +5,7 @@ bilgeRat = {
 	hp: {
 		current: 30,
 		max: 30,
-	}
+	},
 	weapon: "bite",
 	special: ["flee"],
 	specialDetails: [25],
