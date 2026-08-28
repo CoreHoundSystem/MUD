@@ -74,7 +74,7 @@ function combat(x,y) {
 			bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill] + (x.level * 5))) / threat;
 			console.log(bonus);
 			Math.floor(Math.random() * 100) +1;
-		}, xMainFreq);
+		}, xMainFreq * 1000);
 		
 		
 	}
