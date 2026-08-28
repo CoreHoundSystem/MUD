@@ -89,19 +89,19 @@ function combat(x,y) {
 				console.log("Hit");
 				if(crit == 1) {
 					critRan = crit[Math.floor(Math.random() * crit.length)];
-					post(character.name + aRan + xMain + critRan,5);
+					post(character.name + aRan + xMain + critRan,6);
 				} else {
 					hitRan = hit[Math.floor(Math.random() * hit.length)];
-					post(character.name + aRan + xMain + hitRan,6);
+					post(character.name + aRan + xMain + hitRan,5);
 				}
 			} else {
 				console.log("Miss");
 				if(crit == 1) {
 					stumRan = stum[Math.floor(Math.random() * stum.length)];
-					post(character.name + aRan + xMain + stumRan,7);
+					post(character.name + aRan + xMain + stumRan,8);
 				} else {
 					missRan = miss[Math.floor(Math.random() * miss.length)];
-					post(character.name + aRan + xMain + missRan,8);
+					post(character.name + aRan + xMain + missRan,7);
 				}
 			}
 		}, xMainFreq * 1000);
