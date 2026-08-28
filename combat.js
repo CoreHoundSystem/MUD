@@ -22,9 +22,9 @@ function combat(x,y) {
 					cCrit = "";
 				}
 				cLvl = character.level;
-				threat = ((cLvl + window[y].level) * .05);
+				threat = ((cLvl + y.level) * .05);
 				console.log(threat);
-				console.log(window[y].level);
+				console.log(y.level);
 				if(threat == 0) {
 					threat = .05;
 				}
