@@ -27,3 +27,10 @@ unarmed = {
 	damage: "1d2",
 	used: "twohand",
 }
+
+unarmed = {
+	skill: "shield",
+	damage: "1d2",
+	used: "shield",
+	block: 30,
+}
