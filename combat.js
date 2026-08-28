@@ -59,10 +59,10 @@ function combat(x,y) {
 					}
 				} else {
 					result = "hits!";
-					console.log(Math.floor(Math.random() * miss.length));
+					console.log(Math.floor(Math.random() * hit.length));
 					attRan = att[Math.floor(Math.random() * att.length)];
 					if(doCrit == 0) {
-						hitRan = miss[Math.floor(Math.random() * hit.length)];
+						hitRan = hit[Math.floor(Math.random() * hit.length)];
 						post(character.name + attRan + cWeapon + hitRan,7);
 					} else {
 						critRan = crit[Math.floor(Math.random() * crit.length)];
