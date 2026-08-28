@@ -18,20 +18,19 @@ function combat(x,y) {
 		xOff = x.equipped.offhand;
 		yWeapon = y.weapon;
 		dualWield = 0;
-		console.log(window[xMain].used);
-		console.log(window[xOff].used);
-		console.log(window[yWeapon].used);
 		xMainFreq = 0;
 		xOffFreq = 0;
 		yWeaponFreq = 0;
 		xMainParry = 0;
 		xOffParry = 0;
 		yWeaponParry = 0;
+		console.log(window[yWeapon].used);
 		if(x.equipped.mainhand == "") {
 			xMain = "unarmed";
 			base = 89;
 			xMainFreq = window[xMain].speed;
 			xMainParry = window[xMain].parry;
+			console.log(window[xMain].used);
 		} else {
 			if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && (window[xOff].used == "offhand" || window[xOff].used == "mainhand")) {
 				//player is dualwielding
@@ -40,6 +39,8 @@ function combat(x,y) {
 				xMainFreq = window[xMain].speed;
 				xOffFreq = window[xOff].speed;
 				xMainParry = window[xMain].parry + window[xOff].parry;
+				console.log(window[xMain].used);
+				console.log(window[xOff].used);
 			}
 			if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && window[xOff].used == "shield") {
 				//player is using a shield
@@ -47,12 +48,15 @@ function combat(x,y) {
 				block = window[xOff].block;
 				xMainFreq = window[xMain].speed;
 				xMainParry = window[xMain].parry;
+				console.log(window[xMain].used);
+				console.log(window[xOff].used);
 			}
 			if(window[xMain].used == "twohand") {
 				//player is using both hands
 				base = 89;
 				xMainFreq = window[xMain].speed;
 				xMainParry = window[xMain].parry;
+				console.log(window[xMain].used);
 			}
 		}
 	}
