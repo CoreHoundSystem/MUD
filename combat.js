@@ -76,12 +76,33 @@ function combat(x,y) {
 			aRating = bonus + base;
 			aMax = 95;
 			if(aRating >= aMax) {
-				aRating = aMax
+				aRating = aMax;
 			}
-			if((Math.floor(Math.random() * 100) + 1) < aRating) {
+			roll = Math.floor(Math.random() * 100) + 1;
+			cRoll = Math.floor(Math.random() * 100) + 1;
+			crit = 0;
+			if(cRoll <= 5) {
+				crit = 1;
+			}
+			aRan = miss[Math.floor(Math.random() * att.length)];
+			if(roll < aRating) {
 				console.log("Hit");
+				if(crit == 1) {
+					critRan = crit[Math.floor(Math.random() * crit.length)];
+					post(character.name + aRan + xMain + critRan,5);
+				} else {
+					hitRan = hit[Math.floor(Math.random() * hit.length)];
+					post(character.name + aRan + xMain + hitRan,6);
+				}
 			} else {
 				console.log("Miss");
+				if(crit == 1) {
+					stumRan = stum[Math.floor(Math.random() * stum.length)];
+					post(character.name + aRan + xMain + stumRan,7);
+				} else {
+					missRan = miss[Math.floor(Math.random() * miss.length)];
+					post(character.name + aRan + xMain + missRan,8);
+				}
 			}
 		}, xMainFreq * 1000);
 		
