@@ -71,7 +71,7 @@ function combat(x,y) {
 			//((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
 			//((cLvl + window[y].level) * .05)
 			console.log(x.attr[xMainAttr]);
-			bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating + (x.level * 5))) / threat;
+			bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating - (x.level * 5))) / threat;
 			console.log(bonus);
 			aRating = bonus + base;
 			aMax = 95;
