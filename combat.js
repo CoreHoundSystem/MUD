@@ -20,7 +20,7 @@ function combat(x,y) {
 		console.log(window[xMain].used);
 		console.log(window[xOff].used);
 		console.log(window[yWeapon].used);
-		if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && (window[xOff].used == "offhand" || window[xOff].used == "mainhand") {
+		if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && (window[xOff].used == "offhand" || window[xOff].used == "mainhand")) {
 			//player is dualwielding
 			base = 76;
 		}
