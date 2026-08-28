@@ -18,12 +18,6 @@ function combat(x,y) {
 		xOff = x.equipped.offhand;
 		yWeapon = y.weapon;
 		dualWield = 0;
-		xMainFreq = 0;
-		xOffFreq = 0;
-		yWeaponFreq = 0;
-		xMainParry = 0;
-		xOffParry = 0;
-		yWeaponParry = 0;
 		console.log(window[yWeapon].used);
 		if(x.equipped.mainhand == "") {
 			xMain = "unarmed";
@@ -54,11 +48,29 @@ function combat(x,y) {
 			if(window[xMain].used == "twohand") {
 				//player is using both hands
 				base = 89;
-				xMainFreq = window[xMain].speed;
+				
 				xMainParry = window[xMain].parry;
 				console.log(window[xMain].used);
 			}
 		}
+		xMainFreq = 0;
+		xOffFreq = 0;
+		//yWeaponFreq = 0;
+		xMainParry = 0;
+		xOffParry = 0;
+		//yWeaponParry = 0;
+		xMainSkill = window[xMain].skill;
+		xOffSkill = window[xOff].skill;
+		//yWeaponSkill = "";
+		xMainFreq = window[xMain].speed;
+		xMainParry = window[xMain].parry;
+		if(dualWield == 1) {
+			xOffFreq = window[xOff].speed;
+			xMainParry = window[xMain].parry + window[xOff].parry;
+		}
+		
+		
+		
 	}
 	//get character data once
 		//start with weapon - it defines a lot
