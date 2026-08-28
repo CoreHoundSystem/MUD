@@ -211,9 +211,11 @@ function command(c) {
 			if(grid.mobs.indexOf(target) >= 0) {
 				tI = grid.mobs.indexOf(target); 	//may not be mob
 				//confirm target
-				console.log(window[grid.mobIDs[tI]]);
+				console.log(grid.mobIDs[tI]);
+				m = grid.mobIDs[tI];
+				console.log(window[m]);
 				post(character.name + " attacks " + target,0);
-				combat(character,window[grid.mobIDs[tI]]);
+				combat(character,window[m]);
 			} else {
 				post("There is no "+ target + " here.",0);
 			}
