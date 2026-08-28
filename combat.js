@@ -22,34 +22,25 @@ function combat(x,y) {
 		if(x.equipped.mainhand == "") {
 			xMain = "unarmed";
 			base = 89;
-			xMainFreq = window[xMain].speed;
-			xMainParry = window[xMain].parry;
 			console.log(window[xMain].used);
 		} else {
 			if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && (window[xOff].used == "offhand" || window[xOff].used == "mainhand")) {
 				//player is dualwielding
 				dualWield = 1;
 				base = 76;
-				xMainFreq = window[xMain].speed;
-				xOffFreq = window[xOff].speed;
-				xMainParry = window[xMain].parry + window[xOff].parry;
 				console.log(window[xMain].used);
 				console.log(window[xOff].used);
 			}
 			if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && window[xOff].used == "shield") {
 				//player is using a shield
 				base = 85;
-				block = window[xOff].block;
-				xMainFreq = window[xMain].speed;
-				xMainParry = window[xMain].parry;
+				block = window[xOff].block;	//may move is shield needs to be boolean
 				console.log(window[xMain].used);
 				console.log(window[xOff].used);
 			}
 			if(window[xMain].used == "twohand") {
 				//player is using both hands
 				base = 89;
-				
-				xMainParry = window[xMain].parry;
 				console.log(window[xMain].used);
 			}
 		}
@@ -64,11 +55,21 @@ function combat(x,y) {
 		//yWeaponSkill = "";
 		xMainFreq = window[xMain].speed;
 		xMainParry = window[xMain].parry;
+		xMainAttr = window[xMain].attr;
+		yWeaponAttr = window[yWeapon].attr;
 		if(dualWield == 1) {
 			xOffFreq = window[xOff].speed;
 			xMainParry = window[xMain].parry + window[xOff].parry;
+			xOffAttr = window[xOff].attr;
 		}
-		
+		//launch attacks
+		xMainInterval = setInterval(function() {
+			//((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
+			console.log(x.attr[xMainAttr]);
+			bonus = (x.attr[xMainAttr] - x.level);
+			
+			Math.floor(Math.random() * 100) +1;
+		}, xMainFreq);
 		
 		
 	}
