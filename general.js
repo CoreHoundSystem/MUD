@@ -23,6 +23,7 @@ function load() {
 	console.log(JSON.parse(document.cookie));
 }
 
+character = "";
 healAMT = 15;
 
 // modify above
@@ -35,10 +36,10 @@ classes = [
 	"serverCommand",		//server responses to player commands
 	"adminCommands",		//admin commands and server updates
 	"list",					//indents items in a list for readability
-	"notSet",
-	"notSet",
-	"notSet",
-	"notSet",
+	"playerSucceeds",
+	"pSucceedsCrit",
+	"playerFails",
+	"pFailsCrit",
 	"notSet",
 	"notSet",
 	//spell schools (11-30)
@@ -206,11 +207,16 @@ function command(c) {
 		if(c.substring(0,c.indexOf(" ")).toLowerCase() == "attack") {
 			target = c.substring(c.indexOf(" ")+1,c.length);
 			console.log(target);
-			post(character.name + " attacks " + target,0);
-			tI = grid.mobs.indexOf(target); 	//may not be mob
 			//confirm target
-			console.log(grid.mobIDs[tI]);
-			combat(character,grid.mobIDs[tI]);
+			if(grid.mobs.indexOf(target) >= 0) {
+				tI = grid.mobs.indexOf(target); 	//may not be mob
+				//confirm target
+				console.log(grid.mobIDs[tI]);
+				post(character.name + " attacks " + target,0);
+				combat(character,grid.mobIDs[tI]);
+			} else {
+				post("There is no "+ target + " here.",0);
+			}
 		}
 	} else {
 		c = c.split(" ");
