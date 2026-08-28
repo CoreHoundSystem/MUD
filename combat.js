@@ -84,7 +84,7 @@ function combat(x,y) {
 			if(cRoll <= 5) {
 				crit = 1;
 			}
-			aRan = miss[Math.floor(Math.random() * att.length)];
+			aRan = att[Math.floor(Math.random() * att.length)];
 			if(roll < aRating) {
 				console.log("Hit");
 				if(crit == 1) {
