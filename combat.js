@@ -6,7 +6,7 @@ function combat(x,y) {
 	//enter 'combatMode'
 	
 	doBattle = setInterval(function() {
-		if(character.hp.current <= 0 || window[y].hp.current <= 0) {
+		if(character.hp.current <= 0 || y.hp.current <= 0) {
 			//stop
 		} else {
 			if(qSpell == "") {
