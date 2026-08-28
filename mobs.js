@@ -2,7 +2,10 @@ bilgeRat = {
 	name: "Bilge Rat",
 	level: -1,
 	id: "bilgeRat",
-	hp: 30,
+	hp: {
+		current: 30,
+		max: 30,
+	}
 	weapon: "bite",
 	special: ["flee"],
 	specialDetails: [25],
