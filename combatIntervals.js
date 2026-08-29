@@ -115,9 +115,9 @@ function combatInterval(w,x,y,z,b) {
 		}
 		desc = e[Math.floor(Math.random() * e.length)];
 		post(x.name + aRan + window[window[a + "weapon"]].cName + " at " + w.name + desc,dStyle);
-		if(y.hp.current <= 0) {
+		if(w.hp.current <= 0) {
 			clearInterval(xMainInterval);
-			console.log(y.name + " dies!");
+			console.log(w.name + " dies!");
 			//corpse funtion
 		}
 		//award xp
