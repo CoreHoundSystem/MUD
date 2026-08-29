@@ -196,7 +196,7 @@ function combat(x,y) {
 			}
 			//award xp
 			console.log(x.name + " gains " + xp + " experience.");
-			hp();
+			command("hp");
 			xMainFreq = xMainFreq * f;
 		}, xMainFreq * 1000);
 		if(dualWield == 1) {
