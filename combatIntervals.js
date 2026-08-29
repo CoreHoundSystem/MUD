@@ -8,7 +8,7 @@ function combatInterval(w,x,y,z,b) {
 	if(window[a + "weapon"] == "") {
 		window[a + "weapon"] = "unarmed";
 	}				
-	freq = 0;
+	freq = window[window[a + "weapon"]].speed;
 	console.log(window[a + "weapon"]);
 	f = 1;
 	window[a] = setInterval(function() {
@@ -114,7 +114,7 @@ function combatInterval(w,x,y,z,b) {
 			}
 		}
 		desc = e[Math.floor(Math.random() * e.length)];
-		post(x.name + aRan + window[xMain].cName + " at " + y.name + desc,dStyle);
+		post(x.name + aRan + window[window[a + "weapon"]].cName + " at " + w.name + desc,dStyle);
 		if(y.hp.current <= 0) {
 			clearInterval(xMainInterval);
 			console.log(y.name + " dies!");
