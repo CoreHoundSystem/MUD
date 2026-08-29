@@ -8,7 +8,7 @@ hit = [
 	" and strikes a solid blow.",
 ]
 
-crit = [
+critical = [
 	" and hits true!",
 	" and scores a mighty blow!",
 ]
