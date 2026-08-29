@@ -40,6 +40,7 @@ function combat(x,y) {
 				console.log(window[xMain].used);
 			}
 		}
+		/*
 		xMainFreq = 0;
 		xOffFreq = 0;
 		yWeaponFreq = window[yWeapon].speed;
@@ -52,16 +53,18 @@ function combat(x,y) {
 		xMainParry = window[xMain].parry;
 		xMainAttr = window[xMain].attr;
 		yWeaponAttr = window[yWeapon].attr;
+		*/
 		threat = ((x.level + y.level) * .05);
 		if(threat == 0) {
 			threat = .05;
 		}
+		/*
 		if(dualWield == 1) {
 			xOffSkill = window[xOff].skill;
 			xOffFreq = window[xOff].speed;
 			xMainParry = window[xMain].parry + window[xOff].parry;
 			xOffAttr = window[xOff].attr;
-		}
+		}*/
 		//launch attacks
 		
 		combatInterval(y,x,"mainhand",threat,base);
