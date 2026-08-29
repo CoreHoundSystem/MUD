@@ -4,6 +4,7 @@ function combatInterval(w,x,y,z,b) {
 	//i.e. combatInterval(characterID,"mainhand")
 	a = x.name + y +"Interval";
 	freq = 0;
+	f = 1;
 	window[a] = setInterval(function() {
 		window[a + "weapon"] = x.equipped[y];				//identifies equipped weapon in specified hand
 		console.log(window[a + "weapon"]);					//this should read Evandermainhand = "";
@@ -37,7 +38,6 @@ function combatInterval(w,x,y,z,b) {
 		dType = d[1];
 		dRoll = dice * Math.floor(Math.random() * dType) + 1;
 		//set counters and descriptors
-		f = 1;
 		xp = 0;
 		aRan = att[Math.floor(Math.random() * att.length)];
 		desc = "";
