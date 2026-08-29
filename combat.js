@@ -1,8 +1,6 @@
 qSpell = "";		//qued spell
 
 function combat(x,y) {
-	console.log(x);
-	console.log(y);
 	//confirm participants - perfomed in command function
 	//confirm both have at least 1 hp
 	base = 95;
@@ -18,11 +16,9 @@ function combat(x,y) {
 		xOff = x.equipped.offhand;
 		yWeapon = y.weapon;
 		dualWield = 0;
-		console.log(window[yWeapon].used);
 		if(x.equipped.mainhand == "") {
 			xMain = "unarmed";
 			base = 189;	//return to 89 after testing
-			console.log(window[xMain].used);
 		} else {
 			if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && (window[xOff].used == "offhand" || window[xOff].used == "mainhand")) {
 				//player is dualwielding
@@ -52,9 +48,6 @@ function combat(x,y) {
 		yWeaponParry = window[yWeapon].parry;
 		xMainSkill = window[xMain].skill;
 		yWeaponSkill = ((x.level + y.level) * 5) + y.skill[window[yWeapon].skill].rating;
-		console.log(window[yWeapon]);
-		console.log(window[yWeapon].skill);
-		console.log(y.skill[window[yWeapon].skill].rating);
 		xMainFreq = window[xMain].speed;
 		xMainParry = window[xMain].parry;
 		xMainAttr = window[xMain].attr;
@@ -71,9 +64,6 @@ function combat(x,y) {
 		}
 		//launch attacks
 		xMainInterval = setInterval(function() {
-			//((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
-			//((cLvl + window[y].level) * .05)
-			console.log(x.attr[xMainAttr]);
 			bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating - (x.level * 5))) / threat;
 			console.log(bonus);
 			aRating = bonus + base;
@@ -161,13 +151,15 @@ function combat(x,y) {
 					z = critical;
 					desc = z[Math.floor(Math.random() * z.length)];
 					dStyle = 6;
-					console.log(dmg * 1.5);
+					console.log(Math.floor(dmg * 1.5));
+					y.hp.current = y.hp.current - Math.floor(dmg * 1.5);
 					xp = xp + (x.level * 1.5);
 				} else {
 					z = hit;
 					desc = z[Math.floor(Math.random() * z.length)];
 					dStyle = 5;
 					console.log(dmg);
+					y.hp.current = y.hp.current - dmg;
 					xp = xp + x.level;
 				}
 			} else {
@@ -188,10 +180,12 @@ function combat(x,y) {
 			//check for hp
 			if(x.hp.current <= 0) {
 				clearInterval(xMainInterval);
+				console.log(x.name + " dies!");
 				//death function
 			}
 			if(y.hp.current <= 0) {
 				clearInterval(xMainInterval);
+				console.log(y.name + " dies!");
 				//corpse funtion
 			}
 			//award xp
