@@ -1,4 +1,4 @@
-function combatInterval(x,y,z) {
+function combatInterval(x,y,z,b) {
 	//x = character or mobID objects
 	//y = main of offhand
 	//i.e. combatInterval(characterID,"mainhand")
@@ -17,11 +17,10 @@ function combatInterval(x,y,z) {
 		rating = x.skill[skill].rating;
 		bonus = ((attr - x.level) + (rating - (x.level * 5))) / z;
 		console.log(bonus);
+		aRating = bonus + b
 		
 		
 		/*
-		bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating - (x.level * 5))) / threat;
-		console.log(bonus);
 		aRating = bonus + base;
 		aMax = 95;
 		if(aRating >= aMax) {
