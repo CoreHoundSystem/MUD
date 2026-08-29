@@ -13,7 +13,7 @@ function combatInterval(x,y) {
 			window[a + "weapon"] == "unarmed";
 		}
 		console.log(window[a + "weapon"]);			//this should read Evandermainhand = "unarmed";
-		
+		console.log(window[window[a + "weapon"]]);			//this should read Evandermainhand = "unarmed" as object
 		
 		
 		
