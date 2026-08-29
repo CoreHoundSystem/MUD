@@ -91,24 +91,24 @@ function combat(x,y) {
 				attackResolved = 0;
 				dodgeCheck = Math.floor(Math.random() * 100) + 1;
 				if(dodgeCheck < 5 + y.level * threat && attackResolved == 0) {
-					
+					attackResolved = 1;
 				}
 				//check parry - parry negates damage and effect and offers immediate attack of opportunity
 				parryCheck = Math.floor(Math.random() * 100) + 1;
 				if(parryCheck < (5 + yWeaponParry) && attackResolved == 0) {
-					console.log
+					attackResolved = 1;
 				}
 				//check glancing blow - attacker deals minimum damage (no roll)
 				glanceCheck = Math.floor(Math.random() * 100) + 1;
 				if(glanceCheck < y.level * threat && attackResolved == 0) {
-					
+					attackResolved = 1;
 				}
 				//block check if shield is equipped
 					//successful block reduces damage by a min amt or a percentage - whichever is higher
 				blockCheck = Math.floor(Math.random() * 100) + 1;
 				//setup to compute enemy block
 				if(blockCheck < y.level * threat && attackResolved == 0) {
-				
+					attackResolved = 1;
 				}
 				//if the attack is not blocked, parried, or dodged then apply hit
 					//crit attacks do 50% more damage
@@ -137,6 +137,7 @@ function combat(x,y) {
 			//check for spell
 			//check for fumble
 			//check for hp
+			//award xp
 		}, xMainFreq * 1000);
 		if(dualWield == 1) {
 			xOffInterval = setInterval(function() {
@@ -218,22 +219,27 @@ function combat(x,y) {
 		}, yWeaponFreq * 1000);
 	}
 	
-	//build attack stats for each participant
+	/* Formulas
+	Using attr, skill, and level difference
+		((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating - (x.level * 5))) / ((x.level + y.level) * .05);
+		((1 - 1) + (1 - 5)) / ((1 + -1) * .05) = (0 + -4) / (0 * 0.05) [Min 0.05] = -4/.05 -80
+		((1 - 1) + (10 - 5)) / ((1 + -1) * .05) = (0 + 5) / (0 * 0.05) [Min 0.05] = 5/.05 25
+		((1 - 2) + (10 - 10)) / ((2 + -1) * .05) = (-1 + 0) / (1 * 0.05) [Min 0.05] = -1/.05 -5
+		((2 - 2) + (15 - 10)) / ((2 + -1) * .05) = (0 + 5) / (1 * 0.05) [Min 0.05] = 5/.05 25
+		((3 - 3) + (15 - 15)) / ((3 + -1) * .05) = (0 + 0) / (2 * 0.05) [Min 0.05] = 0/.1 0
+		((4 - 4) + (25 - 20)) / ((4 + -1) * .05) = (0 + 5) / (3 * 0.05) [Min 0.05] = 5/.15 33.
 	
-	//combat flow
-		//start timers
-			//if dual weilding the combatant has two timers
-		//attack roll and crit check at same time
-			//if miss then move on
-				//if crit then que up 'recovery spell' to use combatant's next action
-			//if hit is rolled then check the following
-				//check dodge - dodge negates damage and effect
-				//check parry - parry negates damage and effect and offers immediate attack of opportunity
-				//check glancing blow - attacker deals minimum damage (no roll)
-				//block check if shield is equipped
-					//successful block reduces damage by a min amt or a percentage - whichever is higher
-				//if the attack is not blocked, parried, or dodged then apply hit
-					//crit attacks do 50% more damage
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	*/
+	
 		//combat is interrupted for:
 			//player 'casts' a special ability
 				//zero round 'telegraphs' ability - uses normal weapon speed modified by ability
