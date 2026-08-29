@@ -6,7 +6,9 @@ bilgeRat = {
 		current: 30,
 		max: 30,
 	},
-	weapon: "bite",
+	equipped: {
+		mainhand: "bite",
+		offhand: "",
 	skill: {
 		natural: {
 			rating: 5,
