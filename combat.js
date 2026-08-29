@@ -231,7 +231,7 @@ function combat(x,y) {
 			if(roll < aRating) {
 				console.log("Hit");
 				if(crit == 1) {
-					critRan = crit[Math.floor(Math.random() * crit.length)];
+					critRan = critical[Math.floor(Math.random() * critical.length)];
 					post(y.name + aRan + yWeapon + critRan,6);
 				} else {
 					hitRan = hit[Math.floor(Math.random() * hit.length)];
