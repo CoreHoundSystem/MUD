@@ -21,7 +21,7 @@ function combat(x,y) {
 		console.log(window[yWeapon].used);
 		if(x.equipped.mainhand == "") {
 			xMain = "unarmed";
-			base = 89;
+			base = 189;	//return to 89 after testing
 			console.log(window[xMain].used);
 		} else {
 			if((window[xMain].used == "mainhand" || window[xMain].used == "onehand") && (window[xOff].used == "offhand" || window[xOff].used == "mainhand")) {
@@ -93,6 +93,7 @@ function combat(x,y) {
 				//check dodge - dodge negates damage and effect
 				attackResolved = 0;
 				dodgeCheck = Math.floor(Math.random() * 100) + 1;
+				console.log(dodgeCheck);
 				if(dodgeCheck < 5 + y.level * threat && attackResolved == 0) {
 					attackResolved = 1;
 					z = dodge;
@@ -101,6 +102,7 @@ function combat(x,y) {
 				}
 				//check parry - parry negates damage and effect and offers immediate attack of opportunity
 				parryCheck = Math.floor(Math.random() * 100) + 1;
+				console.log(parryCheck);
 				if(parryCheck < (5 + yWeaponParry) && attackResolved == 0) {
 					attackResolved = 1;
 					z = parry;
@@ -109,6 +111,7 @@ function combat(x,y) {
 				}
 				//check glancing blow - attacker deals minimum damage (no roll)
 				glanceCheck = Math.floor(Math.random() * 100) + 1;
+				console.log(glanceCheck);
 				if(glanceCheck < y.level * threat && attackResolved == 0) {
 					attackResolved = 1;
 					z = glance;
@@ -119,6 +122,7 @@ function combat(x,y) {
 				//block check if shield is equipped
 					//successful block reduces damage by a min amt or a percentage - whichever is higher
 				blockCheck = Math.floor(Math.random() * 100) + 1;
+				console.log(blockCheck);
 				//setup to compute enemy block
 				if(blockCheck < y.level * threat && attackResolved == 0) {
 					attackResolved = 1;
