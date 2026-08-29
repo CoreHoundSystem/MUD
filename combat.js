@@ -46,12 +46,12 @@ function combat(x,y) {
 		}
 		xMainFreq = 0;
 		xOffFreq = 0;
-		//yWeaponFreq = 0;
+		yWeaponFreq = window[yWeapon].speed;
 		xMainParry = 0;
 		xOffParry = 0;
-		//yWeaponParry = 0;
+		yWeaponParry = window[yWeapon].parry;
 		xMainSkill = window[xMain].skill;
-		//yWeaponSkill = "";
+		yWeaponSkill = ((x.level + y.level) * 5) + window[yWeapon].skill;
 		xMainFreq = window[xMain].speed;
 		xMainParry = window[xMain].parry;
 		xMainAttr = window[xMain].attr;
@@ -87,6 +87,28 @@ function combat(x,y) {
 			aRan = att[Math.floor(Math.random() * att.length)];
 			if(roll < aRating) {
 				console.log("Hit");
+				//check dodge - dodge negates damage and effect
+				
+				//check parry - parry negates damage and effect and offers immediate attack of opportunity
+				if((Math.floor(Math.random() * 100) + 1) < yWeaponParry) {
+					
+				}
+				//check glancing blow - attacker deals minimum damage (no roll)
+				if((Math.floor(Math.random() * 100) + 1) < yWeaponParry) {
+					
+				}
+				//block check if shield is equipped
+					//successful block reduces damage by a min amt or a percentage - whichever is higher
+				if() {
+				
+				}
+				//if the attack is not blocked, parried, or dodged then apply hit
+					//crit attacks do 50% more damage
+				
+				
+				
+				
+				
 				if(crit == 1) {
 					critRan = crit[Math.floor(Math.random() * crit.length)];
 					post(character.name + aRan + xMain + critRan,6);
@@ -105,23 +127,85 @@ function combat(x,y) {
 				}
 			}
 		}, xMainFreq * 1000);
-		
-		
+		if(dualWield == 1) {
+			xOffInterval = setInterval(function() {
+				//((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
+				//((cLvl + window[y].level) * .05)
+				console.log(x.attr[xOffAttr]);
+				bonus = ((x.attr[xOffAttr] - x.level) + (x.skill[xOffSkill].rating - (x.level * 5))) / threat;
+				console.log(bonus);
+				aRating = bonus + base;
+				aMax = 95;
+				if(aRating >= aMax) {
+					aRating = aMax;
+				}
+				roll = Math.floor(Math.random() * 100) + 1;
+				cRoll = Math.floor(Math.random() * 100) + 1;
+				crit = 0;
+				if(cRoll <= 5) {
+					crit = 1;
+				}
+				aRan = att[Math.floor(Math.random() * att.length)];
+				if(roll < aRating) {
+					console.log("Hit");
+					if(crit == 1) {
+						critRan = crit[Math.floor(Math.random() * crit.length)];
+						post(character.name + aRan + xOff + critRan,6);
+					} else {
+						hitRan = hit[Math.floor(Math.random() * hit.length)];
+						post(character.name + aRan + xOff + hitRan,5);
+					}
+				} else {
+					console.log("Miss");
+					if(crit == 1) {
+						stumRan = stum[Math.floor(Math.random() * stum.length)];
+						post(character.name + aRan + xOff + stumRan,8);
+					} else {
+						missRan = miss[Math.floor(Math.random() * miss.length)];
+						post(character.name + aRan + xOff + missRan,7);
+					}
+				}
+			}, (xOffFreq * 1000) + 1000);
+		}
+		yWeaponInterval = setInterval(function() {
+			//((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
+			//((cLvl + window[y].level) * .05)
+			console.log(yWeapon);
+			bonus = (x.level) + (yWeaponSkill - (x.level * 5)) * threat;
+			console.log(bonus);
+			aRating = bonus + base;
+			aMax = 95;
+			if(aRating >= aMax) {
+				aRating = aMax;
+			}
+			roll = Math.floor(Math.random() * 100) + 1;
+			cRoll = Math.floor(Math.random() * 100) + 1;
+			crit = 0;
+			if(cRoll <= 5) {
+				crit = 1;
+			}
+			aRan = att[Math.floor(Math.random() * att.length)];
+			if(roll < aRating) {
+				console.log("Hit");
+				if(crit == 1) {
+					critRan = crit[Math.floor(Math.random() * crit.length)];
+					post(y.name + aRan + yWeapon + critRan,6);
+				} else {
+					hitRan = hit[Math.floor(Math.random() * hit.length)];
+					post(y.name + aRan + yWeapon + hitRan,5);
+				}
+			} else {
+				console.log("Miss");
+				if(crit == 1) {
+					stumRan = stum[Math.floor(Math.random() * stum.length)];
+					post(y.name + aRan + yWeapon + stumRan,8);
+				} else {
+					missRan = miss[Math.floor(Math.random() * miss.length)];
+					post(y.name + aRan + yWeapon + missRan,7);
+				}
+			}
+		}, yWeaponFreq * 1000);
 	}
-	//get character data once
-		//start with weapon - it defines a lot
-			//mainhand - if 
-				//one handed - check offhand
-					//empty/non weapon - base attack = 95
-					//another weapon - base attack = 76
-					//shield - base attack = 85
-				//two handed - base attack = 89
-			//all weapons have a frequency/speed - this can result in multiple setIntervals for attacks in the case of dual wielding
-			//weapons can require different stats and skills to use
-			//all weapons have a parry chance
-			
-			
-	//get mob data once
 	
 	//build attack stats for each participant
 	
