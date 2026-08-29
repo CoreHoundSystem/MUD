@@ -23,3 +23,18 @@ stum = [
 	" and stumbles forward!",
 	" and nearly injures themself!",
 ]
+
+dodge = [
+	" and is dodged by ",
+	" and is side-stepped by ",
+]
+
+parry = [
+	" and is parried by ",
+	" and is redirected by ",
+]
+
+block = [
+	" and is blocked by ",
+	" and is deflected by ",
+]
