@@ -19,6 +19,7 @@ function combatInterval(w,x,y,z,b) {
 		console.log(cAttr);
 		skill = window[window[a + "weapon"]].skill;			//fetch weapon skill
 		freq = window[window[a + "weapon"]].speed;
+		console.log(freq);
 		rating = x.skill[skill].rating;						//ID's rating with weapon skill
 		bonus = ((cAttr - x.level) + (rating - (x.level * 5))) / z;
 		console.log(bonus);
@@ -135,5 +136,5 @@ function combatInterval(w,x,y,z,b) {
 		
 		
 		*/
-	}, freq * f);
+	}, freq * f * 1000);
 }
