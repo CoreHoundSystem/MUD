@@ -96,6 +96,8 @@ function combat(x,y) {
 			xp = 0;
 			console.log(dmg + "damage.");
 			aRan = att[Math.floor(Math.random() * att.length)];
+			desc = "";
+			dStyle = 5;
 			if(roll < aRating) {
 				console.log("Hit checks");
 				//check dodge - dodge negates damage and effect
@@ -105,8 +107,8 @@ function combat(x,y) {
 				if(dodgeCheck < 5 + y.level * threat && attackResolved == 0) {
 					attackResolved = 1;
 					z = dodge;
-					dodgeRan = z[Math.floor(Math.random() * z.length)];
-					post(character.name + aRan + xMain + dodgeRan + y.name + ".",7);
+					desc = z[Math.floor(Math.random() * z.length)];
+					dStyle = 7;
 				} else {
 					xp++;
 				}
@@ -116,8 +118,8 @@ function combat(x,y) {
 				if(parryCheck < (5 + yWeaponParry) && attackResolved == 0) {
 					attackResolved = 1;
 					z = parry;
-					parryRan = z[Math.floor(Math.random() * z.length)];
-					post(character.name + aRan + xMain + parryRan + y.name + ".",7);
+					desc = z[Math.floor(Math.random() * z.length)];
+					dStyle = 7;
 				} else {
 					xp++;
 				}
@@ -127,8 +129,8 @@ function combat(x,y) {
 				if(glanceCheck < y.level * threat && attackResolved == 0) {
 					attackResolved = 1;
 					z = glance;
-					glanceRan = z[Math.floor(Math.random() * z.length)];
-					post(character.name + aRan + xMain + glanceRan + y.name + ".",5);
+					desc = z[Math.floor(Math.random() * z.length)];
+					dStyle = 5;
 					//get min damage
 				} else {
 					xp++;
@@ -141,8 +143,8 @@ function combat(x,y) {
 				if(blockCheck < y.level * threat && attackResolved == 0) {
 					attackResolved = 1;
 					z = block;
-					blockRan = z[Math.floor(Math.random() * z.length)];
-					post(character.name + aRan + xMain + blockRan + y.name + ".",5);
+					desc = z[Math.floor(Math.random() * z.length)];
+					dStyle = 5;
 					//roll damage and absorb portion
 					console.log("Absorb part of " + dmg);
 				} else {
@@ -156,27 +158,32 @@ function combat(x,y) {
 				
 				
 				if(crit == 1) {
-					critRan = critical[Math.floor(Math.random() * critical.length)];
-					post(character.name + aRan + xMain + critRan,6);
+					z = critical;
+					desc = z[Math.floor(Math.random() * z.length)];
+					dStyle = 6;
 					console.log(dmg * 1.5);
 					xp = xp + (x.level * 1.5);
 				} else {
-					hitRan = hit[Math.floor(Math.random() * hit.length)];
-					post(character.name + aRan + xMain + hitRan,5);
+					z = hit;
+					desc = z[Math.floor(Math.random() * z.length)];
+					dStyle = 5;
 					console.log(dmg);
 					xp = xp + x.level;
 				}
 			} else {
 				console.log("Miss");
 				if(crit == 1) {
-					stumRan = stum[Math.floor(Math.random() * stum.length)];
-					post(character.name + aRan + xMain + stumRan,8);
+					z = stum;
+					desc = z[Math.floor(Math.random() * z.length)];
+					dStyle = 8;
 					f = 2;
 				} else {
-					missRan = miss[Math.floor(Math.random() * miss.length)];
-					post(character.name + aRan + xMain + missRan,7);
+					z = miss;
+					desc = z[Math.floor(Math.random() * z.length)];
+					dStyle = 7;
 				}
 			}
+			post(x.name + aRan + window[xMain].cName + " at " + y.name + desc);
 			//check for spell
 			//check for hp
 			if(x.hp.current <= 0) {
