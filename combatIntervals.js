@@ -8,7 +8,7 @@ function combatInterval(w,x,y,z,b) {
 	if(window[a + "weapon"] == "") {
 		window[a + "weapon"] = "unarmed";
 	}				
-	freq = window[window[a + "weapon"]].speed;
+	freq = 0;
 	console.log(window[a + "weapon"]);
 	f = 1;
 	window[a] = setInterval(function() {
