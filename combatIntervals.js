@@ -12,7 +12,11 @@ function combatInterval(x,y,z) {
 		}
 		console.log(window[a + "weapon"]);					//this should read Evandermainhand = "unarmed";
 		console.log(window[window[a + "weapon"]]);			//this should read Evandermainhand = "unarmed" as object;
-		bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating - (x.level * 5))) / z;
+		attr = window[window[a + "weapon"]].attr;
+		skill = window[window[a + "weapon"]].skill;
+		rating = x.skill[skill].rating;
+		bonus = ((attr - x.level) + (rating - (x.level * 5))) / z;
+		console.log(bonus);
 		
 		
 		/*
