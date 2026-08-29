@@ -25,16 +25,16 @@ stum = [
 ]
 
 dodge = [
-	" and is dodged by ",
-	" and is side-stepped by ",
+	" and is dodged.",
+	" and is side-stepped.",
 ]
 
 parry = [
-	" and is parried by ",
-	" and is redirected by ",
+	" and is parried.",
+	" and is redirected.",
 ]
 
 block = [
-	" and is blocked by ",
-	" and is deflected by ",
+	" and is blocked.",
+	" and is deflected.",
 ]
