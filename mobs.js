@@ -9,10 +9,11 @@ bilgeRat = {
 	equipped: {
 		mainhand: "bite",
 		offhand: "",
+		},
 	skill: {
 		natural: {
 			rating: 5,
-		}
+		},
 	},
 	special: ["flee"],
 	specialDetails: [25],
