@@ -5,7 +5,7 @@ function combatInterval(w,x,y,z,b) {
 	a = x.name + y +"Interval";
 	window[a + "weapon"] = x.equipped[y];				//identifies equipped weapon in specified hand
 	freq = window[window[a + "weapon"]].speed;
-	console.log(freq);
+	console.log(window[a + "weapon"]);
 	f = 1;
 	window[a] = setInterval(function() {
 		console.log(window[a + "weapon"]);					//this should read Evandermainhand = "";
