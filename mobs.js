@@ -7,6 +7,11 @@ bilgeRat = {
 		max: 30,
 	},
 	weapon: "bite",
+	skill: {
+		natural: {
+			rating: 5,
+		}
+	},
 	special: ["flee"],
 	specialDetails: [25],
 	specialFreq: [25],
