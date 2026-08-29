@@ -4,7 +4,7 @@ function combatInterval(w,x,y,z,b) {
 	//i.e. combatInterval(characterID,"mainhand")
 	a = x.name + y +"Interval";
 	window[a + "weapon"] = x.equipped[y];				//identifies equipped weapon in specified hand
-	freq = window[window[a + "weapon"]].speed;
+	//freq = window[window[a + "weapon"]].speed;
 	console.log(window[a + "weapon"]);
 	f = 1;
 	window[a] = setInterval(function() {
