@@ -88,18 +88,26 @@ function combat(x,y) {
 			if(roll < aRating) {
 				console.log("Hit");
 				//check dodge - dodge negates damage and effect
-				
-				//check parry - parry negates damage and effect and offers immediate attack of opportunity
-				if((Math.floor(Math.random() * 100) + 1) < yWeaponParry) {
+				attackResolved = 0;
+				dodgeCheck = Math.floor(Math.random() * 100) + 1;
+				if(dodgeCheck < 5 + y.level * threat && attackResolved == 0) {
 					
 				}
+				//check parry - parry negates damage and effect and offers immediate attack of opportunity
+				parryCheck = Math.floor(Math.random() * 100) + 1;
+				if(parryCheck < (5 + yWeaponParry) && attackResolved == 0) {
+					console.log
+				}
 				//check glancing blow - attacker deals minimum damage (no roll)
-				if((Math.floor(Math.random() * 100) + 1) < yWeaponParry) {
+				glanceCheck = Math.floor(Math.random() * 100) + 1;
+				if(glanceCheck < y.level * threat && attackResolved == 0) {
 					
 				}
 				//block check if shield is equipped
 					//successful block reduces damage by a min amt or a percentage - whichever is higher
-				if() {
+				blockCheck = Math.floor(Math.random() * 100) + 1;
+				//setup to compute enemy block
+				if(blockCheck < y.level * threat && attackResolved == 0) {
 				
 				}
 				//if the attack is not blocked, parried, or dodged then apply hit
@@ -126,6 +134,9 @@ function combat(x,y) {
 					post(character.name + aRan + xMain + missRan,7);
 				}
 			}
+			//check for spell
+			//check for fumble
+			//check for hp
 		}, xMainFreq * 1000);
 		if(dualWield == 1) {
 			xOffInterval = setInterval(function() {
@@ -238,81 +249,4 @@ function combat(x,y) {
 	
 	
 	
-	//enter 'combatMode'
-	/*
-	doBattle = setInterval(function() {
-		if(character.hp.current <= 0 || window[y].hp.current <= 0) {
-			//stop
-		} else {
-			if(qSpell == "") {
-				cAtt = character.attr.str;
-				cSkill = character.skill.unarmed.rating;
-				cWeapon = "fist";
-				cCrit = 5;
-				doCrit = 0;
-				base = 95
-				if(character.equipped.mainhand !== "") {
-					//build database of weapons and skills
-					console.log(character.equipped.mainhand);
-					cWeapon = character.equipped.mainhand;
-					cCrit = 5;
-				}
-				cLvl = character.level;
-				threat = ((cLvl + window[y].level) * .05);
-				console.log(threat);
-				console.log(window[y].level);
-				if(threat == 0) {
-					threat = .05;
-				}
-				console.log(threat);
-				bonus = ((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
-				console.log(bonus);
-				result = "";
-				roll = Math.floor(Math.random()*100)+1;
-				max = 95;	//dual wield and two hander
-				effectiveBonus = 0;
-				if((bonus + base) > max) { 
-					effectiveBonus = max; 
-				} else {
-					effectiveBonus = bonus + base; 
-				}
-				critCheck = Math.floor(Math.random()*100)+1;
-				if(critCheck < cCrit) { 
-					doCrit = 1;
-				}
-				console.log("Hit chance " + effectiveBonus);
-				if (roll > effectiveBonus) {
-					result = "misses.";
-					console.log(Math.floor(Math.random() * miss.length));
-					attRan = att[Math.floor(Math.random() * att.length)];
-					if(doCrit == 0) {
-						missRan = miss[Math.floor(Math.random() * miss.length)];
-						post(character.name + attRan + cWeapon + missRan,7);
-					} else {
-						stumRan = stum[Math.floor(Math.random() * stum.length)];
-						post(character.name + attRan + cWeapon + stumRan,8);
-						qSpell = "his action to regain composure.";
-					}
-				} else {
-					result = "hits!";
-					console.log(Math.floor(Math.random() * miss.length));
-					attRan = att[Math.floor(Math.random() * att.length)];
-					if(doCrit == 0) {
-						hitRan = miss[Math.floor(Math.random() * hit.length)];
-						post(character.name + attRan + cWeapon + hitRan,7);
-					} else {
-						critRan = crit[Math.floor(Math.random() * crit.length)];
-						post(character.name + attRan + cWeapon + critRan,8);
-						qSpell = "his skill to attack twice!";
-					}	
-				}
-				console.log(roll + " " + result);
-			} else {
-				post(character.name + " uses " + qSpell,2);	//class should originate from ability
-				qSpell = "";
-				console.log(character);
-			}
-		}
-		
-	}, 3000);*/
 }
