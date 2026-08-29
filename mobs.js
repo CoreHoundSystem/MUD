@@ -105,11 +105,51 @@ function combat(x,y) {
 				}
 			}
 		}, xMainFreq * 1000);
-		xOffInterval = setInterval(function() {
+		if(dualWield == 1) {
+			xOffInterval = setInterval(function() {
+				//((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
+				//((cLvl + window[y].level) * .05)
+				console.log(x.attr[xOffAttr]);
+				bonus = ((x.attr[xOffAttr] - x.level) + (x.skill[xOffSkill].rating - (x.level * 5))) / threat;
+				console.log(bonus);
+				aRating = bonus + base;
+				aMax = 95;
+				if(aRating >= aMax) {
+					aRating = aMax;
+				}
+				roll = Math.floor(Math.random() * 100) + 1;
+				cRoll = Math.floor(Math.random() * 100) + 1;
+				crit = 0;
+				if(cRoll <= 5) {
+					crit = 1;
+				}
+				aRan = att[Math.floor(Math.random() * att.length)];
+				if(roll < aRating) {
+					console.log("Hit");
+					if(crit == 1) {
+						critRan = crit[Math.floor(Math.random() * crit.length)];
+						post(character.name + aRan + xOff + critRan,6);
+					} else {
+						hitRan = hit[Math.floor(Math.random() * hit.length)];
+						post(character.name + aRan + xOff + hitRan,5);
+					}
+				} else {
+					console.log("Miss");
+					if(crit == 1) {
+						stumRan = stum[Math.floor(Math.random() * stum.length)];
+						post(character.name + aRan + xOff + stumRan,8);
+					} else {
+						missRan = miss[Math.floor(Math.random() * miss.length)];
+						post(character.name + aRan + xOff + missRan,7);
+					}
+				}
+			}, (xOffFreq * 1000) + 1000);
+		}
+		yWeaponInterval = setInterval(function() {
 			//((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
 			//((cLvl + window[y].level) * .05)
-			console.log(x.attr[xOffAttr]);
-			bonus = ((x.attr[xOffAttr] - x.level) + (x.skill[xOffSkill].rating - (x.level * 5))) / threat;
+			console.log(yWeapon);
+			bonus = (x.level) + (yWeaponSkill - (x.level * 5)) * threat;
 			console.log(bonus);
 			aRating = bonus + base;
 			aMax = 95;
@@ -127,24 +167,22 @@ function combat(x,y) {
 				console.log("Hit");
 				if(crit == 1) {
 					critRan = crit[Math.floor(Math.random() * crit.length)];
-					post(character.name + aRan + xOff + critRan,6);
+					post(y.name + aRan + yWeapon + critRan,6);
 				} else {
 					hitRan = hit[Math.floor(Math.random() * hit.length)];
-					post(character.name + aRan + xOff + hitRan,5);
+					post(y.name + aRan + yWeapon + hitRan,5);
 				}
 			} else {
 				console.log("Miss");
 				if(crit == 1) {
 					stumRan = stum[Math.floor(Math.random() * stum.length)];
-					post(character.name + aRan + xOff + stumRan,8);
+					post(y.name + aRan + yWeapon + stumRan,8);
 				} else {
 					missRan = miss[Math.floor(Math.random() * miss.length)];
-					post(character.name + aRan + xOff + missRan,7);
+					post(y.name + aRan + yWeapon + missRan,7);
 				}
 			}
-		}, (xOffFreq * 1000) + 1000);
-		
-		
+		}, yWeaponFreq * 1000);
 	}
 	
 	//build attack stats for each participant
