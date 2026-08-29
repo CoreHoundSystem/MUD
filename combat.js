@@ -197,7 +197,8 @@ function combat(x,y) {
 			//award xp
 			console.log(x.name + " gains " + xp + " experience.");
 			hp();
-		}, xMainFreq * 1000 * f);
+			xMainFreq = xMainFreq * f;
+		}, xMainFreq * 1000);
 		if(dualWield == 1) {
 			xOffInterval = setInterval(function() {
 				//((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
