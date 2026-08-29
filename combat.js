@@ -63,6 +63,9 @@ function combat(x,y) {
 			xOffAttr = window[xOff].attr;
 		}
 		//launch attacks
+		
+		combatInterval(x,"mainhand");
+		/*
 		xMainInterval = setInterval(function() {
 			bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating - (x.level * 5))) / threat;
 			console.log(bonus);
@@ -273,9 +276,9 @@ function combat(x,y) {
 					post(y.name + aRan + yWeapon + missRan,7);
 				}
 			}
-		}, yWeaponFreq * 1000);
+		}, yWeaponFreq * 1000);*/
 	}
-	
+}
 	/* Formulas
 	Using attr, skill, and level difference
 		((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating - (x.level * 5))) / ((x.level + y.level) * .05);
@@ -305,11 +308,7 @@ function combat(x,y) {
 				//stun - stunned combatant spends x number of attacks 'stunned' - dangerous against foes with slow attack speeds
 				//slowed/hastened - this effect applies a multiplier to setInterval
 				//eating/drinking - player eating or drinking can not attack nor can they parry or block
-			
-					
-					
-	
-	
-	
-	
-}
+
+
+
+
