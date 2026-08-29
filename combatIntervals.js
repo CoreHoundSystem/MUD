@@ -4,14 +4,15 @@ function combatInterval(w,x,y,z,b) {
 	//i.e. combatInterval(characterID,"mainhand")
 	a = x.name + y +"Interval";
 	window[a + "weapon"] = x.equipped[y];				//identifies equipped weapon in specified hand
-	//freq = window[window[a + "weapon"]].speed;
+	console.log(window[a + "weapon"]);					//this should read Evandermainhand = "";
+	if(window[a + "weapon"] == "") {
+		window[a + "weapon"] = "unarmed";
+	}				
+	freq = window[window[a + "weapon"]].speed;
 	console.log(window[a + "weapon"]);
 	f = 1;
 	window[a] = setInterval(function() {
-		console.log(window[a + "weapon"]);					//this should read Evandermainhand = "";
-		if(window[a + "weapon"] == "") {
-			window[a + "weapon"] = "unarmed";
-		}
+		
 		console.log(window[a + "weapon"]);					//this should read Evandermainhand = "unarmed";
 		console.log(window[window[a + "weapon"]]);			//this should read Evandermainhand = "unarmed" as object;
 		attr = window[window[a + "weapon"]].attr;			//fetch weapon attribute
