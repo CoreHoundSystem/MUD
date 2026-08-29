@@ -1,10 +1,9 @@
-function combatInterval(x,y,z,b) {
+function combatInterval(w,x,y,z,b) {
 	//x = character or mobID objects
 	//y = main of offhand
 	//i.e. combatInterval(characterID,"mainhand")
-	window[x.name + y +"Interval"] = setInterval(function() {
-		a = x.name + y;
-		console.log(a);
+	a = x.name + y +"Interval";
+	window[a] = setInterval(function() {
 		window[a + "weapon"] = x.equipped[y];				//identifies equipped weapon in specified hand
 		console.log(window[a + "weapon"]);					//this should read Evandermainhand = "";
 		if(window[a + "weapon"] == "") {
@@ -17,6 +16,7 @@ function combatInterval(x,y,z,b) {
 		cAttr = x.attr[attr];
 		console.log(cAttr);
 		skill = window[window[a + "weapon"]].skill;			//fetch weapon skill
+		freq = window[window[a + "weapon"]].speed;
 		rating = x.skill[skill].rating;						//ID's rating with weapon skill
 		bonus = ((cAttr - x.level) + (rating - (x.level * 5))) / z;
 		console.log(bonus);
@@ -35,108 +35,82 @@ function combatInterval(x,y,z,b) {
 		dice = d[0];
 		dType = d[1];
 		dRoll = dice * Math.floor(Math.random() * dType) + 1;
+		//set counters and descriptors
 		f = 1;
 		xp = 0;
-		
-		/*
 		aRan = att[Math.floor(Math.random() * att.length)];
 		desc = "";
 		dStyle = 5;
-		if(roll < aRating) {
+		e = "";
+		if(roll <= aRating) {
 			console.log("Hit checks");
-			//check dodge - dodge negates damage and effect
 			attackResolved = 0;
 			dodgeCheck = Math.floor(Math.random() * 100) + 1;
 			console.log(dodgeCheck);
-			if(dodgeCheck < 5 + y.level * threat && attackResolved == 0) {
+			if(dodgeCheck < 5 + w.level * threat && attackResolved == 0) {
 				attackResolved = 1;
-				z = dodge;
-				desc = z[Math.floor(Math.random() * z.length)];
+				e = dodge;
 				dStyle = 7;
 			} else {
 				xp++;
 			}
-			//check parry - parry negates damage and effect and offers immediate attack of opportunity
 			parryCheck = Math.floor(Math.random() * 100) + 1;
 			console.log(parryCheck);
-			if(parryCheck < (5 + yWeaponParry) && attackResolved == 0) {
+			if(parryCheck < (5 + window[w.equipped.mainhand].parry) && attackResolved == 0) {
 				attackResolved = 1;
-				z = parry;
-				desc = z[Math.floor(Math.random() * z.length)];
+				e = parry;
 				dStyle = 7;
 			} else {
 				xp++;
 			}
-			//check glancing blow - attacker deals minimum damage (no roll)
 			glanceCheck = Math.floor(Math.random() * 100) + 1;
 			console.log(glanceCheck);
-			if(glanceCheck < y.level * threat && attackResolved == 0) {
+			if(glanceCheck < w.level * threat && attackResolved == 0) {
 				attackResolved = 1;
-				z = glance;
-				desc = z[Math.floor(Math.random() * z.length)];
+				e = glance;
 				dStyle = 5;
 				//get min damage
 			} else {
 				xp++;
 			}
-			//block check if shield is equipped
-				//successful block reduces damage by a min amt or a percentage - whichever is higher
+			//needs more depth
 			blockCheck = Math.floor(Math.random() * 100) + 1;
 			console.log(blockCheck);
-			//setup to compute enemy block
-			if(blockCheck < y.level * threat && attackResolved == 0) {
+			if(blockCheck < w.level * threat && attackResolved == 0) {
 				attackResolved = 1;
-				z = block;
-				desc = z[Math.floor(Math.random() * z.length)];
+				e = block;
 				dStyle = 5;
 				//roll damage and absorb portion
-				console.log("Absorb part of " + dmg);
+				console.log("Absorb part of " + dRoll);
 			} else {
 				xp++;
 			}
-			//if the attack is not blocked, parried, or dodged then apply hit
-				//crit attacks do 50% more damage
-			
-			
-			
-			
-			
 			if(crit == 1) {
-				z = critical;
-				desc = z[Math.floor(Math.random() * z.length)];
+				e = critical;
 				dStyle = 6;
-				console.log(Math.floor(dmg * 1.5));
-				y.hp.current = y.hp.current - Math.floor(dmg * 1.5);
+				console.log(Math.floor(dRoll * 1.5));
+				w.hp.current = w.hp.current - Math.floor(dRoll * 1.5);
 				xp = xp + (x.level * 1.5);
 			} else {
-				z = hit;
-				desc = z[Math.floor(Math.random() * z.length)];
+				e = hit;
 				dStyle = 5;
-				console.log(dmg);
-				y.hp.current = y.hp.current - dmg;
+				console.log(dRoll);
+				w.hp.current = w.hp.current - dRoll;
 				xp = xp + x.level;
 			}
 		} else {
 			console.log("Miss");
 			if(crit == 1) {
-				z = stum;
-				desc = z[Math.floor(Math.random() * z.length)];
+				e = stum;
 				dStyle = 8;
 				f = 2;
 			} else {
-				z = miss;
-				desc = z[Math.floor(Math.random() * z.length)];
+				e = miss;
 				dStyle = 7;
 			}
 		}
+		desc = e[Math.floor(Math.random() * e.length)];
 		post(x.name + aRan + window[xMain].cName + " at " + y.name + desc,dStyle);
-		//check for spell
-		//check for hp
-		if(x.hp.current <= 0) {
-			clearInterval(xMainInterval);
-			console.log(x.name + " dies!");
-			//death function
-		}
 		if(y.hp.current <= 0) {
 			clearInterval(xMainInterval);
 			console.log(y.name + " dies!");
@@ -145,7 +119,20 @@ function combatInterval(x,y,z,b) {
 		//award xp
 		console.log(x.name + " gains " + xp + " experience.");
 		command("hp");
-		xMainFreq = xMainFreq * f;
+		
+		/*
+			
+		
+		
+		//check for spell
+		//check for hp
+		if(x.hp.current <= 0) {
+			clearInterval(xMainInterval);
+			console.log(x.name + " dies!");
+			//death function
+		}
+		
+		
 		*/
-	}, 3000);
+	}, freq * f);
 }
