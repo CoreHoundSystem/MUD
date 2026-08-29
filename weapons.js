@@ -1,5 +1,6 @@
 longsword = {
 	skill: "sword",
+	cName: "longsword",
 	damage: "1d8",
 	used: "mainhand",
 	parry: 10,
@@ -9,6 +10,7 @@ longsword = {
 
 greatsword = {
 	skill: "sword",
+	cName: "greatsword",
 	damage: "2d6",
 	used: "twohand",
 	parry: 20,
@@ -18,6 +20,7 @@ greatsword = {
 
 dagger = {
 	skill: "dagger",
+	cName: "dagger",
 	damage: "1d4",
 	used: "onehand",
 	parry: 5,
@@ -27,6 +30,7 @@ dagger = {
 
 parryingDagger = {
 	skill: "dagger",
+	cName: "parrying dagger",
 	damage: "1d3",
 	used: "offhand",
 	parry: 15,
@@ -36,6 +40,7 @@ parryingDagger = {
 
 bite = {
 	skill: "natural",
+	cName: "teeth",
 	damage: "1d3",
 	used: "twohand",
 	parry: 0,
@@ -45,6 +50,7 @@ bite = {
 
 unarmed = {
 	skill: "unarmed",
+	cName: "fists",
 	damage: "1d2",
 	used: "twohand",
 	parry: 0,
@@ -54,6 +60,7 @@ unarmed = {
 
 shield = {
 	skill: "shield",
+	cName: "shield",
 	damage: "1d2",
 	used: "shield",
 	block: 30,
