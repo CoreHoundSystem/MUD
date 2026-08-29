@@ -12,34 +12,33 @@ function combatInterval(x,y,z,b) {
 		}
 		console.log(window[a + "weapon"]);					//this should read Evandermainhand = "unarmed";
 		console.log(window[window[a + "weapon"]]);			//this should read Evandermainhand = "unarmed" as object;
-		attr = window[window[a + "weapon"]].attr;
-		skill = window[window[a + "weapon"]].skill;
-		rating = x.skill[skill].rating;
-		bonus = ((attr - x.level) + (rating - (x.level * 5))) / z;
+		attr = window[window[a + "weapon"]].attr;			//fetch weapon attribute
+		console.log(attr);
+		cAttr = x.attr[attr];
+		console.log(cAttr);
+		skill = window[window[a + "weapon"]].skill;			//fetch weapon skill
+		rating = x.skill[skill].rating;						//ID's rating with weapon skill
+		bonus = ((cAttr - x.level) + (rating - (x.level * 5))) / z;
 		console.log(bonus);
-		aRating = bonus + b
-		
-		
-		/*
-		aRating = bonus + base;
-		aMax = 95;
-		if(aRating >= aMax) {
-			aRating = aMax;
+		aRating = bonus + b;
+		if(aRating >= 95) {
+			aRating = 95;
 		}
+		//do rolls
 		roll = Math.floor(Math.random() * 100) + 1;
 		cRoll = Math.floor(Math.random() * 100) + 1;
 		crit = 0;
 		if(cRoll <= 5) {
 			crit = 1;
 		}
-		d = window[xMain].damage.split("d");
-		console.log(window[xMain].damage);
+		d = window[window[a + "weapon"]].damage.split("d");
 		dice = d[0];
 		dType = d[1];
-		dmg = dice * Math.floor(Math.random() * dType) + 1;
+		dRoll = dice * Math.floor(Math.random() * dType) + 1;
 		f = 1;
 		xp = 0;
-		console.log(dmg + "damage.");
+		
+		/*
 		aRan = att[Math.floor(Math.random() * att.length)];
 		desc = "";
 		dStyle = 5;
