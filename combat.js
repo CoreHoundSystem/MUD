@@ -184,6 +184,9 @@ function combat(x,y) {
 			//((cLvl + window[y].level) * .05)
 			console.log(yWeapon);
 			bonus = (x.level) + (yWeaponSkill - (x.level * 5)) * threat;
+			console.log(x.level);
+			console.log(yWeaponSkill);
+			console.log(threat);
 			console.log(bonus);
 			aRating = bonus + base;
 			aMax = 95;
