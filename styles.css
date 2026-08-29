@@ -83,10 +83,10 @@ span {
 	margin-left: 25px;
 }
 .playerSucceeds {
-	color: green;
+	color: limegreen;
 }
 .pSucceedsCrit {
-	color: green;
+	color: limegreen;
 	font-weight: bold;
 }
 .playerFails {
