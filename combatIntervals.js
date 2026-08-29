@@ -120,7 +120,7 @@ function combatInterval(w,x,y,z,b) {
 		desc = e[Math.floor(Math.random() * e.length)];
 		post(x.name + aRan + window[window[a + "weapon"]].cName + " at " + w.name + desc,dStyle);
 		if(w.hp.current <= 0) {
-			clearInterval(xMainInterval);
+			clearInterval(window[a]);
 			console.log(w.name + " dies!");
 			//corpse funtion
 		}
@@ -135,7 +135,7 @@ function combatInterval(w,x,y,z,b) {
 		//check for spell
 		//check for hp
 		if(x.hp.current <= 0) {
-			clearInterval(xMainInterval);
+			clearInterval(window[a]);
 			console.log(x.name + " dies!");
 			//death function
 		}
