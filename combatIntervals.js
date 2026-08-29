@@ -11,6 +11,10 @@ function combatInterval(w,x,y,z,b) {
 	freq = window[window[a + "weapon"]].speed;
 	console.log(window[a + "weapon"]);
 	f = 1;
+	dualWield = 0;
+	if(y == "offhand") {
+		dualWield = 1;
+	}
 	window[a] = setInterval(function() {
 		
 		console.log(window[a + "weapon"]);					//this should read Evandermainhand = "unarmed";
@@ -138,5 +142,5 @@ function combatInterval(w,x,y,z,b) {
 		
 		
 		*/
-	}, freq * f * 1000);
+	}, ((freq * f) + dualWield) * 1000);
 }
