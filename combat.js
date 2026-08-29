@@ -87,6 +87,13 @@ function combat(x,y) {
 			if(cRoll <= 5) {
 				crit = 1;
 			}
+			dmg = 0;
+			d = window[xMain].damage.split("d");
+			console.log(window[xMain].damage);
+			dice = d[0];
+			dType = d[1];
+			dmg = dice * Math.floor(Math.random() * dType) + 1;
+			console.log(dmg);
 			aRan = att[Math.floor(Math.random() * att.length)];
 			if(roll < aRating) {
 				console.log("Hit");
