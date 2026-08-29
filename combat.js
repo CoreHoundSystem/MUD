@@ -10,7 +10,7 @@ function combatInterval(x,y) {
 		window[a + "weapon"] = x.equipped[y];		//identifies equipped weapon in specified hand
 		console.log(window[a + "weapon"]);			//this should read Evandermainhand = "";
 		if(window[a + "weapon"] == "") {
-			window[a + "weapon"] == "unarmed";
+			window[a + "weapon"] = "unarmed";
 		}
 		console.log(window[a + "weapon"]);			//this should read Evandermainhand = "unarmed";
 		console.log(window[window[a + "weapon"]]);			//this should read Evandermainhand = "unarmed" as object
