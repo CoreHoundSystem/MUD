@@ -3,10 +3,10 @@ function combatInterval(w,x,y,z,b) {
 	//y = main of offhand
 	//i.e. combatInterval(characterID,"mainhand")
 	a = x.name + y +"Interval";
-	freq = 0;
+	window[a + "weapon"] = x.equipped[y];				//identifies equipped weapon in specified hand
+	freq = window[window[a + "weapon"]].speed;
 	f = 1;
 	window[a] = setInterval(function() {
-		window[a + "weapon"] = x.equipped[y];				//identifies equipped weapon in specified hand
 		console.log(window[a + "weapon"]);					//this should read Evandermainhand = "";
 		if(window[a + "weapon"] == "") {
 			window[a + "weapon"] = "unarmed";
