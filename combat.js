@@ -1,6 +1,6 @@
 qSpell = "";		//qued spell
 
-function combatInterval(x,y) {
+function combatInterval(x,y,z) {
 	//x = character or mobID objects
 	//y = main of offhand
 	//i.e. combatInterval(characterID,"mainhand")
@@ -14,7 +14,7 @@ function combatInterval(x,y) {
 		}
 		console.log(window[a + "weapon"]);			//this should read Evandermainhand = "unarmed";
 		console.log(window[window[a + "weapon"]]);			//this should read Evandermainhand = "unarmed" as object
-		
+		bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating - (x.level * 5))) / z;
 		
 		
 		
@@ -215,7 +215,7 @@ function combat(x,y) {
 		}
 		//launch attacks
 		
-		combatInterval(x,"mainhand");
+		combatInterval(x,"mainhand",threat);
 		/*
 		xMainInterval = setInterval(function() {
 			bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating - (x.level * 5))) / threat;
