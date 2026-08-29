@@ -64,7 +64,7 @@ function combat(x,y) {
 		}
 		//launch attacks
 		
-		combatInterval(x,"mainhand",threat);
+		combatInterval(x,"mainhand",threat,base);
 		/*
 		xMainInterval = setInterval(function() {
 			bonus = ((x.attr[xMainAttr] - x.level) + (x.skill[xMainSkill].rating - (x.level * 5))) / threat;
