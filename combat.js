@@ -87,13 +87,12 @@ function combat(x,y) {
 			if(cRoll <= 5) {
 				crit = 1;
 			}
-			dmg = 0;
 			d = window[xMain].damage.split("d");
 			console.log(window[xMain].damage);
 			dice = d[0];
 			dType = d[1];
 			dmg = dice * Math.floor(Math.random() * dType) + 1;
-			console.log(dmg);
+			console.log(dmg + "damage.");
 			aRan = att[Math.floor(Math.random() * att.length)];
 			if(roll < aRating) {
 				console.log("Hit");
@@ -137,6 +136,7 @@ function combat(x,y) {
 					blockRan = z[Math.floor(Math.random() * z.length)];
 					post(character.name + aRan + xMain + blockRan + y.name + ".",5);
 					//roll damage and absorb portion
+					console.log("Absorb part of " + dmg);
 				}
 				//if the attack is not blocked, parried, or dodged then apply hit
 					//crit attacks do 50% more damage
@@ -148,9 +148,11 @@ function combat(x,y) {
 				if(crit == 1) {
 					critRan = critical[Math.floor(Math.random() * critical.length)];
 					post(character.name + aRan + xMain + critRan,6);
+					console.log(dmg * 1.5);
 				} else {
 					hitRan = hit[Math.floor(Math.random() * hit.length)];
 					post(character.name + aRan + xMain + hitRan,5);
+					console.log(dmg);
 				}
 			} else {
 				console.log("Miss");
