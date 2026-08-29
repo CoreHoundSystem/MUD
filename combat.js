@@ -8,7 +8,7 @@ function combatInterval(x,y) {
 		a = x.name + y;
 		console.log(a);
 		window[a + "weapon"] = x.equipped[y];		//identifies equipped weapon in specified hand
-		console.log(window[a + "weapon"]);
+		console.log(x.equipped[y]);
 		
 		
 		
