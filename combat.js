@@ -92,10 +92,12 @@ function combat(x,y) {
 			dice = d[0];
 			dType = d[1];
 			dmg = dice * Math.floor(Math.random() * dType) + 1;
+			f = 1;
+			xp = 0;
 			console.log(dmg + "damage.");
 			aRan = att[Math.floor(Math.random() * att.length)];
 			if(roll < aRating) {
-				console.log("Hit");
+				console.log("Hit checks");
 				//check dodge - dodge negates damage and effect
 				attackResolved = 0;
 				dodgeCheck = Math.floor(Math.random() * 100) + 1;
@@ -105,6 +107,8 @@ function combat(x,y) {
 					z = dodge;
 					dodgeRan = z[Math.floor(Math.random() * z.length)];
 					post(character.name + aRan + xMain + dodgeRan + y.name + ".",7);
+				} else {
+					xp++;
 				}
 				//check parry - parry negates damage and effect and offers immediate attack of opportunity
 				parryCheck = Math.floor(Math.random() * 100) + 1;
@@ -114,6 +118,8 @@ function combat(x,y) {
 					z = parry;
 					parryRan = z[Math.floor(Math.random() * z.length)];
 					post(character.name + aRan + xMain + parryRan + y.name + ".",7);
+				} else {
+					xp++;
 				}
 				//check glancing blow - attacker deals minimum damage (no roll)
 				glanceCheck = Math.floor(Math.random() * 100) + 1;
@@ -124,6 +130,8 @@ function combat(x,y) {
 					glanceRan = z[Math.floor(Math.random() * z.length)];
 					post(character.name + aRan + xMain + glanceRan + y.name + ".",5);
 					//get min damage
+				} else {
+					xp++;
 				}
 				//block check if shield is equipped
 					//successful block reduces damage by a min amt or a percentage - whichever is higher
@@ -137,6 +145,8 @@ function combat(x,y) {
 					post(character.name + aRan + xMain + blockRan + y.name + ".",5);
 					//roll damage and absorb portion
 					console.log("Absorb part of " + dmg);
+				} else {
+					xp++;
 				}
 				//if the attack is not blocked, parried, or dodged then apply hit
 					//crit attacks do 50% more damage
@@ -149,26 +159,38 @@ function combat(x,y) {
 					critRan = critical[Math.floor(Math.random() * critical.length)];
 					post(character.name + aRan + xMain + critRan,6);
 					console.log(dmg * 1.5);
+					xp = xp + (x.level * 1.5);
 				} else {
 					hitRan = hit[Math.floor(Math.random() * hit.length)];
 					post(character.name + aRan + xMain + hitRan,5);
 					console.log(dmg);
+					xp = xp + x.level;
 				}
 			} else {
 				console.log("Miss");
 				if(crit == 1) {
 					stumRan = stum[Math.floor(Math.random() * stum.length)];
 					post(character.name + aRan + xMain + stumRan,8);
+					f = 2;
 				} else {
 					missRan = miss[Math.floor(Math.random() * miss.length)];
 					post(character.name + aRan + xMain + missRan,7);
 				}
 			}
 			//check for spell
-			//check for fumble
 			//check for hp
+			if(x.hp.current <= 0) {
+				clearInterval(xMainInterval);
+				//death function
+			}
+			if(y.hp.current <= 0) {
+				clearInterval(xMainInterval);
+				//corpse funtion
+			}
 			//award xp
-		}, xMainFreq * 1000);
+			console.log(x.name + " gains " + xp + " experience.");
+			hp();
+		}, xMainFreq * 1000 * f);
 		if(dualWield == 1) {
 			xOffInterval = setInterval(function() {
 				//((cAtt - cLvl) + (cSkill - (cLvl * 5))) / threat;
