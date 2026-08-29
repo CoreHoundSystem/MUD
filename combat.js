@@ -144,7 +144,7 @@ function combatInterval(x,y) {
 		command("hp");
 		xMainFreq = xMainFreq * f;
 		*/
-	}, xMainFreq * 1000);
+	}, 3000);
 }
 
 function combat(x,y) {
