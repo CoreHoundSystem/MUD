@@ -92,16 +92,26 @@ function combat(x,y) {
 				dodgeCheck = Math.floor(Math.random() * 100) + 1;
 				if(dodgeCheck < 5 + y.level * threat && attackResolved == 0) {
 					attackResolved = 1;
+					z = dodge;
+					dodgeRan = z[Math.floor(Math.random() * z.length)];
+					post(character.name + aRan + xMain + dodgeRan + y.name + ".",7);
 				}
 				//check parry - parry negates damage and effect and offers immediate attack of opportunity
 				parryCheck = Math.floor(Math.random() * 100) + 1;
 				if(parryCheck < (5 + yWeaponParry) && attackResolved == 0) {
 					attackResolved = 1;
+					z = parry;
+					parryRan = z[Math.floor(Math.random() * z.length)];
+					post(character.name + aRan + xMain + parryRan + y.name + ".",7);
 				}
 				//check glancing blow - attacker deals minimum damage (no roll)
 				glanceCheck = Math.floor(Math.random() * 100) + 1;
 				if(glanceCheck < y.level * threat && attackResolved == 0) {
 					attackResolved = 1;
+					z = glance;
+					glanceRan = z[Math.floor(Math.random() * z.length)];
+					post(character.name + aRan + xMain + glanceRan + y.name + ".",5);
+					//get min damage
 				}
 				//block check if shield is equipped
 					//successful block reduces damage by a min amt or a percentage - whichever is higher
@@ -109,6 +119,10 @@ function combat(x,y) {
 				//setup to compute enemy block
 				if(blockCheck < y.level * threat && attackResolved == 0) {
 					attackResolved = 1;
+					z = block;
+					blockRan = z[Math.floor(Math.random() * z.length)];
+					post(character.name + aRan + xMain + blockRan + y.name + ".",5);
+					//roll damage and absorb portion
 				}
 				//if the attack is not blocked, parried, or dodged then apply hit
 					//crit attacks do 50% more damage
