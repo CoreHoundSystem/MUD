@@ -51,7 +51,7 @@ function combat(x,y) {
 		xOffParry = 0;
 		yWeaponParry = window[yWeapon].parry;
 		xMainSkill = window[xMain].skill;
-		yWeaponSkill = ((x.level + y.level) * 5) + window[yWeapon].skill.rating;
+		yWeaponSkill = ((x.level + y.level) * 5) + y.skill[window[yWeapon].skill].rating;
 		console.log(window[yWeapon]);
 		console.log(window[yWeapon].skill);
 		console.log(y.skill[window[yWeapon].skill].rating);
