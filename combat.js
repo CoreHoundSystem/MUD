@@ -183,7 +183,7 @@ function combat(x,y) {
 					dStyle = 7;
 				}
 			}
-			post(x.name + aRan + window[xMain].cName + " at " + y.name + desc);
+			post(x.name + aRan + window[xMain].cName + " at " + y.name + desc,dStyle);
 			//check for spell
 			//check for hp
 			if(x.hp.current <= 0) {
