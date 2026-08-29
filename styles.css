@@ -78,6 +78,24 @@ span {
 .adminCommands {
 	color: limegreen;
 }
+.list {
+	color: white;
+	margin-left: 25px;
+}
+.playerSucceeds {
+	color: green;
+}
+.pSucceedsCrit {
+	color: green;
+	font-weight: bold;
+}
+.playerFails {
+	color: red;
+}
+.pFailsCrit {
+	color: red;
+	font-weight: bold;
+}
 //spell schools
 .abjuration {
 	color: #ede786;
