@@ -5,6 +5,7 @@ $(function() {
 	if(document.cookie == "null") {
 		console.log(document.cookie);
 		//prompt to select character
+		
 	} else {
 		console.log(document.cookie);
 		character = JSON.parse(document.cookie);
@@ -23,7 +24,7 @@ function load() {
 	console.log(JSON.parse(document.cookie));
 }
 
-character = "";
+
 healAMT = 15;
 
 // modify above
