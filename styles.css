@@ -24,7 +24,7 @@ span {
 }
 #main {
 	width: calc(100vw - calc(var(--margin-body) * 2) - calc(var(--border-ridge) * 2));
-	height: calc(100dvh - calc(var(--margin-body) * 2) - calc(var(--border-ridge) * 2));
+	height: calc(100svh - calc(var(--margin-body) * 2) - calc(var(--border-ridge) * 2));
 	border: ridge var(--border-ridge) black;
 	display: flex;
 	color: white;
